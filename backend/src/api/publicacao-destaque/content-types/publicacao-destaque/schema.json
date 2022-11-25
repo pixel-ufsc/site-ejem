@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "publicacoes_destaques",
+  "info": {
+    "singularName": "publicacao-destaque",
+    "pluralName": "publicacoes-destaques",
+    "displayName": "Publicação destaque"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "publicacao": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::post.post"
+    }
+  }
+}

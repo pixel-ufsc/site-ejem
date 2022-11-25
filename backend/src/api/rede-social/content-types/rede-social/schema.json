@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "redes_sociais",
+  "info": {
+    "singularName": "rede-social",
+    "pluralName": "redes-sociais",
+    "displayName": "Redes sociais",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "linkWhatsapp": {
+      "type": "string",
+      "required": true
+    },
+    "linkInstagram": {
+      "type": "string",
+      "required": true
+    },
+    "linkLinkedin": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

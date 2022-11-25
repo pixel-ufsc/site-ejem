@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "autores",
+  "info": {
+    "singularName": "autor",
+    "pluralName": "autores",
+    "displayName": "Autor",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "required": true,
+      "default": "Fulano da Silva"
+    }
+  }
+}

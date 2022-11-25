@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "contatos",
+  "info": {
+    "singularName": "contato",
+    "pluralName": "contatos",
+    "displayName": "Informações contato",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "telefone": {
+      "type": "string",
+      "required": true,
+      "default": "(48) 3721-4014"
+    },
+    "whatsapp_telefone": {
+      "type": "string",
+      "default": "(67) 99821-2102",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "default": "contato@ejem.com.br",
+      "required": true
+    },
+    "endereco": {
+      "type": "text",
+      "default": "R. Ferreira Lima, Bloco A - Trindade",
+      "required": true
+    }
+  }
+}

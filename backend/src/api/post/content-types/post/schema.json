@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "Publicação",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "subtitulo": {
+      "type": "string",
+      "required": true
+    },
+    "data_publicacao": {
+      "type": "date",
+      "required": true
+    },
+    "resumo": {
+      "type": "text",
+      "required": true,
+      "default": "Este texto aparecerá na listagem de postagens, e não no post em si!"
+    },
+    "conteudo": {
+      "type": "richtext",
+      "default": "Este é o conteúdo da postagem que aparecerá ao clicar nela!",
+      "required": true
+    },
+    "autor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::autor.autor"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titulo",
+      "required": true
+    },
+    "categorias": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::categoria.categoria"
+    }
+  }
+}
