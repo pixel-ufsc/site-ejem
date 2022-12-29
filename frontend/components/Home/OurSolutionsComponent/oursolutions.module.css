@@ -16,7 +16,7 @@
     line-height: 34px;
     text-align: center;
 
-    text-decoration-line: underline;
+    text-decoration: underline 1px;
     text-decoration-color: #79ABDE;
     text-underline-offset: 6px;
 }

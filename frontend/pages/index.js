@@ -16,7 +16,7 @@ export default function Home() {
       <main>
         <NavigationBar></NavigationBar>
         <HomeBanner></HomeBanner>
-        <OurSolutionsComponent />
+        {/* <OurSolutionsComponent /> */}
         <OurContactComponent />
 
       </main>
