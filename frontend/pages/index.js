@@ -5,6 +5,7 @@ import OurSolutionsComponent from "../components/Home/OurSolutionsComponent";
 import OurContactComponent from "../components/Home/OurContactComponent";
 import OurProjectComponent from "../components/Home/OurProjectComponent";
 import OurPartnersComponent from "../components/Home/OurPartnersComponent";
+import OurFeedBackComponent from "../components/Home/OurFeedBackComponent";
 import FooterComponent from "../components/Shared/FooterComponent";
 
 
@@ -24,7 +25,7 @@ export default function Home() {
         <OurContactComponent />
         <OurProjectComponent />
         <OurPartnersComponent />
-        {/* <OurFeedBackComponent /> */}
+        <OurFeedBackComponent />
 
         <FooterComponent />
       </main>
