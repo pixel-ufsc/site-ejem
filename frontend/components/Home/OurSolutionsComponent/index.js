@@ -5,11 +5,13 @@ import card2 from '../../../public/home/cards_solutions/card2.png'
 import card3 from '../../../public/home/cards_solutions/card3.png'
 import card4 from '../../../public/home/cards_solutions/card4.png'
 import card5 from '../../../public/home/cards_solutions/card5.png'
+import wpp_icon from '../../../public/home/cards_solutions/wpp_icon.png'
 
 export default function OurSolutionsComponent() {
     return(
         <section className={styles.section}>
             <div className={styles.text}>Conheça nossas soluções</div>
+            <a className={styles.icon} href="/"><Image src={wpp_icon} alt="wpp"/></a>
             <div className={styles.card_container}>
                 <div className={styles.card}>
                     <div className={styles.card_image}>
