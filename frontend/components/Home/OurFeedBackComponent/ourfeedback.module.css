@@ -1,0 +1,29 @@
+.section1 {
+    height: 352px;
+    width: 100%;
+    background: #EFEFEF;
+    /* border: 1px solid #EFEFEF; */
+}
+
+.section2 {
+    height: 352px;
+    width: 100%;
+    background: #EFEFEF;
+    /* border: 1px solid #EFEFEF; */
+}
+
+.title {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    text-align: center;
+    color: #042660;    
+    margin-top: 47px;
+    margin-bottom: 67px;
+
+    text-decoration: underline 1px;
+    text-decoration-color: #79ABDE;
+    text-underline-offset: 6px;
+}
