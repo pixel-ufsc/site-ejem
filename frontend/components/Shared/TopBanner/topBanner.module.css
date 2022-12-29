@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    align-items: flex-end;
+    height: 90vh;
+}
+
+/* @media screen and (min-width: 576px) {
+    .container {
+        height: 30vh;
+    }
+} */

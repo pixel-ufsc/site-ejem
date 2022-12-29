@@ -1,0 +1,17 @@
+.title {
+    font-family: 'Montserrat';
+    width: 100%;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 58.51px;
+    color: white;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 35px;
+    }
+}
+
