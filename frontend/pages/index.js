@@ -4,6 +4,7 @@ import HomeBanner from "../components/Home/HomeBanner";
 import OurSolutionsComponent from "../components/Home/OurSolutionsComponent";
 import OurContactComponent from "../components/Home/OurContactComponent";
 import OurProjectComponent from "../components/Home/OurProjectComponent";
+import OurPartnersComponent from "../components/Home/OurPartnersComponent";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         {/* <OurSolutionsComponent /> */}
         <OurContactComponent />
         <OurProjectComponent />
+        <OurPartnersComponent />
       </main>
     </>
   )
