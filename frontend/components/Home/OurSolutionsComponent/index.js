@@ -41,7 +41,7 @@ export default function OurSolutionsComponent() {
                     <div className={styles.card_text}>Gestão de Resíduos</div>
                 </div>
 
-                <div className={styles.card}>
+                <div className={styles.card_last}>
                     <div className={styles.card_image}>
                         <a href="/"><Image src={card5} alt="card5"/></a>
                     </div>
