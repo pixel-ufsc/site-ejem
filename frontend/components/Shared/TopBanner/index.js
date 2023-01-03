@@ -3,7 +3,7 @@ import styles from "./topBanner.module.css";
 function TopBanner({ bgOption, children }) {
   const bgOptions = {
     home: "/shared/TopBanner/back_HOME.png",
-    aboutUs: "/shared/TopBanner/AboutUs.png",
+    quemSomos: "/shared/TopBanner/back_QUEM-SOMOS.png",
     servicos: "/shared/TopBanner/Servicos.png",
     contato: "/shared/TopBanner/Contato.png",
     blog: "/shared/TopBanner/Blog.png",
