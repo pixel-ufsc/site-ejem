@@ -2,6 +2,7 @@ import Head from 'next/head'
 import NavigationBar from "../components/Shared/NavigationBar";
 import HomeBanner from "../components/Home/HomeBanner";
 import OurSolutionsComponent from "../components/Home/OurSolutionsComponent";
+import WppComponent from "../components/Shared/WppComponent";
 import OurContactComponent from "../components/Shared/OurContactComponent";
 import OurProjectComponent from "../components/Home/OurProjectComponent";
 import OurPartnersComponent from "../components/Home/OurPartnersComponent";
@@ -21,11 +22,12 @@ export default function Home() {
       <main>
         {/* <NavigationBar></NavigationBar> */}
         <HomeBanner></HomeBanner>
+        <WppComponent />
         <OurSolutionsComponent />
         <OurContactComponent />
         <OurProjectComponent />
         <OurPartnersComponent />
-        <OurFeedBackComponent />
+        {/* <OurFeedBackComponent /> */}
 
         <FooterComponent />
       </main>
