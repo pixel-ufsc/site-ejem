@@ -10,9 +10,9 @@ export default function AboutMejComponent() {
         <section className={styles.section}>
             <div className={styles.title}>EJEM na Rede</div>
             <div className={styles.container}>
-                <div className={styles.text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor elit amet viverra nunc commodo. Auctor sed dictum porta sed cursus ut. Sit elementum aliquam elit sapien quis dolor feugiat placerat. Feugiat tempus blandit dictumst bibendum accumsan habitasse eu id etiam.
+                <div className={styles.text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor elit amet viverra nunc commodo. Auctor sed dictum porta sed cursus ut. Sit elementum aliquam elit sapien quis dolor feugiat placerat. Feugiat tempus blandit dictumst bibendum accumsan habitasse eu id etiam. <br />
 
-                Elementum, risus, justo viverra dictumst id laoreet orci. Egestas enim vel consequat risus. Vestibulum eros, fermentum at id sed consectetur tellus auctor. Volutpat morbi sapien penatibus pharetra mauris lectus. Risus morbi ullamcorper risus tincidunt aliquam. Donec urna tortor at suspendisse malesuada nec sit mattis. 
+                Elementum, risus, justo viverra dictumst id laoreet orci. Egestas enim vel consequat risus. Vestibulum eros, fermentum at id sed consectetur tellus auctor. Volutpat morbi sapien penatibus pharetra mauris lectus. Risus morbi ullamcorper risus tincidunt aliquam. Donec urna tortor at suspendisse malesuada nec sit mattis.
                 Pellentesque urna faucibus vitae convallis amet aliquam nullam bibendum euismod. Ac risus pretium, donec eu integer velit, ac mi
                 Pellentesque urna faucibus vitae convallis amet aliquam nullam bibendum euismod. Ac risus pretium, donec eu integer velit, ac mi
                 </div>

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import QuemSomosBanner from "../../components/QuemSomos/QuemSomosBanner";
-// import IntroCardsComponent from "../../components/AboutUs/IntroCardsComponent";
+import IntroComponent from "../../components/QuemSomos/IntroComponent";
 import OurPartnersComponent from "../../components/QuemSomos/OurPartnersComponent";
 import AboutMejComponent from "../../components/QuemSomos/AboutMejComponent";
 // import OurResultsComponent from "../../components/Home/OurResultsComponents";
@@ -21,6 +21,7 @@ export default function QuemSomos() {
       <main>
 
         <QuemSomosBanner />
+        <IntroComponent />
         {/* <NavigationBar /> */}
         {/* <IntroCardsComponent />
         <OurValuesComponent />
