@@ -20,7 +20,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        {/* <NavigationBar></NavigationBar> */}
+        <NavigationBar></NavigationBar>
         <HomeBanner></HomeBanner>
         <WppComponent />
         <OurSolutionsComponent />

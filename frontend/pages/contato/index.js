@@ -3,7 +3,7 @@ import TitleContactComponent from "../../components/Contato/TitleContactComponen
 import OurContentComponent from "../../components/Contato/OurContentComponent";
 // import OurFormComponent from "../../components/Contato/OurFormComponent";
 import FooterComponent from "../../components/Shared/FooterComponent";
-
+import NavigationBar from "../../components/Shared/NavigationBar";
 
 export default function QuemSomos() {
   return (
@@ -14,6 +14,7 @@ export default function QuemSomos() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+      <NavigationBar></NavigationBar>
         <TitleContactComponent />
         <OurContentComponent />
         {/* <OurFormComponent /> */}

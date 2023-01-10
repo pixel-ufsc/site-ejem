@@ -8,7 +8,7 @@ import AboutMejComponent from "../../components/QuemSomos/AboutMejComponent";
 import OurMembersComponent from "../../components/QuemSomos/OurMembersComponent";
 import OurContactComponent from "../../components/Shared/OurContactComponent";
 import FooterComponent from "../../components/Shared/FooterComponent";
-// import NavigationBar from "../../components/Shared/NavigationBar";
+import NavigationBar from "../../components/Shared/NavigationBar";
 
 export default function QuemSomos() {
   return (
@@ -19,10 +19,10 @@ export default function QuemSomos() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+      <NavigationBar />
 
         <QuemSomosBanner />
         <IntroComponent />
-        {/* <NavigationBar /> */}
         {/* <IntroCardsComponent />
         <OurValuesComponent />
         <AboutMejComponent />
