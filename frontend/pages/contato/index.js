@@ -14,11 +14,10 @@ export default function QuemSomos() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-      <NavigationBar></NavigationBar>
+        <NavigationBar></NavigationBar>
         <TitleContactComponent />
         <OurContentComponent />
-        {/* <OurFormComponent /> */}
-        {/* <FooterComponent /> */}
+        <FooterComponent />
       </main>
     </div>
   );

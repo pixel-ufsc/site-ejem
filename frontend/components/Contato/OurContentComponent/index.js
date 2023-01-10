@@ -15,7 +15,7 @@ export default function OurContentComponent() {
                     <div className={styles.title}>
                         Precisa de uma solução? <br/>
                         Entre em contato conosco para
-                        realizar um orçamento gratuito! <br/>
+                        realizar um <span className={styles.wordColor}>orçamento gratuito!</span> <br/>
                     </div>
                 </div>
             
@@ -25,7 +25,7 @@ export default function OurContentComponent() {
 
                 <div className={styles.items}>
                     <div className={styles.item_icon}>
-                        <a  href="/"><Image className={styles.image} src={email} alt="email"/></a>
+                        <a href="/"><Image className={styles.image} src={email} alt="email"/></a>
                         <div className={styles.item_txt}>contato@ejem.com.br</div>
                     </div>
                     <div className={styles.item_icon}>

@@ -6,6 +6,7 @@
 
 .formContainer {
     width: 635px;
+    width: 89vw;
     height: 690px;
     overflow-y: scroll;
     background: #042660;
@@ -16,12 +17,13 @@
 }
 
 .group {
-    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
     margin-top: 25px;
 }
 
 .label {
-    width: 56px;
+    width: 106%;
     height: 30px;
     
     font-family: 'Montserrat';
@@ -31,14 +33,15 @@
     line-height: 30px;
     
     color: #FFFFFF;
-
+    /* overflow: hidden; */
+    flex-wrap: wrap;
     margin-bottom: 8px;
     /* border: 1px solid black; */
 }
 
 .input {
     box-sizing: border-box;
-    width: 544px;
+    width: 95%;
     height: 50px;
     border: 2px solid #79ABDE;
     border-radius: 8px;
@@ -50,6 +53,7 @@
     display: flex;
     align-items: center;
     gap: 7px;
+    margin-top:10px;
 }
 
 /* .checkbox {
@@ -97,7 +101,12 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 30px;
-    /* identical to box height, or 214% */
     color: #FFFFFF;
+}
 
+@media (max-width: 800px) {    
+    .formContainer {
+        width: 100%;
+        border-radius: 0px;
+    }
 }
