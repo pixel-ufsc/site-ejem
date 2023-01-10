@@ -27,7 +27,7 @@ export default function Home() {
         <OurContactComponent />
         <OurProjectComponent />
         <OurPartnersComponent />
-        {/* <OurFeedBackComponent /> */}
+        <OurFeedBackComponent />
 
         <FooterComponent />
       </main>

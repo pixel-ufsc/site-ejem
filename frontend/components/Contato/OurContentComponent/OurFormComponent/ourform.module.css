@@ -1,0 +1,103 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formContainer {
+    width: 635px;
+    height: 690px;
+    overflow-y: scroll;
+    background: #042660;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 46px 0px 46px;
+}
+
+.group {
+    /* border: 1px solid black; */
+    margin-top: 25px;
+}
+
+.label {
+    width: 56px;
+    height: 30px;
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    
+    color: #FFFFFF;
+
+    margin-bottom: 8px;
+    /* border: 1px solid black; */
+}
+
+.input {
+    box-sizing: border-box;
+    width: 544px;
+    height: 50px;
+    border: 2px solid #79ABDE;
+    border-radius: 8px;
+    background: #042660;
+    color: #FFFFFF;
+}
+
+.formCheckContainer {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+/* .checkbox {
+    border: 2px solid #79ABDE;
+    border-radius: 1px;
+    background-color: #042660;
+} */
+
+.checkbox_label {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 30px;
+    /* identical to box height, or 214% */
+    color: #FFFFFF;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.button {
+    background: #79ABDE;
+    border-radius: 8px;
+    height: 50px;
+    width: 146px;
+    padding: 10px;
+
+    margin-bottom: 30px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.button_txt {
+    width: 56px;
+    height: 30px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 30px;
+    /* identical to box height, or 214% */
+    color: #FFFFFF;
+
+}
