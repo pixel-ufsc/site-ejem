@@ -1,0 +1,22 @@
+.section {
+    height: 302px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.image {
+    width: 168px;
+    height: 168px;
+}
+
+.text {
+    width: 1099px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #000000;
+}
