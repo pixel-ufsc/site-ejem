@@ -5,6 +5,7 @@ import card2 from '../../../public/home/cards_solutions/card2.png'
 import card3 from '../../../public/home/cards_solutions/card3.png'
 import card4 from '../../../public/home/cards_solutions/card4.png'
 import card5 from '../../../public/home/cards_solutions/card5.png'
+import Link from 'next/link'
 
 export default function OurSolutionsComponent() {
     return(
@@ -13,7 +14,7 @@ export default function OurSolutionsComponent() {
             <div className={styles.card_container}>
                 <div className={styles.card}>
                     <div className={styles.card_image}>
-                        <a href="/"><Image src={card1} alt="card1"/></a>
+                        <Link href="/"><Image src={card1} alt="card1"/></Link>
                     </div>
                     <div className={styles.card_text}>Caracterização de materiais</div>
                     <div className={styles.card_description}>
@@ -23,7 +24,7 @@ export default function OurSolutionsComponent() {
 
                 <div className={styles.card}>
                     <div className={styles.card_image}>
-                        <a href="/"><Image src={card2} alt="card2"/></a>
+                        <Link href="/"><Image src={card2} alt="card2"/></Link>
                     </div>
                     <div className={styles.card_text}>Ensaios Mecânicos</div>
                     <div className={styles.card_description}>
@@ -33,7 +34,7 @@ export default function OurSolutionsComponent() {
 
                 <div className={styles.card}>
                     <div className={styles.card_image}>
-                        <a href="/"><Image src={card3} alt="card3"/></a>
+                        <Link href="/"><Image src={card3} alt="card3"/></Link>
                     </div>
                     <div className={styles.card_text}>Análise de Falhas</div>
                     <div className={styles.card_description}>
@@ -43,7 +44,7 @@ export default function OurSolutionsComponent() {
 
                 <div className={styles.card}>
                     <div className={styles.card_image}>
-                        <a href="/"><Image src={card4} alt="card4"/></a>
+                        <Link href="/"><Image src={card4} alt="card4"/></Link>
                     </div>
                     <div className={styles.card_text}>Gestão de Resíduos</div>
                     <div className={styles.card_description}>
@@ -53,7 +54,7 @@ export default function OurSolutionsComponent() {
 
                 <div className={styles.card_last}>
                     <div className={styles.card_image}>
-                        <a href="/"><Image src={card5} alt="card5"/></a>
+                        <Link href="/"><Image src={card5} alt="card5"/></Link>
                     </div>
                     <div className={styles.card_text}>Otimização de Materiais e Processos</div>
                     <div className={styles.card_description}>

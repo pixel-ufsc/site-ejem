@@ -1,31 +1,33 @@
 import styles from "./footer.module.css";
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function FooterComponent() {
   return (
     <footer className={styles.footerContainer}>
         <div className={styles.leftContainer}>
             <div className={styles.logo}>
-                <img src="/shared/footer/logo.png" />
+                <Image src="/shared/footer/logo.png" />
             </div>
             <div className={styles.socialMedia}>
-                <a
+                <Link
                 href="/"
                 target="_blank"
                 >
-                    <img src="/shared/footer/wpp.png" />
-                </a>
-                <a
+                    <Image src="/shared/footer/wpp.png" />
+                </Link>
+                <Link
                 href="/"
                 target="_blank"
                 >
-                    <img src="/shared/footer/insta.png" />
-                </a>
-                <a
+                    <Image src="/shared/footer/insta.png" />
+                </Link>
+                <Link
                 href="/"
                 target="_blank"
                 >
-                    <img src="/shared/footer/linkedin.png" />
-                </a>
+                    <Image src="/shared/footer/linkedin.png" />
+                </Link>
             </div>
         </div>
 

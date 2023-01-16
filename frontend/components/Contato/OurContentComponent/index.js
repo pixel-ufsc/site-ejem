@@ -5,6 +5,7 @@ import phone from '../../../public/home/contact/phone.png'
 import wpp from '../../../public/home/contact/wpp.png'
 import location from '../../../public/contato/content/location.png'
 import OurFormComponent from './OurFormComponent'
+import Link from 'next/link'
 
 
 export default function OurContentComponent() {
@@ -25,15 +26,15 @@ export default function OurContentComponent() {
 
                 <div className={styles.items}>
                     <div className={styles.item_icon}>
-                        <a href="/"><Image className={styles.image} src={email} alt="email"/></a>
+                        <Link href="/"><Image className={styles.image} src={email} alt="email"/></Linka>
                         <div className={styles.item_txt}>contato@ejem.com.br</div>
                     </div>
                     <div className={styles.item_icon}>
-                        <a href="/"><Image className={styles.image} src={phone} alt="phone"/></a>
+                        <Link href="/"><Image className={styles.image} src={phone} alt="phone"/></Link>
                         <div className={styles.item_txt}>(48) 3721-4014</div>
                     </div>
                     <div className={styles.item_icon}>
-                        <a href="/"><Image className={styles.image} src={wpp} alt="wpp"/></a>
+                        <Link href="/"><Image className={styles.image} src={wpp} alt="wpp"/></Link>
                         <div className={styles.item_txt}>(67) 99821-2102</div>
                     </div>  
                 </div>
@@ -41,7 +42,7 @@ export default function OurContentComponent() {
                     Ou venha nos visitar!
                 </div>
                 <div className={styles.location}>
-                    <a href="/"><Image className={styles.image} src={location} alt="location"/></a>
+                    <Link href="/"><Image className={styles.image} src={location} alt="location"/></Link>
                     <div className={styles.subtitle2}>R. Ferreira Lima, Bloco A - Trindade, Florianópolis - SC, 88040-900</div>
                 </div>
             </div>
