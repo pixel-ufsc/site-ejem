@@ -26,7 +26,7 @@ export default function OurContentComponent() {
 
                 <div className={styles.items}>
                     <div className={styles.item_icon}>
-                        <Link href="/"><Image className={styles.image} src={email} alt="email"/></Linka>
+                        <Link href="/"><Image className={styles.image} src={email} alt="email"/></Link>
                         <div className={styles.item_txt}>contato@ejem.com.br</div>
                     </div>
                     <div className={styles.item_icon}>
