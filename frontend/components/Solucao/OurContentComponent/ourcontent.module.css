@@ -1,9 +1,10 @@
 .section {
-    height: 302px;
+    min-height: 302px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
+    padding: 25px;
 }
 
 .image {

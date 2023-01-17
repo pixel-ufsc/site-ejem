@@ -1,6 +1,6 @@
 .container {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
     height: 422px;
 }
@@ -14,7 +14,7 @@
         height: 279px;
     }
 
-    .sapce {
+    .space {
         height: 121px;
     }
 
