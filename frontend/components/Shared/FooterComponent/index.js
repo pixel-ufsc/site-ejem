@@ -7,26 +7,26 @@ export default function FooterComponent() {
     <footer className={styles.footerContainer}>
         <div className={styles.leftContainer}>
             <div className={styles.logo}>
-                <Image src="/shared/footer/logo.png" />
+                <Image width={169} height={75} src="/shared/footer/logo.png" />
             </div>
             <div className={styles.socialMedia}>
                 <Link
                 href="/"
                 target="_blank"
                 >
-                    <Image src="/shared/footer/wpp.png" />
+                    <Image width={25} height={25} src="/shared/footer/wpp.png" />
                 </Link>
                 <Link
                 href="/"
                 target="_blank"
                 >
-                    <Image src="/shared/footer/insta.png" />
+                    <Image width={25} height={25} src="/shared/footer/insta.png" />
                 </Link>
                 <Link
                 href="/"
                 target="_blank"
                 >
-                    <Image src="/shared/footer/linkedin.png" />
+                    <Image width={25} height={25} src="/shared/footer/linkedin.png" />
                 </Link>
             </div>
         </div>

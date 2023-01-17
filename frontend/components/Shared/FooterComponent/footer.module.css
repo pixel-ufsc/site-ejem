@@ -16,11 +16,7 @@
     justify-content: center;
     align-items: center;
     margin-left: 30px;
-}
-
-.logo {
-    /* border: 1px solid black; */
-    transform: scale(0.6);
+    gap: 53px;
 }
 
 .socialMedia {
@@ -59,7 +55,7 @@
     }
     .logo {
         /* border: 1px solid black; */
-        transform: scale(0.6);
+        transform: scale(0.9);
         margin-left: -50px;
     }
     .socialMedia {
