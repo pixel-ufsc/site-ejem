@@ -1,7 +1,7 @@
 import Head from "next/head";
 import TitleContactComponent from "../../components/Contato/TitleContactComponent";
 import OurContentComponent from "../../components/Contato/OurContentComponent";
-// import OurFormComponent from "../../components/Contato/OurFormComponent";
+import WppComponent from "../../components/Shared/WppComponent";
 import FooterComponent from "../../components/Shared/FooterComponent";
 import NavigationBar from "../../components/Shared/NavigationBar";
 
@@ -17,6 +17,7 @@ export default function QuemSomos() {
         <NavigationBar></NavigationBar>
         <TitleContactComponent />
         <OurContentComponent />
+        <WppComponent />
         <FooterComponent />
       </main>
     </div>

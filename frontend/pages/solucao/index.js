@@ -3,6 +3,7 @@ import NavigationBar from "../../components/Shared/NavigationBar";
 import SolucaoBanner from "../../components/Solucao/SolucaoBanner";
 import OurContentComponent from "../../components/Solucao/OurContentComponent";
 import FooterComponent from "../../components/Shared/FooterComponent";
+import WppComponent from "../../components/Shared/WppComponent";
 
 export default function Solucao() {
   return (
@@ -14,6 +15,7 @@ export default function Solucao() {
       </Head>
       <main>
         <NavigationBar />
+        <WppComponent />
         <SolucaoBanner />
         <OurContentComponent />
         <FooterComponent />

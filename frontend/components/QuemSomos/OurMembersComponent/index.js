@@ -23,7 +23,7 @@ function SampleNextArrow(props) {
     return (
       <div
         className={className}
-        style={{ display: "block", color: "red"}}
+        style={{ display: "block", background: "red"  }}
         onClick={onClick}
       />
     );
@@ -32,18 +32,39 @@ function SampleNextArrow(props) {
 
 export default class OurMembersComponent extends Component{
     render() {
+      const members = this.props.members.data
+      // console.log(members[0].attributes.nome)  //nome
+      // console.log(members[0].attributes.cargo) //cargo
+      // console.log(members[0].attributes.foto.data.attributes.formats.thumbnail.url) //foto
+
         const settings = {
           className: "center",
           infinite: true,
           centerPadding: "60px",
-          slidesToShow: 5,
+          slidesToShow: 5, 
           swipeToSlide: true,
+          nextArrow: <SampleNextArrow />,
+          prevArrow: <SamplePrevArrow />
         };
         return (
         <section className={styles.section}>
             <div className={styles.title}>Nossos membros</div>
-            <Slider {...settings}>
-              <div>
+            <Slider {...settings} className={styles.slider}>
+              {members.map((member)=> {
+                  return (
+                    <div>
+                      <h3>
+                        <MembersCard 
+                            id={member.id}
+                            nome={member.attributes.nome}
+                            cargo={member.attributes.cargo}
+                            foto={member.attributes.foto.data.attributes.formats.thumbnail.url}
+                          />
+                      </h3>
+                    </div>
+                  )
+              })}
+              {/* <div>
                 <h3><MembersCard /></h3>
               </div>
               <div>
@@ -69,7 +90,7 @@ export default class OurMembersComponent extends Component{
               </div>
               <div>
                 <h3>9</h3>
-              </div>
+              </div> */}
             </Slider>
           </section>
         );

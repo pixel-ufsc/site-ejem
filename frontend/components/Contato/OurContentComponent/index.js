@@ -26,15 +26,15 @@ export default function OurContentComponent() {
 
                 <div className={styles.items}>
                     <div className={styles.item_icon}>
-                        <Link href="/"><Image className={styles.image} src={email} alt="email"/></Link>
+                        <div href="/"><Image className={styles.image} src={email} alt="email"/></div>
                         <div className={styles.item_txt}>contato@ejem.com.br</div>
                     </div>
                     <div className={styles.item_icon}>
-                        <Link href="/"><Image className={styles.image} src={phone} alt="phone"/></Link>
+                        <div href="/"><Image className={styles.image} src={phone} alt="phone"/></div>
                         <div className={styles.item_txt}>(48) 3721-4014</div>
                     </div>
                     <div className={styles.item_icon}>
-                        <Link href="/"><Image className={styles.image} src={wpp} alt="wpp"/></Link>
+                        <div href="/"><Image className={styles.image} src={wpp} alt="wpp"/></div>
                         <div className={styles.item_txt}>(67) 99821-2102</div>
                     </div>  
                 </div>
