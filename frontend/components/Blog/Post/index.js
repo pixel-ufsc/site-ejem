@@ -14,7 +14,7 @@ export default function PostComponent({ image, htmlString, data }) {
                 <div className={styles.data}> {data.data_publicacao} </div>
 
                     {data.categorias.data.map((categoria) => { return (
-                    <div className={styles.categoria}>
+                    <div className={styles.categoria} key={categoria.id}>
                         {categoria.attributes.tag}
                     </div>
                     )})}
