@@ -2,5 +2,8 @@
     height: 422px;
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100%;
+    width: 90%;
+
 }

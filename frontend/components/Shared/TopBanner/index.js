@@ -8,16 +8,19 @@ function TopBanner({ bgOption, children }) {
   };
 
   return (
-    <div
-      className={styles.container}
-      style={{
-        backgroundImage: `url(${bgOptions[bgOption]})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      {children}
-    </div>
+    <section>
+      <div className={styles.space}></div>
+      <div
+        className={styles.container}
+        style={{
+          backgroundImage: `url(${bgOptions[bgOption]})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {children}
+      </div>
+    </section>
   );
 }
 

@@ -12,22 +12,22 @@ export default function OurSolutionsComponent() {
         <section className={styles.section}>
             <div className={styles.contact_txt}>
                 <div className={styles.txt1}>Entre em contato conosco!</div>
-                <div className={styles.txt2_container}>
+                <Link href="/" className={styles.txt2_container}>
                     <Image src={orçamento} alt="orçamento"/>
-                    <Link href="/" className={styles.txt2}>Solicite seu orçamento gratuito</Link>
-                </div>
+                    <div className={styles.txt2}>Solicite seu orçamento gratuito</div>
+                </Link>
             </div>
             <div className={styles.items}>
                 <div className={styles.item_icon}>
-                    <Link  href="/"><Image className={styles.image} src={email} alt="email"/></Link>
+                    <div  href="/"><Image className={styles.image} src={email} alt="email"/></div>
                     <div className={styles.item_txt}>contato@ejem.com.br</div>
                 </div>
                 <div className={styles.item_icon}>
-                    <Link href="/"><Image className={styles.image} src={phone} alt="phone"/></Link>
+                    <div href="/"><Image className={styles.image} src={phone} alt="phone"/></div>
                     <div className={styles.item_txt}>(48) 3721-4014</div>
                 </div>
                 <div className={styles.item_icon}>
-                    <Link href="/"><Image className={styles.image} src={wpp} alt="wpp"/></Link>
+                    <div href="/"><Image className={styles.image} src={wpp} alt="wpp"/></div>
                     <div className={styles.item_txt}>(67) 99821-2102</div>
                 </div>  
             </div>

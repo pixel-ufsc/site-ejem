@@ -1,5 +1,21 @@
 .container {
     display: flex;
     align-items: flex-end;
-    height: 626px;
+    justify-content: center;
+    height: 422px;
+}
+
+.space {
+    height: 204px;
+}
+
+@media(max-width:800px) {
+    .container {
+        height: 279px;
+    }
+
+    .sapce {
+        height: 121px;
+    }
+
 }
