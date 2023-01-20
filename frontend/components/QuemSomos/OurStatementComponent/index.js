@@ -9,8 +9,8 @@ import Slider from "react-slick";
 
 export default class OurStatementComponent extends Component {
     render() {
-      const statement = this.props.statements.data
-      console.log(statement)
+      const statements = this.props.statements.data
+      console.log(statements)
       const settings = {
         dots: true,
         infinite: true,
@@ -26,7 +26,18 @@ export default class OurStatementComponent extends Component {
                 </div>
             </section>
             <Slider {...settings}>
-                <div>
+                {statements.map((statement)=>{
+                    return (
+                        <StatementCard 
+                            id={statement.id}
+                            nome={statement.attributes.nome}
+                            cargo={statement.attributes.cargo}
+                            textoDepoimento={statement.attributes.textoDepoimento}
+                            foto={statement.attributes.foto.data[0].attributes.formats.thumbnail.url}
+                          />
+                    )
+                }) }
+                {/* <div>
                     <StatementCard></StatementCard>
                 </div>
                 <div>
@@ -34,8 +45,23 @@ export default class OurStatementComponent extends Component {
                 </div>
                 <div>
                     <StatementCard></StatementCard>
-                </div>
+                </div> */}
             </Slider>
+            {/* <Slider {...settings} className={styles.slider}>
+              {statements.map((statement)=> {
+                  return (
+                    <div>
+                        <StatementCard 
+                            id={statement.id}
+                            nome={statement.attributes.nome}
+                            cargo={statement.attributes.cargo}
+                            textoDepoimento={statement.attributes.textoDepoimento}
+                            foto={statement.attributes.foto.data.attributes.formats.thumbnail.url}
+                          />
+                    </div>
+                  )
+              })}
+            </Slider> */}
             <section className={styles.section3}/>
         </section>
       );

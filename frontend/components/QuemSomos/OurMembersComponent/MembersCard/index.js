@@ -2,7 +2,7 @@ import styles from "./card.module.css";
 // import Image from 'next/image'
 
 export default function MembersCard({nome, cargo, foto}) {
-    console.log(foto)
+    // console.log(foto)
     return(
         <section className={styles.section}>
             <div className={styles.imageContainer}>

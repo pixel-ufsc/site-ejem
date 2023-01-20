@@ -12,19 +12,25 @@ import NavigationBar from "../../components/Shared/NavigationBar";
 
 
 export const getStaticProps = async () => {
-  const res = await fetch(
+  const res_members = await fetch(
   // `${process.env.NEXT_PUBLIC_STRAPI_URL}/membros`
      'http://134.209.68.173:1337/api/membros?populate=foto'
   );
-  const data_json = await res.json();
+  const res_statements = await fetch(
+    // `${process.env.NEXT_PUBLIC_STRAPI_URL}/membros`
+       'http://134.209.68.173:1337/api/depoimentos?populate=*'
+    );
+  const data_json = await res_members.json();
+  const data_json1 = await res_statements.json();
   return {
   props: {
-      data: data_json
+      data: data_json,
+      data1: data_json1
   },
   };
 };
 
-export default function QuemSomos({ data }) {
+export default function QuemSomos({ data, data1 }) {
   // console.log(data);
 
   return (
@@ -40,7 +46,7 @@ export default function QuemSomos({ data }) {
         <QuemSomosBanner />
         <WppComponent />
         <IntroComponent />
-        <OurStatementComponent statements={data}/>
+        <OurStatementComponent statements={data1}/>
         <AboutMejComponent />
         <OurPartnersComponent />
         <OurMembersComponent members={data}/>

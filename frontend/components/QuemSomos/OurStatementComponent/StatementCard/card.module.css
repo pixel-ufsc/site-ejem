@@ -1,4 +1,4 @@
-/* .section2 {
+.section2 {
     height: 278px;
     max-width: 80%;
     margin-left: 150px;
@@ -19,17 +19,18 @@
     align-items: center;
 }
 
-.image {
-    border: 1px solid black;
+.textContainer{
+    margin-right: 48px;
+    width: 800px;
+    height: 200px;
+    margin-top: 20px;
+    overflow: hidden;
 }
 
-.textContainer{
-    border: 1px solid black;
+.titleContainer {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 27px;
-    margin-right: 48px;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 .name {
@@ -41,6 +42,16 @@
     color: #FFFFFF;
 }
 
+.job {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #FFFFFF;
+}
+
 .description {
     font-family: 'Montserrat';
     font-style: normal;
@@ -48,5 +59,4 @@
     font-size: 18px;
     line-height: 22px;
     color: #FFFFFF;
-    width: 860px;
-} */
+}
