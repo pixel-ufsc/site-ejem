@@ -7,14 +7,11 @@ import "slick-carousel/slick/slick-theme.css";
 import React, { Component, useState, useEffect } from "react";
 import Slider from "react-slick";
 
-// import Image from 'next/image'
-// import email from '../../../public/home/contact/email.png'
-
 
 export default class OurFeedBackComponent extends Component {
-    // pegar imagem e descrição 
-
     render() {
+      const feedbacks = this.props.feedback.data
+      console.log(feedbacks)
       const settings = {
         dots: true,
         infinite: true,
@@ -27,39 +24,35 @@ export default class OurFeedBackComponent extends Component {
             <section className={styles.section1}>
                 <div className={styles.title}>
                     Feedback de clientes    
-                </div>
+                </div>  
             </section>
-            <Slider {...settings}>
-                <div>
-                    <FeedBackCard></FeedBackCard>
-                </div>
-                <div>
-                    <FeedBackCard></FeedBackCard>
-                </div>
-                <div>
-                    <FeedBackCard></FeedBackCard>
-                </div>
+            <Slider {...settings} className={styles.slider}>
+              {feedbacks.map((feedback)=> {
+                  return (
+                    <div>
+                        <FeedBackCard 
+                            id={feedback.id}
+                            nome={feedback.attributes.nome}
+                            textoFeedback={feedback.attributes.textoFeedback}
+                            foto={feedback.attributes.foto.data.attributes.formats.thumbnail.url}
+                          />
+                    </div>
+                  )
+              })}
             </Slider>
+            {/* <Slider {...settings}>
+                <div>
+                    <FeedBackCard></FeedBackCard>
+                </div>
+                <div>
+                    <FeedBackCard></FeedBackCard>
+                </div>
+                <div>
+                    <FeedBackCard></FeedBackCard>
+                </div>
+            </Slider> */}
             <section className={styles.section3}/>
         </section>
       );
     }
   }
-
-
-// export default function OurFeedBackComponent() {
-//     return(
-//         <section>
-//             <section className={styles.section1}>
-//                 <div className={styles.title}>
-//                     Feedback de clientes    
-//                 </div>
-//             </section>
-//             {/* passar imagem e descrição */}
-//             <FeedBackCard />
-            
-//             <section className={styles.section3}/>
-//         </section>
-//         )
-// }
-

@@ -2,18 +2,15 @@
     width: 100%;
     background: #EFEFEF;
     margin-top: 75px;
-    /* border: 1px solid black; */
 }
 
 .section3 {
     height: 60px;
     width: 100%;
     background: #EFEFEF;
-    /* border: 1px solid black; */
 }
 
 .title {
-    /* border: 1px solid black; */
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
@@ -27,5 +24,33 @@
     text-decoration: underline 1px;
     text-decoration-color: #79ABDE;
     text-underline-offset: 6px;
+}
+
+@media (max-width: 800px) {
+    .section1 {
+        margin-top: 70px;
+    }
+    
+    .section3 {
+        height: 30px;
+        width: 100%;
+        background: #EFEFEF;
+    }
+    
+    .title {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 27px;
+        text-align: center;
+        color: #042660;    
+        padding-top: 15px;
+        margin-bottom: 32px;
+    
+        text-decoration: underline 1px;
+        text-decoration-color: #79ABDE;
+        text-underline-offset: 6px;
+    }
 }
 

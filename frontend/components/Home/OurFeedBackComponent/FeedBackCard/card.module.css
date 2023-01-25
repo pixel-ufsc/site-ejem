@@ -3,34 +3,28 @@
     width: 100%;
     background: #042660;
     margin-top: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     border-radius: 10px;
 }
 
+.sectionContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .imageContainer {
-    border: 1px solid black;
     width: 440px;
     height: 287px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.image {
-    border: 1px solid black;
-    /* margin-left: 50px; */
+    margin-left: 50px;
+    margin-right: 40px;
 }
 
 .textContainer{
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 27px;
     width: 893px;
-    /* align-items: center; */
+    margin-right: 75px;
 }
 
 .name {
@@ -39,8 +33,8 @@
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
-    /* text-align: center; */
     color: #FFFFFF;
+    height: 40px;
 }
 
 .description {
@@ -51,4 +45,72 @@
     line-height: 22px;
     color: #FFFFFF;
     width: 860px;
+    overflow: hidden;
+    height: 130px;
+}
+
+@media (max-width: 800px) { 
+    .section2 {
+        height: 500px;
+        margin-top: 0px;
+        border-radius: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sectionContainer {
+        flex-direction: column;
+        width: 330px;
+        height: 400px;
+        background: #012A6F;
+        border-radius: 7.89673px;
+        margin-bottom: -80px;
+    }
+    
+    .imageContainer {
+        width: 285px;
+        height: 144px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 25px;
+        overflow: hidden;
+    }
+    
+    .textContainer{
+        margin-right: 0px;
+        margin-bottom: 25px;
+        margin-right: 0px;
+        width: 290px;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+    }
+    
+    .name {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        color: #FFFFFF;
+        height: 40px;
+    }
+    
+    .description {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        color: #FFFFFF;
+        width: 860px;
+        overflow: hidden;
+        height: 130px;
+        flex-wrap: wrap;
+    }
+    
 }

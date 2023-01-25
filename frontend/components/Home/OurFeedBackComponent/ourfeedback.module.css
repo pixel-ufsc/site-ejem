@@ -27,3 +27,43 @@
     text-underline-offset: 6px;
 }
 
+@media (max-width: 800px) { 
+    .section1 {
+        /* border: 1px solid black; */
+        margin-top: 10px;
+        height: auto;
+        width: 100%;
+        background-color: #042660;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 10px;
+        margin-bottom: -50px;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .section3 {
+        height: 50px;
+        width: 100%;
+        background: #042660;
+    }
+    
+    .title {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #FFFFFF;
+        font-size: 21.8974px;
+        line-height: 27px;
+
+        text-align: center;  
+        padding-top: 15px;
+        /* margin-top: 20px; */
+
+        text-decoration: underline 1px;
+        text-decoration-color: #79ABDE;
+        text-underline-offset: 6px;
+    }
+}

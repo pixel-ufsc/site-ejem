@@ -4,8 +4,8 @@ import MembersCard from "./MembersCard"
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
-import React, { Component, useState, useEffect } from "react";
-import Slider from "react-slick";
+import React, { Component, useEffect } from "react";
+import Slider from "react-slick"; 
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -37,60 +37,44 @@ export default class OurMembersComponent extends Component{
       // console.log(members[0].attributes.cargo) //cargo
       // console.log(members[0].attributes.foto.data.attributes.formats.thumbnail.url) //foto
 
-        const settings = {
-          className: "center",
-          infinite: true,
-          centerPadding: "60px",
-          slidesToShow: 5, 
-          swipeToSlide: true,
-          nextArrow: <SampleNextArrow />,
-          prevArrow: <SamplePrevArrow />
-        };
+      var settings = {
+        className: "center",
+        infinite: true,
+        centerPadding: "60px",
+        slidesToShow: 5, 
+        swipeToSlide: true,
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />
+      };
+
+      if (typeof window !== "undefined") {
+        if (window.screen.availWidth < 880) {
+          settings = {
+            className: "center",
+            infinite: true,
+            centerPadding: "60px",
+            slidesToShow: 1, 
+            swipeToSlide: true,
+            nextArrow: <SampleNextArrow />,
+            prevArrow: <SamplePrevArrow />
+          };
+        }
+        }
+  
         return (
         <section className={styles.section}>
             <div className={styles.title}>Nossos membros</div>
-            <Slider {...settings} className={styles.slider}>
+            <Slider {...settings}>
               {members.map((member)=> {
                   return (
-                    <div>
-                      <h3>
                         <MembersCard 
                             id={member.id}
                             nome={member.attributes.nome}
                             cargo={member.attributes.cargo}
                             foto={member.attributes.foto.data.attributes.formats.thumbnail.url}
                           />
-                      </h3>
-                    </div>
                   )
               })}
-              {/* <div>
-                <h3><MembersCard /></h3>
-              </div>
-              <div>
-                <h3><MembersCard /></h3>
-              </div>
-              <div>
-                <h3><MembersCard /></h3>
-              </div>
-              <div>
-                <h3><MembersCard /></h3>
-              </div>
-              <div>
-                <h3><MembersCard /></h3>
-              </div>
-              <div>
-                <h3><MembersCard /></h3>
-              </div>
-              <div>
-                <h3>7</h3>
-              </div>
-              <div>
-                <h3>8</h3>
-              </div>
-              <div>
-                <h3>9</h3>
-              </div> */}
             </Slider>
           </section>
         );
