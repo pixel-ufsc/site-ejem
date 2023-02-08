@@ -4,6 +4,8 @@ import SolucaoBanner from "../../components/Solucao/SolucaoBanner";
 import OurContentComponent from "../../components/Solucao/OurContentComponent";
 import FooterComponent from "../../components/Shared/FooterComponent";
 import WppComponent from "../../components/Shared/WppComponent";
+import OurFormComponent from "../../components/Contato/OurContentComponent/OurFormComponent"
+import styles from './styles.module.css'
 
 export default function Solucao() {
   return (
@@ -17,7 +19,10 @@ export default function Solucao() {
         <NavigationBar />
         <WppComponent />
         <SolucaoBanner />
-        <OurContentComponent />
+        <OurContentComponent className={styles.containerForm} />
+        <div className={styles.sectionForm}>
+          <OurFormComponent />
+        </div>
         <FooterComponent />
       </main>
     </div>

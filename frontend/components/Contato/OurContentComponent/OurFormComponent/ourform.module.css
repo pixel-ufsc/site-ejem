@@ -1,37 +1,40 @@
 .container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 0;
+    margin: 0;
 }
 
 .formContainer {
-    width: 635px;
-    width: 89vw;
-    height: 690px;
-    overflow-y: scroll;
+    width: 100vw;
     background: #042660;
-    border-radius: 10px;
+    border-radius: 0px;
     display: flex;
     flex-direction: column;
-    padding: 5px 46px 0px 46px;
+    /* padding: 5px 284px 0px 284px; */
 }
 
 .group {
     display: flex;
     flex-direction: column;
+    min-width: 0;
     margin-top: 25px;
+}
+.groupContato {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 0;
+    margin-top: 25px;
+    width: 100%;
 }
 
 .label {
-    width: 106%;
+    width: 100%;
     height: 30px;
-    
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 30px;
-    
     color: #FFFFFF;
     /* overflow: hidden; */
     flex-wrap: wrap;
@@ -41,26 +44,63 @@
 
 .input {
     box-sizing: border-box;
+    text-indent: 0.5em;
     width: 95%;
     height: 50px;
     border: 2px solid #79ABDE;
     border-radius: 8px;
     background: #042660;
     color: #FFFFFF;
+    resize: none;
 }
 
 .formCheckContainer {
     display: flex;
     align-items: center;
     gap: 7px;
-    margin-top:10px;
+    margin-top: 10px;
+    margin-right: 35px;
 }
 
-/* .checkbox {
-    border: 2px solid #79ABDE;
-    border-radius: 1px;
-    background-color: #042660;
-} */
+.checkbox {
+    
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  /* Remove most all native input styles */
+  appearance: none;
+  /* For iOS < 15 */
+  /* background-color: var(--form-background); */
+  /* Not removed via appearance */
+  margin: 0;
+
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid #79ABDE;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+
+  display: grid;
+  place-content: center;
+}
+
+.checkbox::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em white;
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+}
+
+.checkbox:checked::before {
+    transform: scale(1);
+}
 
 .checkbox_label {
     font-family: 'Montserrat';
@@ -104,9 +144,28 @@
     color: #FFFFFF;
 }
 
-@media (max-width: 800px) {    
+.title {
+    color: white;
+    text-align: center;
+}
+
+.spanOrcamento {
+    color: #79ABDE;
+}
+
+.error {
+    color: rgb(255, 44, 44);
+    font-size: 20px;
+}
+
+@media (max-width: 800px) {
     .formContainer {
-        width: 100%;
+        width: 100vw;
         border-radius: 0px;
+        /* padding: 5px 10px 0px 10px; */
+    }
+    .checkbox{
+        width: 1.5em;
+        height: 1.5em;
     }
 }
