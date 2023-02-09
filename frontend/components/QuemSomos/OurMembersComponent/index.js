@@ -12,18 +12,18 @@ function SampleNextArrow(props) {
     return (
       <button
         className={className}
-        style={{ ...style, display: "block", background: "red" }}
+        style={{ ...style, display: "block" }}
         onClick={onClick}
       />
     );
   }
   
   function SamplePrevArrow(props) {
-    const { className, onClick } = props;
+    const { className, style, onClick } = props;
     return (
       <div
         className={className}
-        style={{ display: "block", background: "red"  }}
+        style={{ ...style, display: "block", background: "red"  }}
         onClick={onClick}
       />
     );
@@ -44,22 +44,59 @@ export default class OurMembersComponent extends Component{
         slidesToShow: 5, 
         swipeToSlide: true,
         nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />
+        prevArrow: <SamplePrevArrow />,
+        responsive: [
+          {
+            breakpoint: 1300,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 2,
+              infinite: true,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 2,
+              infinite: true,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 800,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              infinite: true,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 2,
+              initialSlide: 2
+            }
+          }
+        ]
       };
 
-      if (typeof window !== "undefined") {
-        if (window.screen.availWidth < 880) {
-          settings = {
-            className: "center",
-            infinite: true,
-            centerPadding: "60px",
-            slidesToShow: 1, 
-            swipeToSlide: true,
-            nextArrow: <SampleNextArrow />,
-            prevArrow: <SamplePrevArrow />
-          };
-        }
-        }
+      // if (typeof window !== "undefined") {
+      //   if (window.screen.availWidth < 880) {
+      //     settings = {
+      //       className: "center",
+      //       infinite: true,
+      //       centerPadding: "60px",
+      //       slidesToShow: 1, 
+      //       swipeToSlide: true,
+      //       nextArrow: <SampleNextArrow />,
+      //       prevArrow: <SamplePrevArrow />
+      //     };
+      //   }
+      //   }
   
         return (
         <section className={styles.section}>
