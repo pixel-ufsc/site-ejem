@@ -1,3 +1,9 @@
+.sectionForm {
+    width: 100vw;
+    padding: 5px 284px 0px 284px;
+    background-color: #042660;
+}
+
 .container {
     display: flex;
     padding: 0;
@@ -164,6 +170,10 @@
 }
 
 @media (max-width: 800px) {
+    .sectionForm {
+        width: 100vw;
+        padding: 5px 10px 0px 10px;
+    }
     .formContainer {
         width: 100vw;
         border-radius: 0px;
