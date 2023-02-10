@@ -48,18 +48,19 @@
 
 .card:hover > .card_image, 
 .card_last:hover > .card_image {
-    transform: scale(0.5);
+    transform: scale(0.4);
     margin: 0px;
-    margin-left: 40px;
-    margin-top: -10px;
+    margin-left: 30px;
+    margin-top: -25px;
 }
 
 .card:hover > .card_text, .card_last:hover > .card_text {
     /* border: 1px solid black; */
     font-size: 15px;
+    line-height: 18px;
     color: #042660;
-    margin-bottom: 3px;
-    margin-top: -25px;
+    margin-bottom: 8px;
+    margin-top: -30px;
     margin-left: 10px;
     margin-right: 10px;
 }
@@ -69,7 +70,8 @@
     visibility: visible;
     font-size: 12px;
     color: #042660;
-    word-wrap: break-word;  
+    word-wrap: break-word;
+    hyphens: auto;
     height: 138px;
     width: auto;
     margin: 0 16px;
