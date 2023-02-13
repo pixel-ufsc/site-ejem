@@ -52,7 +52,7 @@ export default function OurFormComponent() {
       a.innerHTML += 'Insira um nome de empresa/segmento válido!<br>'
       validador = false
     }
-    if (telefone.length !== 15) {
+    if (telefone.length !== 15 || telefone.length !== 14) {
       a.innerHTML += 'Insira um telefone no formato (99) 99999-9999<br>'
       validador = false
     }
