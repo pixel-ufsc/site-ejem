@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./card.module.css";
 
 export default function StatementCard({nome, cargo, textoDepoimento, foto}) {
