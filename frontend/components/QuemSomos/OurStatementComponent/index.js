@@ -10,7 +10,7 @@ import Slider from "react-slick";
 export default class OurStatementComponent extends Component {
     render() {
       const statements = this.props.statements.data
-    //   console.log(statements)
+      // console.log(statements)
       const settings = {
         dots: true,
         infinite: true,
@@ -29,6 +29,7 @@ export default class OurStatementComponent extends Component {
                 {statements.map((statement)=>{
                     return (
                         <StatementCard 
+                            key={statement.id}
                             id={statement.id}
                             nome={statement.attributes.nome}
                             cargo={statement.attributes.cargo}

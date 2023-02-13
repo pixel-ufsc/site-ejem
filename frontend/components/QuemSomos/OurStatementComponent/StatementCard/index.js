@@ -6,7 +6,7 @@ export default function StatementCard({nome, cargo, textoDepoimento, foto}) {
         <section className={styles.section2}>
             <div className={styles.sectionContainer}>
                 <div className={styles.imageContainer}>
-                    <img className={styles.image} src={foto} width="280" height="210"  alt="depoimentos"></img>
+                    <Image className={styles.image} src={foto} width="280" height="210"  alt="depoimentos"></Image>
                 </div>
                 <div className={styles.textContainer}>
                     <div className={styles.titleContainer}>

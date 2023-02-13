@@ -105,6 +105,7 @@ export default class OurMembersComponent extends Component{
               {members.map((member)=> {
                   return (
                         <MembersCard 
+                            key={member.id}
                             id={member.id}
                             nome={member.attributes.nome}
                             cargo={member.attributes.cargo}

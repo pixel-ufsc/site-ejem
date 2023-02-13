@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./card.module.css";
 
 export default function OurFeedBackComponent({nome, textoFeedback, foto}) {
@@ -5,7 +6,7 @@ export default function OurFeedBackComponent({nome, textoFeedback, foto}) {
         <section className={styles.section2}>
             <div className={styles.sectionContainer}>
                 <div className={styles.imageContainer}>
-                    <img src={foto} width="326" height="207" alt="feedback"></img>
+                    <Image src={foto} width="326" height="207" alt="feedback"></Image>
                 </div>
                 <div className={styles.textContainer}>
                     <div className={styles.name}>{nome}</div>

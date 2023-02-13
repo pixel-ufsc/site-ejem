@@ -11,7 +11,7 @@ import Slider from "react-slick";
 export default class OurFeedBackComponent extends Component {
     render() {
       const feedbacks = this.props.feedback.data
-      console.log(feedbacks)
+      // console.log(feedbacks)
       const settings = {
         dots: true,
         infinite: true,
@@ -29,7 +29,9 @@ export default class OurFeedBackComponent extends Component {
             <Slider {...settings} className={styles.slider}>
               {feedbacks.map((feedback)=> {
                   return (
-                    <div>
+                    <div
+                      key={feedback.id}
+                    >
                         <FeedBackCard 
                             id={feedback.id}
                             nome={feedback.attributes.nome}
