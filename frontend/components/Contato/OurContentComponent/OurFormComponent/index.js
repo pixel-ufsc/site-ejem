@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import validator from "validator";
-import styles from "./ourform.module.css";
+import React, { useState } from 'react';
+import validator from 'validator';
+import styles from './ourform.module.css';
 
 export default function OurFormComponent() {
   const [nome, setNome] = useState('');
@@ -73,28 +73,41 @@ export default function OurFormComponent() {
 
 
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
     if (validate_inputs()){
-      const formObjectt = {'nome':nome,'email':email,'empresa':empresa,'telefone':telefone,'demanda':demanda,'comentario':comentario,'checkboxes':checkboxes.filter((item)=>!(item.slice(0,8) === 'Contato:')),'contato':checkboxes.filter((item)=>(item.slice(0,8) === 'Contato:'))}
-      //Agora só enviar o form com o objeto acima, acredito que fiz toda validação necessaria de inputs, agora só enviar
-    }else{
-      console.log('Algum erro')
+      const formObject = {'nome':nome,'email':email,'empresa':empresa,'telefone':telefone,'demanda':demanda,'comentario':comentario,'checkboxes':checkboxes.filter((item)=>!(item.slice(0,8) === 'Contato:')),'contato':checkboxes.filter((item)=>(item.slice(0,8) === 'Contato:'))}
+      
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({ 'form-name': 'contato', formObject })
+      })
+        .then(() => alert('Success!'))
+        .catch(error => alert(error));
     }
+
+    event.preventDefault();
   };
 
   return (
     <div className={styles.container}>
-      <form className={styles.formContainer}>
+      <form
+        className={styles.formContainer}
+        netlify
+        netlify-honeypot='bot-field'
+        onSubmit={(event) => handleSubmit(event)}
+      >
+        <input type='hidden' name='contato' value='contato' /> {/* Configura o nome do formulário para o Netlify Forms */}
         <h1 className={styles.title} >E aí, vamos fazer um <span className={styles.spanOrcamento}>orçamento gratuito?</span></h1>
-
         <div className={styles.group}>
           <label className={styles.label}>
             Nome:
           </label>
           <input
+            name='nome'
             className={styles.input}
             required
-            type="text"
+            type='text'
             value={nome}
             onChange={(({ target }) => setNome(target.value))}
           />
@@ -105,8 +118,9 @@ export default function OurFormComponent() {
             E-mail:
           </label>
           <input
+            name='email'
             className={styles.input}
-            type="email"
+            type='email'
             value={email}
             onChange={(({ target }) => setEmail(target.value))}
           />
@@ -117,8 +131,9 @@ export default function OurFormComponent() {
             Nome e segmento da empresa:
           </label>
           <input
+            name='empresa'
             className={styles.input}
-            type="text"
+            type='text'
             value={empresa}
             onChange={(({ target }) => setEmpresa(target.value))}
           />
@@ -129,10 +144,11 @@ export default function OurFormComponent() {
             Telefone:
           </label>
           <input
+            name='telefone'
             className={styles.input}
             required
             maxLength={15}
-            type="text"
+            type='text'
             value={telefone}
             onChange={handleTelefoneChange}
           />
@@ -142,7 +158,8 @@ export default function OurFormComponent() {
           <label className={styles.label}>Quais soluções atendem sua demanda?</label>
           <div className={styles.formCheckContainer}>
             <input
-              type="checkbox"
+              name='Caracterização de materias metálicos'
+              type='checkbox'
               className={styles.checkbox}
               value='Caracterização de materias metálicos'
               onChange={handleBoxChange}
@@ -152,7 +169,8 @@ export default function OurFormComponent() {
 
           <div className={styles.formCheckContainer}>
             <input
-              type="checkbox"
+              name='Caracterização de materias poliméricos'
+              type='checkbox'
               className={styles.checkbox}
               value='Caracterização de materias poliméricos'
               onChange={handleBoxChange}
@@ -162,7 +180,8 @@ export default function OurFormComponent() {
 
           <div className={styles.formCheckContainer}>
             <input
-              type="checkbox"
+              name='Caracterização de materias cerâmicos ou compósitos'
+              type='checkbox'
               className={styles.checkbox}
               value='Caracterização de materiais cerâmicos ou compósitos'
               onChange={handleBoxChange}
@@ -172,7 +191,8 @@ export default function OurFormComponent() {
 
           <div className={styles.formCheckContainer}>
             <input
-              type="checkbox"
+              name='Engenharia reversa'
+              type='checkbox'
               className={styles.checkbox}
               value='Engenharia reversa'
               onChange={handleBoxChange}
@@ -182,7 +202,8 @@ export default function OurFormComponent() {
 
           <div className={styles.formCheckContainer}>
             <input
-              type="checkbox"
+              name='Ensaios mecânicos'
+              type='checkbox'
               className={styles.checkbox}
               value='Ensaios mecânicos'
               onChange={handleBoxChange}
@@ -192,7 +213,8 @@ export default function OurFormComponent() {
 
           <div className={styles.formCheckContainer}>
             <input
-              type="checkbox"
+              name='Seleção de materiais'
+              type='checkbox'
               className={styles.checkbox}
               value='Seleção de materiais'
               onChange={handleBoxChange}
@@ -202,7 +224,8 @@ export default function OurFormComponent() {
 
           <div className={styles.formCheckContainer}>
             <input
-              type="checkbox"
+              name='Outros'
+              type='checkbox'
               className={styles.checkbox}
               value='Outros'
               onChange={handleBoxChange}
@@ -217,6 +240,7 @@ export default function OurFormComponent() {
             Descreva sua demanda:
           </label>
           <textarea
+            name='demanda'
             className={styles.input}
             value={demanda}
             onChange={({ target }) => setDemanda(target.value)}
@@ -228,6 +252,7 @@ export default function OurFormComponent() {
             Comentários adicionais:
           </label>
           <textarea
+            name='comentario'
             className={styles.input}
             value={comentario}
             onChange={({ target }) => setComentario(target.value)}
@@ -239,8 +264,9 @@ export default function OurFormComponent() {
 
           <div className={styles.formCheckContainer}>
             <input
+              name='Contato:Telefone'
               className={styles.checkbox}
-              type="checkbox"
+              type='checkbox'
               value={'Contato:Telefone'}
               onChange={handleBoxChange}
             />
@@ -250,7 +276,8 @@ export default function OurFormComponent() {
           <div className={styles.formCheckContainer}>
             <input
             className={styles.checkbox}
-              type="checkbox"
+              name='Contato:E-mail'
+              type='checkbox'
               value={'Contato:E-mail'}
               onChange={handleBoxChange}
             />
@@ -262,9 +289,8 @@ export default function OurFormComponent() {
         <p id='error' className={styles.error}></p>
         <div className={styles.buttonContainer}>
           <button
-          type='button'
+            type='submit'
             className={styles.button}
-            onClick={handleSubmit}
           >
             <span className={styles.button_txt}>
               ENVIAR
