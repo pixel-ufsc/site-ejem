@@ -4,6 +4,8 @@ import Link from 'next/link'
 
 
 export default function PostComponent({ image, htmlString, data }) {
+    // console.log(htmlString)
+    // console.log(data)
     return(
         <section className={styles.section}>
             <div className={styles.container}>
