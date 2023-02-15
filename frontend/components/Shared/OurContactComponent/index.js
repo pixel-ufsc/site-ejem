@@ -7,7 +7,7 @@ import orçamento from '../../../public/home/contact/orcamento.png'
 import Link from 'next/link'
 
 
-export default function OurSolutionsComponent() {
+export default function OurContactComponent() {
     return(
         <section className={styles.section}>
             <div className={styles.contact_txt}>

@@ -1,6 +1,6 @@
 import styles from "./ourproject.module.css";
 
-export default function OurSolutionsComponent() {
+export default function OurProjectComponent() {
     return(
         <section>
             <section className={styles.section1}></section>
