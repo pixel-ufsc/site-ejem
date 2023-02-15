@@ -1,0 +1,78 @@
+.section {
+    width: 100%;
+    /* border: 1px solid red; */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.title {
+    margin-top: 260px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 59px;
+
+    /* identical to box height */
+    text-align: center;
+
+    /* Azul escuro */
+    color: #042660;
+}
+
+.search {
+    width: 1296px;
+    height: 50px;
+    border: 1px solid #2E4494;
+    border-radius: 7px;
+    display: flex;
+}
+
+.button {
+    width: 50px;
+    background-color: white;
+    border: 0;
+    border-radius: 7px 0px 0px 7px;
+    cursor: pointer;
+}
+
+.input {
+    border-radius: 0px 7px 7px 0px;
+    border: none;
+    width: 100%;
+    font-family: 'Montserrat';
+    font-style: italic;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 12px;
+    text-align: start;  
+}
+
+
+/* Tirar placeholder */
+.input:focus::-webkit-input-placeholder {
+    color: transparent;
+ }
+ .input:focus:-moz-placeholder { /* Firefox 18- */
+    color: transparent;  
+ }
+ .input:focus::-moz-placeholder {  /* Firefox 19+ */
+    color: transparent;  
+ }
+ .input:focus:-ms-input-placeholder {  
+    color: transparent; 
+ }
+
+.input:focus {
+    outline: 0;
+    font-style: normal;
+    color: black;
+    font-size: 15px;
+}
+
