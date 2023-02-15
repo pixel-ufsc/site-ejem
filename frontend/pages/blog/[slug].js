@@ -8,7 +8,8 @@ import OurContactComponent from "../../components/Shared/OurContactComponent";
 import FooterComponent from "../../components/Shared/FooterComponent";
 
 export const getStaticPaths = async () => {
-    let result = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/posts`);
+    let result = await fetch(`http://134.209.68.173:1337/api/posts`);
+    // let result = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/posts`);
     result = await result.json()
     return {
     paths: result.data.map(result => ({
@@ -20,7 +21,8 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
     const res = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL}/posts?filters[slug][$eq]=${params.slug}&populate=%2A`
+    `http://134.209.68.173:1337/api/posts?filters[slug][$eq]=${params.slug}&populate=%2A`
+    // `${process.env.NEXT_PUBLIC_STRAPI_URL}/posts?filters[slug][$eq]=${params.slug}&populate=%2A`
     );
     //console.log(params);
     //console.log(`${process.env.NEXT_PUBLIC_STRAPI_URL}/posts?filters[slug][$eq]=${params.slug}&populate=imagem&populate=autor`)
@@ -50,7 +52,6 @@ export default function Post({ image, htmlString, data }) {
             <PostComponent image={image} htmlString={htmlString} data={data} />
             <OurContactComponent />
             <FooterComponent />
-
         </main>
         
     </>
