@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 // Hooks
 import useDebounce from "../../../hooks/useDebounce";
 // Components
-import OurPostComponent from "./OurPostComponent";
+import OurPostComponent from "../OurPostComponent";
 // Icons
 import { AiOutlineSearch } from "react-icons/ai";
 
