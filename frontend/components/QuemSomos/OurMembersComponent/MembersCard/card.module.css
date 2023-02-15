@@ -4,7 +4,6 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    /* border: 1px solid black; */
 }
 
 .section {
@@ -17,19 +16,15 @@
     gap: 24px;
     align-items: center;
     border-radius: 10px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     overflow: hidden;
-    /* border: 1px solid black; */
 }
 
 .imageContainer {
-    /* border: 1px solid black; */
     width: 166px;
     height: 195px;
 }
 
 .textContainer{
-    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: center;
