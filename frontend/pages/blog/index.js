@@ -26,22 +26,8 @@ export const getStaticProps = async () => {
 import OurSearchComponent from "../../components/Blog/OurSearchComponent";
 
 
-export const getStaticProps = async () => {
-  const res_posts = await fetch(
-  // `${process.env.NEXT_PUBLIC_STRAPI_URL}/membros`
-     'http://134.209.68.173:1337/api/posts?populate=%2A'
-  );
-  const data_json = await res_posts.json();
-  return {
-  props: {
-      data: data_json,
-  },
-  };
-};
-
 export default function Blog({ data , data1 }) {
   // console.log(data)
-export default function Blog({ data }) {
   // console.log(data)
   return (
     <div>
@@ -65,4 +51,3 @@ export default function Blog({ data }) {
     </div>
   );
 }
-
