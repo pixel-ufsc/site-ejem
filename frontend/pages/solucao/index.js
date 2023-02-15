@@ -20,7 +20,7 @@ export default function Solucao() {
         <WppComponent />
         <SolucaoBanner />
         <OurContentComponent className={styles.containerForm} />
-        <OurFormComponent />
+        <OurFormComponent />  
         <FooterComponent />
       </main>
     </div>
