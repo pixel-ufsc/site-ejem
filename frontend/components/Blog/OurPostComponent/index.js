@@ -1,6 +1,7 @@
 import styles from "./ourpost.module.css";
 import { useState } from 'react';
 import Image from 'next/image'
+import PostTagComponent from "../PostTagComponent";
 
 
 export default function OurPostComponent({ atributes }) {
@@ -8,7 +9,8 @@ export default function OurPostComponent({ atributes }) {
         titulo,
         data_publicacao,
         resumo,
-        imagem: { data: { attributes: { formats, alternativeText }}}
+        imagem: { data: { attributes: { formats, alternativeText }}},
+        categorias: { data: postTags },
     } = atributes
 
     const convertDate = (date) => {
@@ -31,10 +33,17 @@ export default function OurPostComponent({ atributes }) {
                 alt={alternativeText}
                 className={styles.cardImage}
             />
+
             <div className={styles.textContent}>
                 <h2>{titulo}</h2>
                 <p className={styles.date}>{convertDate(data_publicacao)}</p>
                 <p className={styles.description}>{resumo}</p>
+            </div>
+
+            <div className={styles.tagsContainer}>
+                {postTags.map((tag) => (
+                    <PostTagComponent text={tag?.attributes?.tag} />
+                ))}
             </div>
         </div>
     )

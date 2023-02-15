@@ -3,7 +3,7 @@
 
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	grid-auto-rows: 536px;
+	grid-auto-rows: min-content;
 	grid-gap: 2.5%;
 
 	padding: 65px 5%;
@@ -13,7 +13,6 @@
 	.container {
 		grid-template-columns: 1fr;
 		padding: 65px 20%;
-		grid-auto-rows: min-content;
 	}
 }
 
