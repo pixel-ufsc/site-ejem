@@ -18,24 +18,24 @@ export const getStaticProps = async () => {
   const data_json = await res_posts.json();
   const data_json_post = await res_post.json();
   return {
-  props: {
-      data: data_json,
-      data1: data_json_post
-  },
+    props: {
+      posts: data_json.data,
+      mainPost: data_json_post.data
+    },
   };
 };
 
-export default function Blog({ data , data1 }) {
-  const [filteredPosts, setFilteredPosts] = useState(data);
+export default function Blog({ posts , mainPost }) {
+  const [filteredPosts, setFilteredPosts] = useState(posts);
 
   const handleSearch = (search) => {
     if (search) { // If search is not '' (empty)
-      const filtered = data.filter((post) => {
-        return post.titulo.toLowerCase().includes(search.toLowerCase());
+      const filtered = posts.filter((post) => {
+        return post.attributes.titulo.toLowerCase().includes(search.toLowerCase());
       });
       setFilteredPosts(filtered);
     } else { // Else, return all posts
-      setFilteredPosts(data);
+      setFilteredPosts(posts);
     }
   };
 
@@ -50,7 +50,7 @@ export default function Blog({ data , data1 }) {
       <main>
         <NavigationBar />
         <OurSearchComponent onSearch={(search) => handleSearch(search)} />
-        <PostGridComponent posts={filteredPosts?.data} />
+        <PostGridComponent posts={filteredPosts} />
         
         {/* <NavigationBar />
         <OurSearchComponent posts={data}/>

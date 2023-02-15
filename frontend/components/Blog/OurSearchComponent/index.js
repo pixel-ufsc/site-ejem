@@ -13,7 +13,6 @@ export default function OurSearchComponent({ onSearch }) {
     const debouncedSearch = useDebounce(searchValue, 500); // This will make it so the search is only made 500ms after the user stops typing
 
     useEffect(() => {
-        console.log(debouncedSearch)
         onSearch?.(debouncedSearch)
     }, [debouncedSearch])
 

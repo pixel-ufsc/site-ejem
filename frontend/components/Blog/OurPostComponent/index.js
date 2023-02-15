@@ -42,7 +42,7 @@ export default function OurPostComponent({ atributes }) {
 
             <div className={styles.tagsContainer}>
                 {postTags.map((tag) => (
-                    <PostTagComponent text={tag?.attributes?.tag} />
+                    <PostTagComponent text={tag?.attributes?.tag} key={tag?.id} />
                 ))}
             </div>
         </div>
