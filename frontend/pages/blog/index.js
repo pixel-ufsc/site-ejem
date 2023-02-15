@@ -50,6 +50,7 @@ export default function Blog({ posts , mainPost }) {
       <main>
         <NavigationBar />
         <OurSearchComponent onSearch={(search) => handleSearch(search)} />
+        <OurMainPostComponent mainPost={mainPost}/>
         <PostGridComponent posts={filteredPosts} />
         
         {/* <NavigationBar />
