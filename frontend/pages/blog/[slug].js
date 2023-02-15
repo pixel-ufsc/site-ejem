@@ -3,7 +3,7 @@ import fm from "front-matter";
 import Head from "next/head";
 import { marked } from "marked";
 import NavigationBar from "../../components/Shared/NavigationBar";
-import PostComponent from "../../components/Blog/Post";
+import PostComponent from "../../components/Blog/PostComponent";
 import OurContactComponent from "../../components/Shared/OurContactComponent";
 import FooterComponent from "../../components/Shared/FooterComponent";
 
