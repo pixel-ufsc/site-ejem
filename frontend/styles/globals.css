@@ -1,29 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: "Montserrat", "Ubuntu", sans-serif;
-  background: #EFEFEF;
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat", "Ubuntu", sans-serif;
+    background: #EFEFEF;
+}
+
+body {
+    overflow-x: hidden;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
-
 :root {
-  --color-turquesaAdv: #3891a6;
-  --color-turquesa50: #57b2c7;
-  --color-azulAdv: #011d67;
-  --color-azul90: #000d2b;
-  --color-azul70: #01133d;
-  --color-brancoAdv: #f7f4f3;
-  --color-pinkAdv: #ff1053;
-  --color-pink: #e00040;
+    --color-turquesaAdv: #3891a6;
+    --color-turquesa50: #57b2c7;
+    --color-azulAdv: #011d67;
+    --color-azul90: #000d2b;
+    --color-azul70: #01133d;
+    --color-brancoAdv: #f7f4f3;
+    --color-pinkAdv: #ff1053;
+    --color-pink: #e00040;
 }
