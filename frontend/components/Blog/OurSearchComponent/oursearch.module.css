@@ -1,18 +1,19 @@
 .section {
     width: 100%;
-    /* border: 1px solid red; */
 }
 
 .container {
+    padding-top: 260px;
+    padding-bottom: 64px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 .title {
-    margin-top: 260px;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
@@ -27,7 +28,7 @@
 }
 
 .search {
-    width: 1296px;
+    width: 90%;
     height: 50px;
     border: 1px solid #2E4494;
     border-radius: 7px;
