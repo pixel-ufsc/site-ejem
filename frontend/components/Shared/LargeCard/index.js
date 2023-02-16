@@ -1,11 +1,11 @@
-import Image from "next/image";
-import styles from "./card.module.css";
+import Image from 'next/image';
+import styles from './card.module.css';
 
-export default function StatementCard({title, subtitle, description, imageUrl}) {
-    return(
+export default function StatementCard({ title, subtitle, description, imageUrl }) {
+    return (
         <div className={styles.cardContainer}>
             <div className={styles.card}>
-                <Image src={imageUrl} alt="Imagem depoimento" width="280" height="210" className={styles.image}/>
+                <Image src={imageUrl} alt="Imagem depoimento" width="280" height="210" className={styles.image} />
 
                 <div className={styles.textContent}>
                     <div className={styles.titleContainer}>
@@ -16,5 +16,5 @@ export default function StatementCard({title, subtitle, description, imageUrl}) 
                 </div>
             </div>
         </div>
-    )
+    );
 }

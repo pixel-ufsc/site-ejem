@@ -1,13 +1,15 @@
-import styles from "./wpp.module.css";
-import Image from 'next/image'
-import Link from 'next/link'
+import styles from './wpp.module.css';
+import Image from 'next/image';
+import Link from 'next/link';
 
-import wpp_icon from '../../../public/home/cards_solutions/wpp_icon.png'
+import wpp_icon from '../../../public/home/cards_solutions/wpp_icon.png';
 
 export default function WppComponent() {
-    return(
+    return (
         <>
-            <Link className={styles.icon} href="/"><Image src={wpp_icon} alt="wpp"/></Link>
+            <Link className={styles.icon} href="/">
+                <Image src={wpp_icon} alt="wpp" />
+            </Link>
         </>
-    )
+    );
 }

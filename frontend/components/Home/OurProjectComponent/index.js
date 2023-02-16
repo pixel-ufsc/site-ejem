@@ -1,7 +1,7 @@
-import styles from "./ourproject.module.css";
+import styles from './ourproject.module.css';
 
 export default function OurProjectComponent() {
-    return(
+    return (
         <section>
             <section className={styles.section1}></section>
             <section className={styles.section2}>
@@ -19,5 +19,5 @@ export default function OurProjectComponent() {
                 </div>
             </section>
         </section>
-    )
+    );
 }

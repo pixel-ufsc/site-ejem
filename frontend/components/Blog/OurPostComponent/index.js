@@ -1,17 +1,20 @@
-import styles from "./ourpost.module.css";
+import styles from './ourpost.module.css';
 import { useState } from 'react';
-import Image from 'next/image'
-import PostTagComponent from "../PostTagComponent";
-
+import Image from 'next/image';
+import PostTagComponent from '../PostTagComponent';
 
 export default function OurPostComponent({ atributes }) {
     const {
         titulo,
         data_publicacao,
         resumo,
-        imagem: { data: { attributes: { formats, alternativeText }}},
+        imagem: {
+            data: {
+                attributes: { formats, alternativeText },
+            },
+        },
         categorias: { data: postTags },
-    } = atributes
+    } = atributes;
 
     const convertDate = (date) => {
         // Converter 2022-12-29 para 29/12/2022
@@ -20,13 +23,13 @@ export default function OurPostComponent({ atributes }) {
         const month = dateArray[1];
         const day = dateArray[2];
         return `${day}/${month}/${year}`;
-    }
-    
+    };
+
     const handleClick = () => {
         // TODO - fazer redirecionamento para a página do post
-    }
+    };
 
-    return(
+    return (
         <div className={styles.container} onClick={handleClick}>
             <img
                 src={formats.large.url ? formats.large.url : formats.medium.url}
@@ -46,5 +49,5 @@ export default function OurPostComponent({ atributes }) {
                 ))}
             </div>
         </div>
-    )
+    );
 }

@@ -1,13 +1,11 @@
-import styles from "./ourmainpost.module.css";
-import Image from 'next/image'
-import PostTagComponent from "../PostTagComponent";
-
+import styles from './ourmainpost.module.css';
+import Image from 'next/image';
+import PostTagComponent from '../PostTagComponent';
 
 export default function OurMainPostComponent({ mainPost }) {
-
-    const post = mainPost.attributes.publicacao.data.attributes
-    const image = post.imagem.data.attributes.formats.thumbnail.url
-    const postTags = post.categorias.data
+    const post = mainPost.attributes.publicacao.data.attributes;
+    const image = post.imagem.data.attributes.formats.thumbnail.url;
+    const postTags = post.categorias.data;
     // const tag = mainPost.attributes.publicacao.data.attributes.categorias.data[0].attributes.tag
 
     const convertDate = (date) => {
@@ -17,10 +15,9 @@ export default function OurMainPostComponent({ mainPost }) {
         const month = dateArray[1];
         const day = dateArray[2];
         return `${day}/${month}/${year}`;
-    }
-    
+    };
 
-    return(
+    return (
         <section className={styles.sectionOutside}>
             <section className={styles.section}>
                 <div className={styles.text}>
@@ -32,17 +29,21 @@ export default function OurMainPostComponent({ mainPost }) {
                         {postTags.map((tag) => (
                             <PostTagComponent text={tag?.attributes?.tag} key={tag?.id} />
                         ))}
-                    </div> 
+                    </div>
                 </div>
                 <div className={styles.image}>
-                    <img src={image} alt="imagem" width={550} height={356}/>
-                </div>            
+                    <img src={image} alt="imagem" width={550} height={356} />
+                </div>
             </section>
         </section>
-    )
+    );
 }
 
-{/* <div className={styles.tag}>{categoria.data[0].attributes.tag}</div> */}
-{/* <div className={styles.image}>
+{
+    /* <div className={styles.tag}>{categoria.data[0].attributes.tag}</div> */
+}
+{
+    /* <div className={styles.image}>
    <Image src={imagem} alt="imagem" width={550} height={356}/>
-</div>  */}
+</div>  */
+}
