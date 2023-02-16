@@ -3,18 +3,13 @@ import { useState } from 'react';
 import Image from 'next/image';
 import PostTagComponent from '../PostTagComponent';
 
-export default function OurPostComponent({ atributes }) {
-    const {
-        titulo,
-        data_publicacao,
-        resumo,
-        imagem: {
-            data: {
-                attributes: { formats, alternativeText },
-            },
-        },
-        categorias: { data: postTags },
-    } = atributes;
+export default function OurPostComponent({ attributes }) {
+    const titulo = attributes?.titulo ? attributes.titulo : '';
+    const data_publicacao = attributes?.data_publicacao ? attributes.data_publicacao : '';
+    const resumo = attributes?.resumo ? attributes.resumo : '';
+    const postTags = attributes?.categorias?.data;
+    const imageFormats = attributes?.foto?.data?.attributes?.formats;
+    const alternativeText = attributes?.foto?.data?.attributes?.alternativeText;
 
     const convertDate = (date) => {
         // Converter 2022-12-29 para 29/12/2022
@@ -32,7 +27,7 @@ export default function OurPostComponent({ atributes }) {
     return (
         <div className={styles.container} onClick={handleClick}>
             <img
-                src={formats.large.url ? formats.large.url : formats.medium.url}
+                src={imageFormats.large.url ? imageFormats.large.url : imageFormats.medium.url}
                 alt={alternativeText}
                 className={styles.cardImage}
             />

@@ -3,13 +3,13 @@ import P from 'prop-types';
 // Components
 import OurPostComponent from '../OurPostComponent';
 
-export default function PostGridComponent({ posts }) {
-    console.log(posts);
+export default function PostGridComponent({ postsData }) {
+    const posts = postsData ? postsData : [];
 
     return (
         <div className={styles.container}>
             {posts.map((post) => (
-                <OurPostComponent key={post?.id} atributes={post?.attributes} />
+                <OurPostComponent key={post?.id} attributes={post?.attributes} />
             ))}
         </div>
     );

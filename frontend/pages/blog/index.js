@@ -12,7 +12,7 @@ import OurMainPostComponent from '../../components/Blog/OurMainPostComponent';
 import PostGridComponent from '../../components/Blog/PostGridComponent';
 
 export default function Blog() {
-    const { data: posts, postsLoading, postsError } = useEndpoint('/posts?populate=%2A');
+    const { data: postsData, postsLoading, postsError } = useEndpoint('/posts?populate=%2A');
     const {
         data: mainPost,
         mainPostLoading,
@@ -24,21 +24,21 @@ export default function Blog() {
     const [filteredPosts, setFilteredPosts] = useState([]);
 
     useEffect(() => {
-        if (posts) {
-            setFilteredPosts(posts);
+        if (postsData) {
+            setFilteredPosts(postsData?.data);
         }
-    }, [posts]);
+    }, [postsData]);
 
     const handleSearch = (search) => {
         if (search) {
             // If search is not '' (empty)
-            const filtered = posts.filter((post) => {
+            const filtered = postsData?.data.filter((post) => {
                 return post.attributes.titulo.toLowerCase().includes(search.toLowerCase());
             });
             setFilteredPosts(filtered);
         } else {
             // Else, return all posts
-            setFilteredPosts(posts);
+            setFilteredPosts(postsData?.data);
         }
     };
 
