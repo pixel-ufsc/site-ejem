@@ -3,10 +3,9 @@ import Image from 'next/image';
 import PostTagComponent from '../PostTagComponent';
 
 export default function OurMainPostComponent({ mainPost }) {
-    const post = mainPost.attributes.publicacao.data.attributes;
-    const image = post.imagem.data.attributes.formats.thumbnail.url;
-    const postTags = post.categorias.data;
-    // const tag = mainPost.attributes.publicacao.data.attributes.categorias.data[0].attributes.tag
+    const post = mainPost?.data?.attributes?.publicacao?.data?.attributes;
+    const image = post?.imagem?.data?.attributes?.formats?.thumbnail?.url;
+    const postTags = post?.categorias?.data;
 
     const convertDate = (date) => {
         // Converter 2022-12-29 para 29/12/2022
@@ -39,11 +38,3 @@ export default function OurMainPostComponent({ mainPost }) {
     );
 }
 
-{
-    /* <div className={styles.tag}>{categoria.data[0].attributes.tag}</div> */
-}
-{
-    /* <div className={styles.image}>
-   <Image src={imagem} alt="imagem" width={550} height={356}/>
-</div>  */
-}

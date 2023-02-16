@@ -52,9 +52,10 @@ export default function Blog() {
             <main>
                 <NavigationBar />
                 <OurSearchComponent onSearch={(search) => handleSearch(search)} />
-                {/* <OurMainPostComponent mainPost={mainPost} /> */}
+                <OurMainPostComponent mainPost={mainPost} />
                 <PostGridComponent postsData={filteredPosts} />
             </main>
         </div>
     );
 }
+
