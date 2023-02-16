@@ -12,14 +12,13 @@ import FooterComponent from "../components/Shared/FooterComponent";
 
 export const getStaticProps = async () => {
   const res_feedback = await fetch(
-  // `${process.env.NEXT_PUBLIC_STRAPI_URL}/membros`
-     'http://134.209.68.173:1337/api/feedbacks?populate=foto'
+      `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/feedbacks?populate=foto`
   );
   const data_json = await res_feedback.json();
   return {
-  props: {
-      data: data_json,
-  },
+      props: {
+          data: data_json,
+      },
   };
 };
 
@@ -40,7 +39,7 @@ export default function Home({data}) {
         <OurContactComponent />
         <OurProjectComponent />
         <OurPartnersComponent />
-        <OurFeedBackComponent feedback={data}/>
+        {/* <OurFeedBackComponent feedback={data}/> */}
         <FooterComponent />
       </main>
     </>
