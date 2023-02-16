@@ -10,7 +10,6 @@
     border-radius: 0px;
     display: flex;
     flex-direction: column;
-    /* padding: 5px 284px 0px 284px; */
 }
 
 .group {
@@ -35,7 +34,7 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 30px;
-    color: #FFFFFF;
+    color: #ffffff;
     /* overflow: hidden; */
     flex-wrap: wrap;
     margin-bottom: 8px;
@@ -47,15 +46,15 @@
     text-indent: 0.5em;
     width: 95%;
     height: 50px;
-    border: 2px solid #79ABDE;
+    border: 2px solid #79abde;
     border-radius: 8px;
     background: #042660;
-    color: #FFFFFF;
+    color: #ffffff;
     resize: none;
 }
 
 .input:focus {
-    box-shadow: 0px 0px 5px #79ABDE;
+    box-shadow: 0px 0px 5px #79abde;
     outline: 0;
 }
 
@@ -68,30 +67,24 @@
 }
 
 .checkbox {
-    
-  /* Add if not using autoprefixer */
-  -webkit-appearance: none;
-  /* Remove most all native input styles */
-  appearance: none;
-  /* For iOS < 15 */
-  /* background-color: var(--form-background); */
-  /* Not removed via appearance */
-  margin: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
 
-  font: inherit;
-  color: currentColor;
-  width: 1.15em;
-  height: 1.15em;
-  border: 0.15em solid #79ABDE;
-  border-radius: 0.15em;
-  transform: translateY(-0.075em);
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid #79abde;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
 
-  display: grid;
-  place-content: center;
+    display: grid;
+    place-content: center;
 }
 
 .checkbox::before {
-    content: "";
+    content: '';
     width: 0.65em;
     height: 0.65em;
     clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
@@ -114,39 +107,32 @@
     font-size: 14px;
     line-height: 30px;
     /* identical to box height, or 214% */
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 .buttonContainer {
+    width: 100%;
+    margin-top: 30px;
+
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 100%;
 }
 
 .button {
-    background: #79ABDE;
-    border-radius: 8px;
-    height: 50px;
-    width: 146px;
-    padding: 10px;
+    padding: 18px 50px;
 
-    margin-bottom: 30px;
-    margin-top: 15px;
-    cursor: pointer;
-}
-
-.button_txt {
-    width: 56px;
-    height: 30px;
+    background: #79abde;
+    border-radius: 10px;
+    border: none;
 
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
-    line-height: 30px;
-    color: #FFFFFF;
+    color: white;
+
+    cursor: pointer;
 }
 
 .title {
@@ -155,7 +141,7 @@
 }
 
 .spanOrcamento {
-    color: #79ABDE;
+    color: #79abde;
 }
 
 .error {
@@ -167,9 +153,8 @@
     .formContainer {
         width: 100%;
         border-radius: 0px;
-        /* padding: 5px 10px 0px 10px; */
     }
-    .checkbox{
+    .checkbox {
         width: 1.5em;
         height: 1.5em;
     }

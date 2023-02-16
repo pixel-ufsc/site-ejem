@@ -41,7 +41,7 @@ export default function OurFormComponent() {
         let validador = true;
         let a = document.getElementById('error');
         a.innerHTML = '';
-        if (!validator.isAlpha(nome.replace(' ', '')) || nome.length <= 2) {
+        if (nome.length <= 2) {
             a.innerHTML += 'Insira um nome válido!<br>';
             validador = false;
         }
@@ -53,7 +53,7 @@ export default function OurFormComponent() {
             a.innerHTML += 'Insira um nome de empresa/segmento válido!<br>';
             validador = false;
         }
-        if (telefone.length !== 15 || telefone.length !== 14) {
+        if (telefone.length < 14 || telefone.length > 15) {
             a.innerHTML += 'Insira um telefone no formato (99) 99999-9999<br>';
             validador = false;
         }
@@ -73,7 +73,7 @@ export default function OurFormComponent() {
     };
 
     const handleSubmit = (event) => {
-        if (validate_inputs()) {
+        /* if (validate_inputs()) {
             const formObject = {
                 nome: nome,
                 email: email,
@@ -92,7 +92,7 @@ export default function OurFormComponent() {
             })
                 .then(() => alert('Success!'))
                 .catch((error) => alert(error));
-        }
+        } */
 
         event.preventDefault();
     };
@@ -280,7 +280,7 @@ export default function OurFormComponent() {
                 <p id="error" className={styles.error}></p>
                 <div className={styles.buttonContainer}>
                     <button type="submit" className={styles.button}>
-                        <span className={styles.button_txt}>ENVIAR</span>
+                        ENVIAR
                     </button>
                 </div>
             </form>

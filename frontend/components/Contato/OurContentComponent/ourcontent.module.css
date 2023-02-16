@@ -1,25 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
 
-
 .section {
     gap: 10px;
-    /* border: 1px solid black; */
     width: 100%;
     display: flex;
 }
 
 .sectionContent {
     width: 50vw;
-    /* border: 1px solid red; */
 }
 
 .sectionForm {
-    /* border: 1px solid green; */
     width: 45vw;
     height: 100vh;
     overflow-y: auto;
     border-radius: 10px;
-    padding: 5px 46px 0px 46px;
+    padding: 30px 46px;
     background-color: #042660;
 }
 
@@ -40,7 +36,7 @@
 }
 
 .wordColor {
-    color: #79ABDE;
+    color: #79abde;
 }
 
 .subtitle {
@@ -99,12 +95,12 @@
     color: #000000;
 }
 
-@media (max-width: 800px) {  
+@media (max-width: 800px) {
     .section {
         flex-direction: column;
         gap: 10px;
     }
-    
+
     .sectionContent {
         width: 100%;
     }
@@ -113,7 +109,7 @@
         width: 100%;
         padding: 5px 10px 0px 10px;
     }
-    
+
     .sectionForm {
         width: 100%;
     }
@@ -122,28 +118,28 @@
         display: flex;
         margin-left: 23px;
     }
-    
+
     .title {
         margin-right: 23px;
         font-weight: 600;
         font-size: 24px;
         line-height: 30px;
     }
-    
+
     .subtitle {
         margin-right: 23px;
         margin-left: 23px;
         margin-top: 35px;
         font-size: 20px;
     }
-    
+
     .items {
         margin-left: 23px;
         margin-right: 23px;
         margin-top: 34px;
         width: 90%;
     }
-    
+
     .item_txt {
         font-size: 21px;
         line-height: 24px;
@@ -155,15 +151,14 @@
         margin-top: 30px;
         margin-bottom: 60px;
     }
-    
+
     .subtitle2 {
         margin-right: 23px;
         font-size: 20px;
         line-height: 24px;
     }
-    
+
     .image {
         transform: scale(0.8);
     }
-
 }
