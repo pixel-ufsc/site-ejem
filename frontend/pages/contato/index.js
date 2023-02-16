@@ -5,7 +5,7 @@ import WppComponent from '../../components/Shared/WppComponent';
 import FooterComponent from '../../components/Shared/FooterComponent';
 import NavigationBar from '../../components/Shared/NavigationBar';
 
-export default function QuemSomos() {
+export default function Contato() {
     return (
         <div>
             <Head>

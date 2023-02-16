@@ -1,4 +1,7 @@
 import Head from 'next/head';
+// Hooks
+import useEndpoint from '../hooks/useEndpoint';
+// Components
 import NavigationBar from '../components/Shared/NavigationBar';
 import HomeBanner from '../components/Home/HomeBanner';
 import OurSolutionsComponent from '../components/Home/OurSolutionsComponent';
@@ -9,17 +12,9 @@ import OurPartnersComponent from '../components/Home/OurPartnersComponent';
 import OurFeedBackComponent from '../components/Home/OurFeedBackComponent';
 import FooterComponent from '../components/Shared/FooterComponent';
 
-export const getStaticProps = async () => {
-    const res_feedback = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/feedbacks?populate=foto`);
-    const data_json = await res_feedback.json();
-    return {
-        props: {
-            data: data_json,
-        },
-    };
-};
+export default function Home() {
+    const { data: feedbackData, loading, error } = useEndpoint('/feedbacks?populate=foto');
 
-export default function Home({ data }) {
     return (
         <>
             <Head>
@@ -29,14 +24,14 @@ export default function Home({ data }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
-                <NavigationBar></NavigationBar>
-                <HomeBanner></HomeBanner>
+                <NavigationBar />
+                <HomeBanner />
                 <WppComponent />
                 <OurSolutionsComponent />
                 <OurContactComponent />
                 <OurProjectComponent />
                 <OurPartnersComponent />
-                {/* <OurFeedBackComponent feedback={data}/> */}
+                <OurFeedBackComponent feedbackData={feedbackData} />
                 <FooterComponent />
             </main>
         </>

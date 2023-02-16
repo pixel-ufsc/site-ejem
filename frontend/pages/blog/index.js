@@ -1,33 +1,33 @@
+import { useEffect, useState } from 'react';
 import Head from 'next/head';
+// Hooks
+import useEndpoint from '../../hooks/useEndpoint';
+// Components
 import NavigationBar from '../../components/Shared/NavigationBar';
 import SolucaoBanner from '../../components/Solucao/SolucaoBanner';
 import OurContentComponent from '../../components/Solucao/OurContentComponent';
 import FooterComponent from '../../components/Shared/FooterComponent';
 import OurSearchComponent from '../../components/Blog/OurSearchComponent';
 import OurMainPostComponent from '../../components/Blog/OurMainPostComponent';
-import { useState } from 'react';
 import PostGridComponent from '../../components/Blog/PostGridComponent';
 
-export const getStaticProps = async () => {
-    const res_posts = await fetch(
-        // `${process.env.NEXT_PUBLIC_STRAPI_URL}/membros`
-        'http://134.209.68.173:1337/api/posts?populate=%2A',
+export default function Blog() {
+    const { data: posts, postsLoading, postsError } = useEndpoint('/posts?populate=%2A');
+    const {
+        data: mainPost,
+        mainPostLoading,
+        mainPostError,
+    } = useEndpoint(
+        '/publicacao-destaque?populate[publicacao][populate][0]=imagem&populate[publicacao][populate][1]=categorias',
     );
-    const res_post = await fetch(
-        'http://134.209.68.173:1337/api/publicacao-destaque?populate[publicacao][populate][0]=imagem&populate[publicacao][populate][1]=categorias',
-    );
-    const data_json = await res_posts.json();
-    const data_json_post = await res_post.json();
-    return {
-        props: {
-            posts: data_json.data,
-            mainPost: data_json_post.data,
-        },
-    };
-};
 
-export default function Blog({ posts, mainPost }) {
-    const [filteredPosts, setFilteredPosts] = useState(posts);
+    const [filteredPosts, setFilteredPosts] = useState([]);
+
+    useEffect(() => {
+        if (posts) {
+            setFilteredPosts(posts);
+        }
+    }, [posts]);
 
     const handleSearch = (search) => {
         if (search) {
@@ -52,12 +52,8 @@ export default function Blog({ posts, mainPost }) {
             <main>
                 <NavigationBar />
                 <OurSearchComponent onSearch={(search) => handleSearch(search)} />
-                <OurMainPostComponent mainPost={mainPost} />
-                <PostGridComponent posts={filteredPosts} />
-
-                {/* <NavigationBar />
-        <OurSearchComponent posts={data}/>
-        <OurMainPostComponent post={data1}/> */}
+                {/* <OurMainPostComponent mainPost={mainPost} /> */}
+                <PostGridComponent postsData={filteredPosts} />
             </main>
         </div>
     );

@@ -1,4 +1,7 @@
 import Head from 'next/head';
+// Hooks
+import useEndpoint from '../../hooks/useEndpoint';
+// Components
 import QuemSomosBanner from '../../components/QuemSomos/QuemSomosBanner';
 import IntroComponent from '../../components/QuemSomos/IntroComponent';
 import OurPartnersComponent from '../../components/QuemSomos/OurPartnersComponent';
@@ -10,27 +13,9 @@ import OurContactComponent from '../../components/Shared/OurContactComponent';
 import FooterComponent from '../../components/Shared/FooterComponent';
 import NavigationBar from '../../components/Shared/NavigationBar';
 
-export const getStaticProps = async () => {
-    const res_members = await fetch(
-        // `${process.env.NEXT_PUBLIC_STRAPI_URL}/membros`
-        'http://134.209.68.173:1337/api/membros?populate=foto',
-    );
-    const res_statements = await fetch(
-        // `${process.env.NEXT_PUBLIC_STRAPI_URL}/membros`
-        'http://134.209.68.173:1337/api/depoimentos?populate=*',
-    );
-    const data_json = await res_members.json();
-    const data_json1 = await res_statements.json();
-    return {
-        props: {
-            data: data_json,
-            data1: data_json1,
-        },
-    };
-};
-
-export default function QuemSomos({ data, data1 }) {
-    // console.log(data);
+export default function QuemSomos() {
+    const { data: statementsData, statementsLoading, statementsError } = useEndpoint('/depoimentos?populate=*');
+    const { data: membersData, membersloading, memberserror } = useEndpoint('/membros?populate=foto');
 
     return (
         <div>
@@ -41,14 +26,13 @@ export default function QuemSomos({ data, data1 }) {
             </Head>
             <main>
                 <NavigationBar />
-
                 <QuemSomosBanner />
                 <WppComponent />
                 <IntroComponent />
-                <OurStatementComponent statements={data1} />
+                <OurStatementComponent statementsData={statementsData} />
                 <AboutMejComponent />
                 <OurPartnersComponent />
-                <OurMembersComponent members={data} />
+                <OurMembersComponent membersData={membersData} />
                 <OurContactComponent />
                 <FooterComponent />
             </main>

@@ -9,7 +9,7 @@ import Slider from 'react-slick';
 
 export default class OurStatementComponent extends Component {
     render() {
-        const statements = this.props.statements.data;
+        const statements = this.props.statementsData?.data ? this.props.statementsData.data : [];
 
         const settings = {
             dots: true,

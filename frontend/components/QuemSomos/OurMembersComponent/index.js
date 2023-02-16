@@ -25,7 +25,7 @@ export default class OurMembersComponent extends Component {
     }
 
     render() {
-        const members = this.props.members.data;
+        const members = this.props.membersData?.data ? this.props.membersData.data : [];
 
         const settings = {
             infinite: false,
