@@ -23,7 +23,9 @@
 .contentContainer {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
+
     gap: 5%;
 }
 
@@ -34,15 +36,6 @@
     font-size: 24px;
     line-height: 40px;
     color: #000;
-}
-
-.contentContainer > .imageContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    gap: 6px;
 }
 
 @media (max-width: 1300px) {
@@ -61,16 +54,11 @@
         text-align: justify;
         -webkit-hyphens: auto;
         -moz-hyphens: auto;
+        -ms-hyphens: auto;
         hyphens: auto;
     }
-    .contentContainer > .imageContainer {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-    .contentContainer > .imageContainer > .image {
-        width: 30%;
-        height: auto;
+    .contentContainer > .imageContainer > img {
+        height: 151px;
+        width: auto;
     }
 }
