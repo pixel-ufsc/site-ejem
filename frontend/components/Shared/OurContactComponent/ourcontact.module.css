@@ -1,6 +1,6 @@
 .container {
     box-sizing: border-box;
-    border: 4px solid #79ABDE;
+    border: 4px solid #79abde;
 
     padding: 56px 10vw;
 
@@ -9,7 +9,7 @@
     justify-content: space-between;
     align-items: center;
 
-    overflow: scroll;
+    overflow: auto;
 }
 
 .contactUs {
@@ -25,7 +25,7 @@
     font-weight: 700;
     font-size: 36px;
     text-decoration: underline 1px;
-    text-decoration-color: #79ABDE;
+    text-decoration-color: #79abde;
     text-underline-offset: 6px;
     color: #042660;
 
@@ -36,7 +36,7 @@
     padding: 17px 40px;
     border-radius: 10px;
     overflow: hidden;
-    background-color: #79ABDE;
+    background-color: #79abde;
 
     display: flex;
     flex-direction: row;
@@ -84,7 +84,7 @@
         justify-content: center;
         gap: 40px;
 
-        padding: 35px 0;
+        padding: 35px 10px;
     }
 
     .contactUs {
@@ -94,13 +94,14 @@
     .contactInfo {
         gap: 10px;
     }
+}
 
-    /* .contactUs {
-        gap: 32px;
+@media (max-width: 450px) {
+    .contactInfoItem {
+        gap: 5vw;
     }
 
-    .contactInfo {
-        padding: 0;
-    } */
-    
+    .contactInfoItem > h5 {
+        font-size: 20px;
+    }
 }
