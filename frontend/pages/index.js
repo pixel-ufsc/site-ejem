@@ -12,7 +12,7 @@ import OurPartnersComponent from '../components/Home/OurPartnersComponent';
 import OurFeedBackComponent from '../components/Home/OurFeedBackComponent';
 import FooterComponent from '../components/Shared/FooterComponent';
 
-export default function Home({ feedbackData }) {
+export default function Home({ feedbackData, redesSociaisData }) {
     return (
         <>
             <Head>
@@ -30,7 +30,7 @@ export default function Home({ feedbackData }) {
                 <OurProjectComponent />
                 <OurPartnersComponent />
                 <OurFeedBackComponent feedbackData={feedbackData} />
-                <FooterComponent />
+                <FooterComponent redesSociaisData={redesSociaisData} />
             </main>
         </>
     );
@@ -40,8 +40,15 @@ export default function Home({ feedbackData }) {
 // That is why we should place this function in the page component instead of using a hook like useFetch.
 export async function getStaticProps() {
     const feedbackData = await fetchData('/feedbacks?populate=foto');
+    const redesSociaisFetch = await fetch(
+        `${process.env.NEXT_PUBLIC_STRAPI_URL}/rede-social?populate=%2A`
+    );
+    const redesSociais = await redesSociaisFetch.json();
 
     return {
-        props: { feedbackData },
+        props: { 
+            feedbackData,
+            redesSociaisData: redesSociais.data.attributes 
+        },
     };
 }
