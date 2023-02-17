@@ -1,8 +1,8 @@
-import Image from "next/image";
-import styles from "./card.module.css";
+import Image from 'next/image';
+import styles from './card.module.css';
 
-export default function OurFeedBackComponent({nome, textoFeedback, foto}) {
-    return(
+export default function OurFeedBackComponent({ nome, textoFeedback, foto }) {
+    return (
         <section className={styles.section2}>
             <div className={styles.sectionContainer}>
                 <div className={styles.imageContainer}>
@@ -10,11 +10,9 @@ export default function OurFeedBackComponent({nome, textoFeedback, foto}) {
                 </div>
                 <div className={styles.textContainer}>
                     <div className={styles.name}>{nome}</div>
-                    <div className={styles.description}>
-                        {textoFeedback}
-                    </div>
+                    <div className={styles.description}>{textoFeedback}</div>
                 </div>
             </div>
         </section>
-    )
+    );
 }

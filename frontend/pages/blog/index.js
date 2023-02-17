@@ -1,68 +1,63 @@
-import Head from "next/head";
-import NavigationBar from "../../components/Shared/NavigationBar";
-import SolucaoBanner from "../../components/Solucao/SolucaoBanner";
-import OurContentComponent from "../../components/Solucao/OurContentComponent";
-import FooterComponent from "../../components/Shared/FooterComponent";
-import OurSearchComponent from "../../components/Blog/OurSearchComponent";
-import OurMainPostComponent from "../../components/Blog/OurMainPostComponent";
+import { useEffect, useState } from 'react';
+import Head from 'next/head';
+// Hooks
+import fetchData from '../../utils/fetchData';
+// Components
+import NavigationBar from '../../components/Shared/NavigationBar';
+import FooterComponent from '../../components/Shared/FooterComponent';
+import OurSearchComponent from '../../components/Blog/OurSearchComponent';
+import OurMainPostComponent from '../../components/Blog/OurMainPostComponent';
+import PostGridComponent from '../../components/Blog/PostGridComponent';
+import OurContactComponent from '../../components/Shared/OurContactComponent';
 
+export default function Blog({ postsData, mainPost }) {
+    const [filteredPosts, setFilteredPosts] = useState([]);
 
-export const getStaticProps = async () => {
-  const res_posts = await fetch(
-  // `${process.env.NEXT_PUBLIC_STRAPI_URL}/membros`
-     'http://134.209.68.173:1337/api/posts?populate=%2A'
-  );
-  const res_post = await fetch('http://134.209.68.173:1337/api/publicacao-destaque?populate[publicacao][populate][0]=imagem&populate[publicacao][populate][1]=categorias');
-  const data_json = await res_posts.json();
-  const data_json_post = await res_post.json();
-  return {
-  props: {
-      data: data_json,
-      data1: data_json_post
-  },
-  };
-};
+    useEffect(() => {
+        if (postsData) {
+            setFilteredPosts(postsData?.data);
+        }
+    }, [postsData]);
 
-import OurSearchComponent from "../../components/Blog/OurSearchComponent";
+    const handleSearch = (search) => {
+        if (search) {
+            // If search is not '' (empty)
+            const filtered = postsData?.data.filter((post) => {
+                return post.attributes.titulo.toLowerCase().includes(search.toLowerCase());
+            });
+            setFilteredPosts(filtered);
+        } else {
+            // Else, return all posts
+            setFilteredPosts(postsData?.data);
+        }
+    };
 
-
-export const getStaticProps = async () => {
-  const res_posts = await fetch(
-  // `${process.env.NEXT_PUBLIC_STRAPI_URL}/membros`
-     'http://134.209.68.173:1337/api/posts?populate=%2A'
-  );
-  const data_json = await res_posts.json();
-  return {
-  props: {
-      data: data_json,
-  },
-  };
-};
-
-export default function Blog({ data , data1 }) {
-  // console.log(data)
-export default function Blog({ data }) {
-  // console.log(data)
-  return (
-    <div>
-      <Head>
-        <title>Solução</title>
-        <meta name="description" content="Página sobre a empresa" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main>
-        <NavigationBar />
-        <OurSearchComponent posts={data}/>
-        <OurMainPostComponent post={data1}/>
-        {/* <SolucaoBanner /> */}
-        {/* <OurContentComponent /> */}
-        {/* <FooterComponent /> */}
-        <OurSearchComponent posts={data}/>
-        {/* <SolucaoBanner /> */}
-        {/* <OurContentComponent /> */}
-        {/* <FooterComponent /> */}
-      </main>
-    </div>
-  );
+    return (
+        <div>
+            <Head>
+                <title>Solução</title>
+                <meta name="description" content="Página sobre a empresa" />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+            <main>
+                <NavigationBar />
+                <OurSearchComponent onSearch={(search) => handleSearch(search)} />
+                <OurMainPostComponent mainPost={mainPost} />
+                <PostGridComponent postsData={filteredPosts} />
+                <OurContactComponent />
+                <FooterComponent />
+            </main>
+        </div>
+    );
 }
 
+export async function getStaticProps() {
+    const postsData = await fetchData('/posts?populate=%2A');
+    const mainPost = await fetchData(
+        '/publicacao-destaque?populate[publicacao][populate][0]=foto&populate[publicacao][populate][1]=categorias',
+    );
+
+    return {
+        props: { postsData, mainPost },
+    };
+}

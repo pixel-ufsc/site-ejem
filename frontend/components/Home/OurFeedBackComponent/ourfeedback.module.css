@@ -1,69 +1,22 @@
-.section1 {
-    height: 64px;
+.sectionContainer {
     width: 100%;
-    background: #EFEFEF;
-    /* border: 1px solid #EFEFEF; */
-}
-
-.section3 {
-    height: 40px;
-    width: 100%;
-    background: #EFEFEF;
+    margin-top: 80px;
+    margin-bottom: 100px;
 }
 
 .title {
-    /* border: 1px solid black; */
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
     font-size: 28px;
     line-height: 34px;
     text-align: center;
-    color: #042660;    
-    padding-top: 15px;
+    color: #042660;
+    
+    margin: 0;
+    margin-bottom: 32px;
 
     text-decoration: underline 1px;
     text-decoration-color: #79ABDE;
     text-underline-offset: 6px;
-}
-
-@media (max-width: 800px) { 
-    .section1 {
-        /* border: 1px solid black; */
-        margin-top: 10px;
-        height: auto;
-        width: 100%;
-        background-color: #042660;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-top: 10px;
-        margin-bottom: -50px;
-        position: relative;
-        z-index: 1;
-    }
-    
-    .section3 {
-        height: 50px;
-        width: 100%;
-        background: #042660;
-    }
-    
-    .title {
-        display: flex;
-        align-items: center;
-        text-align: center;
-        color: #FFFFFF;
-        font-size: 21.8974px;
-        line-height: 27px;
-
-        text-align: center;  
-        padding-top: 15px;
-        /* margin-top: 20px; */
-
-        text-decoration: underline 1px;
-        text-decoration-color: #79ABDE;
-        text-underline-offset: 6px;
-    }
 }

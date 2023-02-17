@@ -1,174 +1,44 @@
-.section {
-    height: 405px;
+.container {
     width: 100%;
-    background-color: #EFEFEF;
-    border: 1px solid #EFEFEF;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 32px;
+
+    padding: 42px 0 52px 0;
 }
 
-.text {
-    /* border-bottom: 1px solid #79ABDE; */
-    height: 34px;
-    margin-top: 35px;
-    margin-bottom: 32px;
-    color: #042660;
-
+.title {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
     font-size: 28px;
     line-height: 34px;
     text-align: center;
+    color: #042660;
 
     text-decoration: underline 1px;
     text-decoration-color: #79ABDE;
     text-underline-offset: 6px;
 }
 
-.card_container {
+.cards {
+    width: 100%;
+
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 49px;
-    width: 100%;
+    gap: 20px;
 }
 
-.card, .card_last {
-    background-color: #042660;
-    min-width: 220px;
-    width: 220px;
-    height: 263px;
-    border-radius: 10px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
-
-.card:hover, .card_last:hover {
-    background-color: #79ABDE;
-    transition: 0.5s;
-}
-
-.card:hover > .card_image, 
-.card_last:hover > .card_image {
-    transform: scale(0.4);
-    margin: 0px;
-    margin-left: 30px;
-    margin-top: -25px;
-}
-
-.card:hover > .card_text, .card_last:hover > .card_text {
-    /* border: 1px solid black; */
-    font-size: 15px;
-    line-height: 18px;
-    color: #042660;
-    margin-bottom: 8px;
-    margin-top: -30px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.card:hover > .card_description, .card_last:hover > .card_description {
-    /* border: 1px solid black; */
-    visibility: visible;
-    font-size: 12px;
-    color: #042660;
-    word-wrap: break-word;
-    hyphens: auto;
-    height: 138px;
-    width: auto;
-    margin: 0 16px;
-    display: hidden;
-}
-
-.card_image {
-    /* display: block; */
-    margin-left: 50px;
-    margin-top: 34px;
-}
-
-.card_text {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24px;
-    text-align: center;
-    color: white;
-    margin: 20px;
-    /* border: 1px solid yellow; */
-}
-
-.card_description {
-    visibility: hidden;
-    /* border: 1px solid black; */
-}
-
-@media (max-width: 800px) { 
-    .section {
-        height: 580px;
-    }
-
-    .text {
-        font-size: 21px ;
-    }
-
-    .card_container {
-        display: flex;
+@media (max-width: 1300px) {
+    .cards {
         flex-direction: column;
-        gap: 10px;
-        /* border: 1px solid black; */
+        gap: 8px;
+        padding: 0 10px;
     }
-
-    .card, .card:hover {
-        display: flex;
-        width: 358px;
-        height: 76px;
-        padding: 0px;
-
-        background-color: #042660;
-        min-width: 220px;
-        border-radius: 10px;
-        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-        /* border: 1px solid black; */
-    }
-
-    .card_last, .card_last:hover {
-        display: flex;
-        width: 358px;
-        height: 100px;
-
-        background-color: #042660;
-        min-width: 220px;
-        border-radius: 10px;
-        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-        /* border: 1px solid black; */
-    }
-    
-    .card_image, .card:hover > .card_image,
-    .card_last:hover > .card_image {
-        transform: scale(0.5);
-        margin: 0;
-        margin-bottom: 35px;
-        /* border: 1px solid black; */
-
-    }
-    
-    .card_text, .card:hover > .card_text, .card_last:hover > .card_text{
-        font-family: 'Montserrat';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 18px;
-        line-height: 24px;
-        text-align: center;
-        color: white;
-        margin: 20px;
-        width: 200px;
-        margin-left: -5px;
-        /* margin-top: 23px; */
-        /* border: 1px solid black; */
-    }
-
-    .card_description, .card:hover > .card_description, .card_last:hover > .card_description {
-        margin-right: -5000px;
-        visibility: hidden;
-    } 
-
 }

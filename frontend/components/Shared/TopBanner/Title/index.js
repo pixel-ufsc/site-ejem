@@ -1,7 +1,7 @@
-import styles from "./title.module.css";
+import styles from './title.module.css';
 
 function Title({ children }) {
-  return <div className={styles.title}>{children}</div>;
+    return <div className={styles.title}>{children}</div>;
 }
 
 export default Title;

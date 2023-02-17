@@ -1,5 +1,5 @@
 .sectionForm {
-    width: 100vw;
+    width: 100%;
     padding: 5px 284px 0px 284px;
     background-color: #042660;
 }
@@ -11,7 +11,7 @@
 }
 
 .formContainer {
-    width: 100vw;
+    width: 100%;
     background: #042660;
     border-radius: 0px;
     display: flex;
@@ -171,11 +171,11 @@
 
 @media (max-width: 800px) {
     .sectionForm {
-        width: 100vw;
+        width: 100%;
         padding: 5px 10px 0px 10px;
     }
     .formContainer {
-        width: 100vw;
+        width: 100%;
         border-radius: 0px;
         /* padding: 5px 10px 0px 10px; */
     }

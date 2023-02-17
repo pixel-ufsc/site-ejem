@@ -1,0 +1,66 @@
+.container {
+    width: 100%;
+    min-height: min-content;
+    height: 100%;
+
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+
+    background-color: var(--color-azulAdv);
+}
+
+.cardImage {
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+}
+
+.textContent {
+    padding: 28px 32px 14px 32px; 
+
+    color: white;
+    font-family: 'Montserrat';
+}
+
+.textContent > * {
+    margin: 0;
+}
+
+.textContent > h2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    
+    margin-bottom: 14px;
+}
+
+.textContent > .date {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.textContent .description {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    
+    margin-top: 22px;
+}
+
+.tagsContainer {
+    /* display: flex;
+    flex-direction: row;
+    gap: 6px; */
+
+    padding-left: 32px; 
+    padding-right: 32px;
+    padding-bottom: 28px;
+}
