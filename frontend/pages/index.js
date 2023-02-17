@@ -1,6 +1,6 @@
 import Head from 'next/head';
-// Hooks
-import useEndpoint from '../hooks/useEndpoint';
+// Utils
+import fetchData from '../utils/fetchData';
 // Components
 import NavigationBar from '../components/Shared/NavigationBar';
 import HomeBanner from '../components/Home/HomeBanner';
@@ -12,9 +12,7 @@ import OurPartnersComponent from '../components/Home/OurPartnersComponent';
 import OurFeedBackComponent from '../components/Home/OurFeedBackComponent';
 import FooterComponent from '../components/Shared/FooterComponent';
 
-export default function Home() {
-    const { data: feedbackData, loading, error } = useEndpoint('/feedbacks?populate=foto');
-
+export default function Home({ feedbackData }) {
     return (
         <>
             <Head>
@@ -36,4 +34,14 @@ export default function Home() {
             </main>
         </>
     );
+}
+
+// Next.js uses the getStaticProps function to fetch data at build time.
+// That is why we should place this function in the page component instead of using a hook like useFetch.
+export async function getStaticProps() {
+    const feedbackData = await fetchData('/feedbacks?populate=foto');
+
+    return {
+        props: { feedbackData },
+    };
 }

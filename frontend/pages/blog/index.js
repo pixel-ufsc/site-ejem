@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
 // Hooks
-import useEndpoint from '../../hooks/useEndpoint';
+import fetchData from '../../utils/fetchData';
 // Components
 import NavigationBar from '../../components/Shared/NavigationBar';
 import SolucaoBanner from '../../components/Solucao/SolucaoBanner';
@@ -11,16 +11,7 @@ import OurSearchComponent from '../../components/Blog/OurSearchComponent';
 import OurMainPostComponent from '../../components/Blog/OurMainPostComponent';
 import PostGridComponent from '../../components/Blog/PostGridComponent';
 
-export default function Blog() {
-    const { data: postsData, postsLoading, postsError } = useEndpoint('/posts?populate=%2A');
-    const {
-        data: mainPost,
-        mainPostLoading,
-        mainPostError,
-    } = useEndpoint(
-        '/publicacao-destaque?populate[publicacao][populate][0]=imagem&populate[publicacao][populate][1]=categorias',
-    );
-
+export default function Blog({ postsData, mainPost }) {
     const [filteredPosts, setFilteredPosts] = useState([]);
 
     useEffect(() => {
@@ -59,3 +50,13 @@ export default function Blog() {
     );
 }
 
+export async function getStaticProps() {
+    const postsData = await fetchData('/posts?populate=%2A');
+    const mainPost = await fetchData(
+        '/publicacao-destaque?populate[publicacao][populate][0]=imagem&populate[publicacao][populate][1]=categorias',
+    );
+
+    return {
+        props: { postsData, mainPost },
+    };
+}

@@ -1,5 +1,3 @@
-import styles from './ourpartners.module.css';
-import Image from 'next/image';
 import Ampera from '../../../public/quemSomos/partners/ampera.png';
 import Empower from '../../../public/quemSomos/partners/empower.png';
 import LabSolda from '../../../public/quemSomos/partners/labsolda.png';
