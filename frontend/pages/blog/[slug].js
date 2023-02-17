@@ -28,7 +28,8 @@ export const getStaticProps = async ({ params }) => {
     const markdownWithMeta = await res.json();
     const parsedMarkdown = fm(markdownWithMeta.data[0].attributes.conteudo);
     const htmlString = marked(parsedMarkdown.body);
-    const image = markdownWithMeta.data[0].attributes.imagem.data.attributes.formats.medium.url;
+    // console.log(markdownWithMeta.data[0].attributes.imagem.data.attributes.formats.medium.url)
+    const image = markdownWithMeta.data[0].attributes.foto.data.attributes.formats.medium.url;
     return {
         props: {
             image,
