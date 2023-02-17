@@ -10,7 +10,7 @@ import OurMainPostComponent from '../../components/Blog/OurMainPostComponent';
 import PostGridComponent from '../../components/Blog/PostGridComponent';
 import OurContactComponent from '../../components/Shared/OurContactComponent';
 
-export default function Blog({ postsData, mainPost }) {
+export default function Blog({ postsData, mainPost, redesSociaisData }) {
     const [filteredPosts, setFilteredPosts] = useState([]);
 
     useEffect(() => {
@@ -45,7 +45,7 @@ export default function Blog({ postsData, mainPost }) {
                 <OurMainPostComponent mainPost={mainPost} />
                 <PostGridComponent postsData={filteredPosts} />
                 <OurContactComponent />
-                <FooterComponent />
+                <FooterComponent redesSociaisData={redesSociaisData} />
             </main>
         </div>
     );
@@ -56,8 +56,16 @@ export async function getStaticProps() {
     const mainPost = await fetchData(
         '/publicacao-destaque?populate[publicacao][populate][0]=foto&populate[publicacao][populate][1]=categorias',
     );
+    const redesSociaisFetch = await fetch(
+        `${process.env.NEXT_PUBLIC_STRAPI_URL}/rede-social?populate=%2A`
+    );
+    const redesSociais = await redesSociaisFetch.json();
 
     return {
-        props: { postsData, mainPost },
+        props: { 
+            postsData, 
+            mainPost,
+            redesSociaisData: redesSociais.data.attributes
+        },
     };
 }
