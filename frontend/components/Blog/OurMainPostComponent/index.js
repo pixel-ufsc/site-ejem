@@ -4,7 +4,7 @@ import PostTagComponent from '../PostTagComponent';
 
 export default function OurMainPostComponent({ mainPost }) {
     const post = mainPost?.data?.attributes?.publicacao?.data?.attributes;
-    const image = post?.imagem?.data?.attributes?.formats?.thumbnail?.url;
+    const postImageFormats = post?.foto?.data?.attributes?.formats;
     const postTags = post?.categorias?.data;
 
     const convertDate = (date) => {
@@ -17,24 +17,26 @@ export default function OurMainPostComponent({ mainPost }) {
     };
 
     return (
-        <section className={styles.sectionOutside}>
-            <section className={styles.section}>
-                <div className={styles.text}>
-                    <div className={styles.title}>{post.titulo}</div>
-                    <div className={styles.subTitle}>{post.subtitulo}</div>
-                    <div className={styles.summary}>{post.resumo}</div>
-                    <div className={styles.data}>{convertDate(post.data_publicacao)}</div>
+        <section className={styles.container}>
+            <div className={styles.contentWrapper}>
+                <div className={styles.textContainer}>
+                    <h2>{post.titulo}</h2>
+                    <h4>{post.subtitulo}</h4>
+                    <p>{post.resumo}</p>
+                    <p>{convertDate(post.data_publicacao)}</p>
                     <div className={styles.tagsContainer}>
                         {postTags.map((tag) => (
                             <PostTagComponent text={tag?.attributes?.tag} key={tag?.id} />
                         ))}
                     </div>
                 </div>
-                <div className={styles.image}>
-                    <img src={image} alt="imagem" width={550} height={356} />
-                </div>
-            </section>
+
+                <img
+                    className={styles.image}
+                    src={postImageFormats?.large?.url ? postImageFormats?.large?.url : postImageFormats?.medium?.url}
+                    alt="imagem"
+                />
+            </div>
         </section>
     );
 }
-

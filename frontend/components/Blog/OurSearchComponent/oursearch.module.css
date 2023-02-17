@@ -30,7 +30,7 @@
 .search {
     width: 90%;
     height: 50px;
-    border: 1px solid #2E4494;
+    border: 1px solid #2e4494;
     border-radius: 7px;
     display: flex;
 }
@@ -52,23 +52,24 @@
     font-weight: 300;
     font-size: 13px;
     line-height: 12px;
-    text-align: start;  
+    text-align: start;
 }
-
 
 /* Tirar placeholder */
 .input:focus::-webkit-input-placeholder {
     color: transparent;
- }
- .input:focus:-moz-placeholder { /* Firefox 18- */
-    color: transparent;  
- }
- .input:focus::-moz-placeholder {  /* Firefox 19+ */
-    color: transparent;  
- }
- .input:focus:-ms-input-placeholder {  
-    color: transparent; 
- }
+}
+.input:focus:-moz-placeholder {
+    /* Firefox 18- */
+    color: transparent;
+}
+.input:focus::-moz-placeholder {
+    /* Firefox 19+ */
+    color: transparent;
+}
+.input:focus:-ms-input-placeholder {
+    color: transparent;
+}
 
 .input:focus {
     outline: 0;
@@ -77,3 +78,13 @@
     font-size: 15px;
 }
 
+@media (max-width: 767px) {
+    .container {
+        padding: 160px 0 50px 0;
+    }
+
+    .title {
+        font-size: 32px;
+        line-height: 39px;
+    }
+}

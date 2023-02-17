@@ -1,103 +1,73 @@
-.section {
+.container {
     width: 100%;
-    /* min-width: min-content; */
-    /* height: 436px; */
+    height: fit-content;
+    padding: 30px 5%;
+
+    background-color: #042660;
+}
+
+.contentWrapper {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    column-gap: 30px;
+}
+
+.textContainer {
     display: flex;
-    background: #042660;
-    justify-content: center;
-}
+    flex-direction: column;
+    justify-content: space-between;
 
-.text {
-    max-width: 600px;
-    margin-left: 40px;
-    padding-left: 30px;
-}
-
-.title {
     font-family: 'Montserrat';
     font-style: normal;
+    color: #ffffff;
+}
+
+.textContainer > h2 {
     font-weight: 600;
     font-size: 32px;
     line-height: 39px;
-    color: #FFFFFF;
-    margin-bottom: 16px;
-    margin-top: 40px;
+
+    margin-bottom: 18px;
 }
 
-.subTitle {
-    font-family: 'Montserrat';
-    font-style: normal;
+.textContainer > h4 {
     font-weight: 500;
     font-size: 20px;
     line-height: 24px;
-    color: #FFFFFF;
-    margin-bottom: 24px;
+
+    margin-bottom: 30px;
 }
 
-.summary {
-    max-width: 600px;
-    min-height: 100px;
-    overflow: hidden;
-
-    font-family: 'Montserrat';
-    font-style: normal;
+.textContainer > p {
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
 
-    color: #FFFFFF;
-    margin-bottom: 40px;
-}
-
-.data {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    color: #FFFFFF;
-}
-
-.tagsContainer {
-    margin-top: 45px;
-    margin-bottom: 55px;
+    margin-bottom: 16px;
 }
 
 .image {
-    margin-left: 73px;
-    margin-right: 70px;
-    display: flex;
-    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: blue;
+
+    border-radius: 10px;
+
     object-fit: cover;
 }
 
-.image > img {
-    border-radius: 10px;
-}
-
-
 @media (max-width: 800px) {
-    .sectionOutside {
-        display: flex;
-        justify-content: center;
-        background: #042660;
-    }
-	.section {
-        border-radius: 5px;
-		width: 80%;
-        flex-direction: column-reverse;
-        background: #012A6F;
-        margin-top: 40px;
-        margin-bottom: 40px;
-	}
-    
-    .text {
-        margin: 0px;
-        padding-right: 5px;
+    .contentWrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: 170px fit-content;
+        row-gap: 30px;
+        padding: 20px;
+
+        background-color: #012a6f;
+        border-radius: 10px;
     }
 
     .image {
-        margin-top: 40px;
+        grid-row: 1;
     }
 }
-

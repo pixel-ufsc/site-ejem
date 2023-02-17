@@ -4,12 +4,11 @@ import Head from 'next/head';
 import fetchData from '../../utils/fetchData';
 // Components
 import NavigationBar from '../../components/Shared/NavigationBar';
-import SolucaoBanner from '../../components/Solucao/SolucaoBanner';
-import OurContentComponent from '../../components/Solucao/OurContentComponent';
 import FooterComponent from '../../components/Shared/FooterComponent';
 import OurSearchComponent from '../../components/Blog/OurSearchComponent';
 import OurMainPostComponent from '../../components/Blog/OurMainPostComponent';
 import PostGridComponent from '../../components/Blog/PostGridComponent';
+import OurContactComponent from '../../components/Shared/OurContactComponent';
 
 export default function Blog({ postsData, mainPost }) {
     const [filteredPosts, setFilteredPosts] = useState([]);
@@ -45,6 +44,8 @@ export default function Blog({ postsData, mainPost }) {
                 <OurSearchComponent onSearch={(search) => handleSearch(search)} />
                 <OurMainPostComponent mainPost={mainPost} />
                 <PostGridComponent postsData={filteredPosts} />
+                <OurContactComponent />
+                <FooterComponent />
             </main>
         </div>
     );
@@ -53,7 +54,7 @@ export default function Blog({ postsData, mainPost }) {
 export async function getStaticProps() {
     const postsData = await fetchData('/posts?populate=%2A');
     const mainPost = await fetchData(
-        '/publicacao-destaque?populate[publicacao][populate][0]=imagem&populate[publicacao][populate][1]=categorias',
+        '/publicacao-destaque?populate[publicacao][populate][0]=foto&populate[publicacao][populate][1]=categorias',
     );
 
     return {
