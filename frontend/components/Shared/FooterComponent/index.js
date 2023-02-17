@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 export default function FooterComponent() {
     return (
-        <footer className={styles.footerContainer}>
-            <div className={styles.leftContainer}>
+        <footer className={styles.container}>
+            <div className={styles.contentContainer}>
                 <div className={styles.logo}>
                     <Image width={169} height={75} src="/shared/Footer/logo.png" alt="logo" />
                 </div>
@@ -22,9 +22,7 @@ export default function FooterComponent() {
                 </div>
             </div>
 
-            <div className={styles.info}>
-                <div>Desenvolvido por Pixel - Soluções Digitais</div>
-            </div>
+            <p className={styles.informationText}>Desenvolvido por Pixel - Soluções Digitais</p>
         </footer>
     );
 }

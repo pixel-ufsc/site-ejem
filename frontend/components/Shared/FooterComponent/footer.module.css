@@ -1,76 +1,66 @@
-.footerContainer{
+.container {
+    width: 100%;
+    height: 85px;
+    padding: 0 5vw;
     margin-top: 65px;
 
-    background-color: #042660;
-    height: 85px;
-    width: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-top: 3px solid #708FBD;
+
+    background-color: #042660;
+    border-top: 3px solid #708fbd;
 }
 
-.leftContainer {
-    /* border: 1px solid black; */
-    height: 80px;
+.contentContainer {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-left: 30px;
-    gap: 53px;
+
+    gap: 2.5vw;
 }
 
 .socialMedia {
-    /* border: 1px solid black; */
     display: flex;
-    gap: 18px;   
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: clamp(16px, 1.5vw, 40px);
 }
 
-.info {
-    /* border: 1px solid black; */
+.informationText {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 300;
     font-size: 14px;
     line-height: 17px;
-    color: #FFFFFF;
-    margin-right: 72px;
+
+    color: white;
 }
 
-@media (max-width: 800px) { 
-    .footerContainer{
-        height: 157px;
+@media (max-width: 800px) {
+    .container {
+        height: fit-content;
+        width: 100%;
+
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        /* border: 1px solid black; */
+
+        gap: 8px;
+        padding: 16px 5vw;
     }
-    .leftContainer {
+
+    .contentContainer {
         width: 100%;
-        /* border: 1px solid black; */
-        height: 80px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: 0px;
+        justify-content: space-between;
     }
+
     .logo {
-        /* border: 1px solid black; */
         transform: scale(0.9);
-        margin-left: -50px;
-    }
-    .socialMedia {
-        /* border: 1px solid black; */
-        display: flex;
-        gap: 18px;   
-    }
-    .info {
-        width: 100%;
-        /* border: 1px solid black; */
-        margin-right: 0px;
-        margin-top: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        margin-left: -10px;
     }
 }
