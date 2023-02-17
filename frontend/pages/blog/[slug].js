@@ -21,8 +21,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
     const res = await fetch(
-        `http://134.209.68.173:1337/api/posts?filters[slug][$eq]=${params.slug}&populate=%2A`,
-        // `${process.env.NEXT_PUBLIC_STRAPI_URL}/posts?filters[slug][$eq]=${params.slug}&populate=%2A`
+         `${process.env.NEXT_PUBLIC_STRAPI_URL}/posts?filters[slug][$eq]=${params.slug}&populate=%2A`
     );
     //console.log(params);
     //console.log(`${process.env.NEXT_PUBLIC_STRAPI_URL}/posts?filters[slug][$eq]=${params.slug}&populate=imagem&populate=autor`)
