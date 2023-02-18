@@ -12,6 +12,8 @@ import OurMembersComponent from '../../components/QuemSomos/OurMembersComponent'
 import OurContactComponent from '../../components/Shared/OurContactComponent';
 import FooterComponent from '../../components/Shared/FooterComponent';
 import NavigationBar from '../../components/Shared/NavigationBar';
+import { loadDepoimentos } from '../../utils/loadDepoimentos';
+import { loadMembros } from '../../utils/loadMembros';
 
 export default function QuemSomos({ statementsData, membersData, redesSociaisData }) {
     return (
@@ -38,8 +40,8 @@ export default function QuemSomos({ statementsData, membersData, redesSociaisDat
 }
 
 export async function getStaticProps() {
-    const statementsData = await fetchData('/depoimentos?populate=*');
-    const membersData = await fetchData('/membros?populate=foto');
+    const statementsData = await loadDepoimentos();
+    const membersData = await loadMembros();
     const redesSociaisData = await loadRedesSociais();
 
     return {

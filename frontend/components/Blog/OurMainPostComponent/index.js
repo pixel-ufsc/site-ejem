@@ -3,7 +3,8 @@ import Image from 'next/image';
 import PostTagComponent from '../PostTagComponent';
 
 export default function OurMainPostComponent({ mainPost }) {
-    const post = mainPost?.data?.attributes?.publicacao?.data?.attributes;
+    console.log(mainPost?.publicacao?.data?.attributes)
+    const post = mainPost?.publicacao?.data?.attributes;
     const postImageFormats = post?.foto?.data?.attributes?.formats;
     const postTags = post?.categorias?.data;
 
