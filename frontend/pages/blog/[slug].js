@@ -6,6 +6,7 @@ import NavigationBar from '../../components/Shared/NavigationBar';
 import PostComponent from '../../components/Blog/PostComponent';
 import OurContactComponent from '../../components/Shared/OurContactComponent';
 import FooterComponent from '../../components/Shared/FooterComponent';
+import { loadRedesSociais } from '../../utils/loadRedesSociais';
 
 export default function Post({ image, htmlString, data, redesSociaisData }) {
     return (
@@ -49,17 +50,14 @@ export const getStaticProps = async ({ params }) => {
     // console.log(markdownWithMeta.data[0].attributes.imagem.data.attributes.formats.medium.url)
     const image = markdownWithMeta.data[0].attributes.foto.data.attributes.formats.medium.url;
     
-    const redesSociaisFetch = await fetch(
-        `${process.env.NEXT_PUBLIC_STRAPI_URL}/rede-social?populate=%2A`
-    );
-    const redesSociais = await redesSociaisFetch.json();
+    const redesSociaisData = await loadRedesSociais();
 
     return {
         props: {
             image,
             htmlString,
             data: markdownWithMeta.data[0].attributes,
-            redesSociaisData: redesSociais.data.attributes
+            redesSociaisData,
         },
     };
 };

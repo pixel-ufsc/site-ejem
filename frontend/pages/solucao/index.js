@@ -6,6 +6,7 @@ import FooterComponent from '../../components/Shared/FooterComponent';
 import WppComponent from '../../components/Shared/WppComponent';
 import OurFormComponent from '../../components/Solucao/OurFormComponent';
 import styles from './styles.module.css';
+import { loadRedesSociais } from '../../utils/loadRedesSociais';
 
 export default function Solucao({ redesSociaisData }) {
     return (
@@ -28,14 +29,11 @@ export default function Solucao({ redesSociaisData }) {
 }
 
 export async function getStaticProps() {
-    const redesSociaisFetch = await fetch(
-        `${process.env.NEXT_PUBLIC_STRAPI_URL}/rede-social?populate=%2A`
-    );
-    const redesSociais = await redesSociaisFetch.json();
+    const redesSociaisData = await loadRedesSociais();
 
     return {
         props: { 
-            redesSociaisData: redesSociais.data.attributes 
+            redesSociaisData,
         },
     };
 }

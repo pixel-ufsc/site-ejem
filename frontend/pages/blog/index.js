@@ -9,6 +9,7 @@ import OurSearchComponent from '../../components/Blog/OurSearchComponent';
 import OurMainPostComponent from '../../components/Blog/OurMainPostComponent';
 import PostGridComponent from '../../components/Blog/PostGridComponent';
 import OurContactComponent from '../../components/Shared/OurContactComponent';
+import { loadRedesSociais } from '../../utils/loadRedesSociais';
 
 export default function Blog({ postsData, mainPost, redesSociaisData }) {
     const [filteredPosts, setFilteredPosts] = useState([]);
@@ -56,16 +57,13 @@ export async function getStaticProps() {
     const mainPost = await fetchData(
         '/publicacao-destaque?populate[publicacao][populate][0]=foto&populate[publicacao][populate][1]=categorias',
     );
-    const redesSociaisFetch = await fetch(
-        `${process.env.NEXT_PUBLIC_STRAPI_URL}/rede-social?populate=%2A`
-    );
-    const redesSociais = await redesSociaisFetch.json();
+    const redesSociaisData = await loadRedesSociais();
 
     return {
         props: { 
             postsData, 
             mainPost,
-            redesSociaisData: redesSociais.data.attributes
+            redesSociaisData,
         },
     };
 }
