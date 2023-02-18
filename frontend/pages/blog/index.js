@@ -16,6 +16,7 @@ import OurContactComponent from '../../components/Shared/OurContactComponent';
 
 export default function Blog({ postsData, mainPost, contatoData, redesSociaisData }) {
     const [filteredPosts, setFilteredPosts] = useState([]);
+    const [activeTag, setActiveTag] = useState('');
 
     useEffect(() => {
         if (postsData) {
@@ -37,6 +38,25 @@ export default function Blog({ postsData, mainPost, contatoData, redesSociaisDat
         }
     };
 
+    const handleTagSearch = (tag) => {
+        if (tag) {
+            // If search is not '' (empty)
+            const filtered = postsData?.filter((post) => {
+                return post.attributes.categorias.data.some((categoria) => {
+                    return categoria.attributes.tag.toLowerCase().includes(tag.toLowerCase());
+                });
+            });
+            setFilteredPosts(filtered);
+            setActiveTag(tag);
+        } else {
+            // Else, return all posts
+            // Talvez adicionar um numero maximo de posts...
+            setFilteredPosts(postsData);
+            setActiveTag('');
+        }
+    };
+
+
     return (
         <div>
             <Head>
@@ -47,7 +67,7 @@ export default function Blog({ postsData, mainPost, contatoData, redesSociaisDat
             <main>
                 <NavigationBar />
                 <OurMainPostComponent mainPost={mainPost} />
-                <OurSearchComponent onSearch={(search) => handleSearch(search)} />
+                <OurSearchComponent onSearch={(search) => handleTagSearch(search)} />
                 <PostGridComponent postsData={filteredPosts} />
                 <OurContactComponent contatoData={contatoData} />
                 <FooterComponent redesSociaisData={redesSociaisData} />

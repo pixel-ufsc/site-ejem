@@ -10,6 +10,7 @@ export default function OurPostComponent({ attributes }) {
     const imageFormats = attributes?.foto?.data?.attributes?.formats;
     const alternativeText = attributes?.foto?.data?.attributes?.alternativeText;
     const slug = attributes?.slug ? 'blog/' + attributes.slug : '';
+    
 
     const convertDate = (date) => {
         // Convert 2022-12-29 to 29/12/2022
