@@ -1,0 +1,152 @@
+.container {
+    width: 100%;
+}
+
+.topContainer {
+    position: relative;
+
+    height: 422px;
+    width: 100%;
+}
+
+.topContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #11274e;
+}
+
+.topContainer > img {
+    object-fit: cover;
+
+    opacity: 0.3;
+    filter: blur(2px);
+}
+
+.topContainer > .title {
+    width: fit-content;
+    height: fit-content;
+
+    position: absolute;
+    z-index: 2;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    text-align: center;
+    color: white;
+}
+
+.topContainer > .title > h1 {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 59px;
+}
+
+.topContainer > .title > h2 {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 49px;
+}
+
+.postWrapper {
+    padding: 35px 5%;
+}
+
+.postWrapper > .info {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.postWrapper > .content {
+    width: 100%;
+
+    font-family: 'Montserrat';
+}
+
+.postWrapper > .content > h1 {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 40px;
+
+    margin-bottom: 24px;
+}
+
+.postWrapper > .content > h2 {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 38px;
+
+    margin-bottom: 22px;
+}
+
+.postWrapper > .content > h3 {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 36px;
+
+    margin-bottom: 20px;
+}
+
+.postWrapper > .content > h4 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 34px;
+
+    margin-bottom: 18px;
+}
+
+.postWrapper > .content > h5 {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 32px;
+
+    margin-bottom: 16px;
+}
+
+.postWrapper > .content > h6 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+
+    margin-bottom: 14px;
+}
+
+.postWrapper > .content > p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    text-align: justify;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+
+    margin-bottom: 10px;
+}
+
+.postWrapper > .content > ul {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.postWrapper > .content > ol {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.postWrapper > .content > li {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.postWrapper > .content > a {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #042660;
+}

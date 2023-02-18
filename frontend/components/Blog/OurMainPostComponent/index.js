@@ -8,7 +8,7 @@ export default function OurMainPostComponent({ mainPost }) {
     const postTags = post?.categorias?.data;
 
     const convertDate = (date) => {
-        // Converter 2022-12-29 para 29/12/2022
+        // Convert 2022-12-29 to 29/12/2022
         const dateArray = date.split('-');
         const year = dateArray[0];
         const month = dateArray[1];

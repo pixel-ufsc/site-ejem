@@ -1,0 +1,27 @@
+.container {
+    font-family: 'Montserrat';
+}
+
+.container .autor {
+    font-style: italic;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #042660;
+
+    margin-bottom: 4px;
+}
+
+.container .date {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #042660;
+}
+
+.container .tags {
+    margin-top: 8px;
+}

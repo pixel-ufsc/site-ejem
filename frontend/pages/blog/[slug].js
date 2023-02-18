@@ -3,7 +3,7 @@ import fm from 'front-matter';
 import Head from 'next/head';
 import { marked } from 'marked';
 import NavigationBar from '../../components/Shared/NavigationBar';
-import PostComponent from '../../components/Blog/PostComponent';
+import PostPageComponent from '../../components/Blog/PostPageComponent';
 import OurContactComponent from '../../components/Shared/OurContactComponent';
 import FooterComponent from '../../components/Shared/FooterComponent';
 
@@ -17,9 +17,9 @@ export default function Post({ image, htmlString, data, redesSociaisData }) {
             </Head>
             <main>
                 <NavigationBar />
-                <PostComponent image={image} htmlString={htmlString} data={data} />
+                <PostPageComponent image={image} htmlString={htmlString} data={data} />
                 <OurContactComponent />
-                <FooterComponent redesSociaisData={redesSociaisData}/>
+                <FooterComponent redesSociaisData={redesSociaisData} />
             </main>
         </>
     );
@@ -39,19 +39,17 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
     const res = await fetch(
-         `${process.env.NEXT_PUBLIC_STRAPI_URL}/posts?filters[slug][$eq]=${params.slug}&populate=%2A`
+        `${process.env.NEXT_PUBLIC_STRAPI_URL}/posts?filters[slug][$eq]=${params.slug}&populate=%2A`,
     );
     //console.log(params);
     //console.log(`${process.env.NEXT_PUBLIC_STRAPI_URL}/posts?filters[slug][$eq]=${params.slug}&populate=imagem&populate=autor`)
     const markdownWithMeta = await res.json();
     const parsedMarkdown = fm(markdownWithMeta.data[0].attributes.conteudo);
     const htmlString = marked(parsedMarkdown.body);
-    // console.log(markdownWithMeta.data[0].attributes.imagem.data.attributes.formats.medium.url)
-    const image = markdownWithMeta.data[0].attributes.foto.data.attributes.formats.medium.url;
-    
-    const redesSociaisFetch = await fetch(
-        `${process.env.NEXT_PUBLIC_STRAPI_URL}/rede-social?populate=%2A`
-    );
+    // console.log(markdownWithMeta.data[0].attributes.imagem.data.attributes.formats.medium)
+    const image = markdownWithMeta.data[0].attributes.foto.data.attributes.formats.large;
+
+    const redesSociaisFetch = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/rede-social?populate=%2A`);
     const redesSociais = await redesSociaisFetch.json();
 
     return {
@@ -59,7 +57,7 @@ export const getStaticProps = async ({ params }) => {
             image,
             htmlString,
             data: markdownWithMeta.data[0].attributes,
-            redesSociaisData: redesSociais.data.attributes
+            redesSociaisData: redesSociais.data.attributes,
         },
     };
 };
