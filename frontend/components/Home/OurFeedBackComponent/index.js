@@ -10,7 +10,7 @@ import LargeCard from '../../Shared/LargeCard';
 
 export default class OurFeedBackComponent extends Component {
     render() {
-        const feedbacks = this.props.feedbackData?.data ? this.props.feedbackData.data : [];
+        const feedbacks = this.props.feedbackData? this.props.feedbackData : [];
 
         const settings = {
             dots: true,
