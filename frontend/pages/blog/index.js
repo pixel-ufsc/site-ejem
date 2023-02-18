@@ -11,6 +11,7 @@ import PostGridComponent from '../../components/Blog/PostGridComponent';
 import OurContactComponent from '../../components/Shared/OurContactComponent';
 import { loadRedesSociais } from '../../utils/loadRedesSociais';
 import { loadPosts } from '../../utils/loadPosts';
+import { loadMainPosts } from '../../utils/loadMainPost';
 
 export default function Blog({ postsData, mainPost, redesSociaisData }) {
     const [filteredPosts, setFilteredPosts] = useState([]);
@@ -56,9 +57,7 @@ export default function Blog({ postsData, mainPost, redesSociaisData }) {
 
 export async function getStaticProps() {
     const postsData = await loadPosts();
-    const mainPost = await fetchData(
-        '/publicacao-destaque?populate[publicacao][populate][0]=foto&populate[publicacao][populate][1]=categorias',
-    );
+    const mainPost = await loadMainPosts();
     const redesSociaisData = await loadRedesSociais();
     return {
         props: { 
