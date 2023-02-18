@@ -42,26 +42,19 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
-    const res = await fetch(
-        `${process.env.NEXT_PUBLIC_STRAPI_URL}/posts?filters[slug][$eq]=${params.slug}&populate=%2A`,
-    );
-    //console.log(params);
-    //console.log(`${process.env.NEXT_PUBLIC_STRAPI_URL}/posts?filters[slug][$eq]=${params.slug}&populate=imagem&populate=autor`)
-    const markdownWithMeta = await res.json();
+    const markdownWithMeta = await loadPostsFiltered({ slug: params.slug });
     const parsedMarkdown = fm(markdownWithMeta.data[0].attributes.conteudo);
     const htmlString = marked(parsedMarkdown.body);
-    // console.log(markdownWithMeta.data[0].attributes.imagem.data.attributes.formats.medium)
     const image = markdownWithMeta.data[0].attributes.foto.data.attributes.formats.large;
 
-    const redesSociaisFetch = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/rede-social?populate=%2A`);
-    const redesSociais = await redesSociaisFetch.json();
+    const redesSociaisData = await loadRedesSociais();
 
     return {
         props: {
             image,
             htmlString,
             data: markdownWithMeta.data[0].attributes,
-            redesSociaisData: redesSociais.data.attributes,
+            redesSociaisData,
         },
     };
 };
