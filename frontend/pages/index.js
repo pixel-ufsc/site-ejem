@@ -1,6 +1,7 @@
 import Head from 'next/head';
 // Utils
-import fetchData from '../utils/fetchData';
+import { loadRedesSociais } from '../utils/loadRedesSociais';
+import { loadFeedback } from '../utils/loadFeedback';
 // Components
 import NavigationBar from '../components/Shared/NavigationBar';
 import HomeBanner from '../components/Home/HomeBanner';
@@ -11,6 +12,7 @@ import OurProjectComponent from '../components/Home/OurProjectComponent';
 import OurPartnersComponent from '../components/Home/OurPartnersComponent';
 import OurFeedBackComponent from '../components/Home/OurFeedBackComponent';
 import FooterComponent from '../components/Shared/FooterComponent';
+
 
 export default function Home({ feedbackData, redesSociaisData }) {
     return (
@@ -39,16 +41,13 @@ export default function Home({ feedbackData, redesSociaisData }) {
 // Next.js uses the getStaticProps function to fetch data at build time.
 // That is why we should place this function in the page component instead of using a hook like useFetch.
 export async function getStaticProps() {
-    const feedbackData = await fetchData('/feedbacks?populate=foto');
-    const redesSociaisFetch = await fetch(
-        `${process.env.NEXT_PUBLIC_STRAPI_URL}/rede-social?populate=%2A`
-    );
-    const redesSociais = await redesSociaisFetch.json();
+    const feedbackData = await loadFeedback();
+    const redesSociaisData = await loadRedesSociais();
 
     return {
         props: { 
             feedbackData,
-            redesSociaisData: redesSociais.data.attributes 
+            redesSociaisData,
         },
     };
 }

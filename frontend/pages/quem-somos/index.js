@@ -1,6 +1,6 @@
 import Head from 'next/head';
 // Hooks
-import fetchData from '../../utils/fetchData';
+import { loadRedesSociais } from '../../utils/loadRedesSociais';
 // Components
 import QuemSomosBanner from '../../components/QuemSomos/QuemSomosBanner';
 import IntroComponent from '../../components/QuemSomos/IntroComponent';
@@ -40,16 +40,13 @@ export default function QuemSomos({ statementsData, membersData, redesSociaisDat
 export async function getStaticProps() {
     const statementsData = await fetchData('/depoimentos?populate=*');
     const membersData = await fetchData('/membros?populate=foto');
-    const redesSociaisFetch = await fetch(
-        `${process.env.NEXT_PUBLIC_STRAPI_URL}/rede-social?populate=%2A`
-    );
-    const redesSociais = await redesSociaisFetch.json();
+    const redesSociaisData = await loadRedesSociais();
 
     return {
         props: { 
             statementsData,
             membersData,
-            redesSociaisData: redesSociais.data.attributes 
+            redesSociaisData,
         },
     };
 }

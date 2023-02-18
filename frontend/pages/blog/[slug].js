@@ -2,6 +2,11 @@ import React from 'react';
 import fm from 'front-matter';
 import Head from 'next/head';
 import { marked } from 'marked';
+// Utils
+import { loadRedesSociais } from '../../utils/loadRedesSociais';
+import { loadPosts } from '../../utils/loadPosts';
+import { loadPostsFiltered } from '../../utils/loadPostsFiltered';
+// Components
 import NavigationBar from '../../components/Shared/NavigationBar';
 import PostPageComponent from '../../components/Blog/PostPageComponent';
 import OurContactComponent from '../../components/Shared/OurContactComponent';
@@ -27,10 +32,9 @@ export default function Post({ image, htmlString, data, redesSociaisData }) {
 
 export const getStaticPaths = async () => {
     //let result = await fetch(`http://134.209.68.173:1337/api/posts`);
-    let result = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/posts`);
-    result = await result.json();
+    let result = await loadPosts();
     return {
-        paths: result.data.map((result) => ({
+        paths: result.map((result) => ({
             params: { slug: result.attributes.slug },
         })),
         fallback: false,

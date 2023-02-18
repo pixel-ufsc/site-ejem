@@ -1,4 +1,7 @@
 import Head from 'next/head';
+// Utils
+import { loadRedesSociais } from '../../utils/loadRedesSociais';
+// Components
 import TitleContactComponent from '../../components/Contato/TitleContactComponent';
 import OurContentComponent from '../../components/Contato/OurContentComponent';
 import WppComponent from '../../components/Shared/WppComponent';
@@ -25,14 +28,11 @@ export default function Contato({ redesSociaisData }) {
 }
 
 export async function getStaticProps() {
-    const redesSociaisFetch = await fetch(
-        `${process.env.NEXT_PUBLIC_STRAPI_URL}/rede-social?populate=%2A`
-    );
-    const redesSociais = await redesSociaisFetch.json();
+    const redesSociaisData = await loadRedesSociais();
 
     return {
         props: { 
-            redesSociaisData: redesSociais.data.attributes 
+            redesSociaisData,
         },
     };
 }
