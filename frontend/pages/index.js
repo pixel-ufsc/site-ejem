@@ -2,6 +2,7 @@ import Head from 'next/head';
 // Utils
 import { loadRedesSociais } from '../utils/loadRedesSociais';
 import { loadFeedback } from '../utils/loadFeedback';
+import { loadContato } from '../utils/loadContato';
 // Components
 import NavigationBar from '../components/Shared/NavigationBar';
 import HomeBanner from '../components/Home/HomeBanner';
@@ -14,7 +15,7 @@ import OurFeedBackComponent from '../components/Home/OurFeedBackComponent';
 import FooterComponent from '../components/Shared/FooterComponent';
 
 
-export default function Home({ feedbackData, redesSociaisData }) {
+export default function Home({ contatoData, feedbackData, redesSociaisData }) {
     return (
         <>
             <Head>
@@ -28,7 +29,7 @@ export default function Home({ feedbackData, redesSociaisData }) {
                 <HomeBanner />
                 <WppComponent />
                 <OurSolutionsComponent />
-                <OurContactComponent />
+                <OurContactComponent contatoData={contatoData}/>
                 <OurProjectComponent />
                 <OurPartnersComponent />
                 <OurFeedBackComponent feedbackData={feedbackData} />
@@ -41,11 +42,12 @@ export default function Home({ feedbackData, redesSociaisData }) {
 // Next.js uses the getStaticProps function to fetch data at build time.
 // That is why we should place this function in the page component instead of using a hook like useFetch.
 export async function getStaticProps() {
+    const contatoData = await loadContato();
     const feedbackData = await loadFeedback();
     const redesSociaisData = await loadRedesSociais();
-
     return {
         props: { 
+            contatoData,
             feedbackData,
             redesSociaisData,
         },

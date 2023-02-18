@@ -3,6 +3,7 @@ import Head from 'next/head';
 // Utils
 import { loadRedesSociais } from '../../utils/loadRedesSociais';
 import { loadPosts } from '../../utils/loadPosts';
+import { loadContato } from '../../utils/loadContato';
 import { loadMainPosts } from '../../utils/loadMainPost';
 // Components
 import NavigationBar from '../../components/Shared/NavigationBar';
@@ -13,7 +14,7 @@ import PostGridComponent from '../../components/Blog/PostGridComponent';
 import OurContactComponent from '../../components/Shared/OurContactComponent';
 
 
-export default function Blog({ postsData, mainPost, redesSociaisData }) {
+export default function Blog({ postsData, mainPost, contatoData, redesSociaisData }) {
     const [filteredPosts, setFilteredPosts] = useState([]);
 
     useEffect(() => {
@@ -48,7 +49,7 @@ export default function Blog({ postsData, mainPost, redesSociaisData }) {
                 <OurSearchComponent onSearch={(search) => handleSearch(search)} />
                 <OurMainPostComponent mainPost={mainPost} />
                 <PostGridComponent postsData={filteredPosts} />
-                <OurContactComponent />
+                <OurContactComponent contatoData={contatoData} />
                 <FooterComponent redesSociaisData={redesSociaisData} />
             </main>
         </div>
@@ -58,11 +59,13 @@ export default function Blog({ postsData, mainPost, redesSociaisData }) {
 export async function getStaticProps() {
     const postsData = await loadPosts();
     const mainPost = await loadMainPosts();
+    const contatoData = await loadContato();
     const redesSociaisData = await loadRedesSociais();
     return {
         props: { 
             postsData, 
             mainPost,
+            contatoData,
             redesSociaisData,
         },
     };

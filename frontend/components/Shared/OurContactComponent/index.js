@@ -6,7 +6,7 @@ import wpp from '../../../public/home/contact/wpp.png';
 import orçamento from '../../../public/home/contact/orcamento.png';
 import Link from 'next/link';
 
-export default function OurContactComponent() {
+export default function OurContactComponent({ contatoData }) {
     return (
         <section className={styles.container}>
             <div className={styles.contactUs}>
@@ -20,15 +20,15 @@ export default function OurContactComponent() {
             <div className={styles.contactInfo}>
                 <div className={styles.contactInfoItem}>
                     <Image className={styles.image} src={email} alt="Email Icon" />
-                    <h5>contato@ejem.com.br</h5>
+                    <h5>{contatoData.email}</h5>
                 </div>
                 <div className={styles.contactInfoItem}>
                     <Image className={styles.image} src={phone} alt="Phone Icon" />
-                    <h5>(48) 3721-4014</h5>
+                    <h5>{contatoData.telefone}</h5>
                 </div>
                 <div className={styles.contactInfoItem}>
                     <Image className={styles.image} src={wpp} alt="Whatsapp Icon" />
-                    <h5>(67) 99821-2102</h5>
+                    <h5>{contatoData.whatsapp_telefone}</h5>
                 </div>
             </div>
         </section>
