@@ -7,7 +7,7 @@ import location from '../../../public/contato/content/location.png';
 import OurFormComponent from './OurFormComponent';
 import Link from 'next/link';
 
-export default function OurContentComponent() {
+export default function OurContentComponent( { contatoData } ) {
     return (
         <section className={styles.section}>
             <div className={styles.sectionContent}>
@@ -28,19 +28,19 @@ export default function OurContentComponent() {
                         <div href="/">
                             <Image className={styles.image} src={email} alt="email" />
                         </div>
-                        <div className={styles.item_txt}>contato@ejem.com.br</div>
+                        <div className={styles.item_txt}>{contatoData.email}</div>
                     </div>
                     <div className={styles.item_icon}>
                         <div href="/">
                             <Image className={styles.image} src={phone} alt="phone" />
                         </div>
-                        <div className={styles.item_txt}>(48) 3721-4014</div>
+                        <div className={styles.item_txt}>{contatoData.telefone}</div>
                     </div>
                     <div className={styles.item_icon}>
                         <div href="/">
                             <Image className={styles.image} src={wpp} alt="wpp" />
                         </div>
-                        <div className={styles.item_txt}>(67) 99821-2102</div>
+                        <div className={styles.item_txt}>{contatoData.whatsapp_telefone}</div>
                     </div>
                 </div>
                 <div className={styles.subtitle}>Ou venha nos visitar!</div>
@@ -49,7 +49,7 @@ export default function OurContentComponent() {
                         <Image className={styles.image} src={location} alt="location" />
                     </Link>
                     <div className={styles.subtitle2}>
-                        R. Ferreira Lima, Bloco A - Trindade, Florianópolis - SC, 88040-900
+                        {contatoData.endereco}
                     </div>
                 </div>
             </div>

@@ -14,8 +14,9 @@ import FooterComponent from '../../components/Shared/FooterComponent';
 import NavigationBar from '../../components/Shared/NavigationBar';
 import { loadDepoimentos } from '../../utils/loadDepoimentos';
 import { loadMembros } from '../../utils/loadMembros';
+import { loadContato } from '../../utils/loadContato';
 
-export default function QuemSomos({ statementsData, membersData, redesSociaisData }) {
+export default function QuemSomos({ statementsData,contatoData, membersData, redesSociaisData }) {
     return (
         <div>
             <Head>
@@ -32,7 +33,7 @@ export default function QuemSomos({ statementsData, membersData, redesSociaisDat
                 <AboutMejComponent />
                 <OurPartnersComponent />
                 <OurMembersComponent membersData={membersData} />
-                <OurContactComponent />
+                <OurContactComponent contatoData={contatoData} />
                 <FooterComponent redesSociaisData={redesSociaisData}/>
             </main>
         </div>
@@ -41,12 +42,14 @@ export default function QuemSomos({ statementsData, membersData, redesSociaisDat
 
 export async function getStaticProps() {
     const statementsData = await loadDepoimentos();
+    const contatoData = await loadContato();
     const membersData = await loadMembros();
     const redesSociaisData = await loadRedesSociais();
 
     return {
         props: { 
             statementsData,
+            contatoData,
             membersData,
             redesSociaisData,
         },
