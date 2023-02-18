@@ -1,6 +1,5 @@
 import styles from './ourpost.module.css';
-import { useState } from 'react';
-import Image from 'next/image';
+import { useRouter } from 'next/router';
 import PostTagComponent from '../PostTagComponent';
 
 export default function OurPostComponent({ attributes }) {
@@ -10,6 +9,7 @@ export default function OurPostComponent({ attributes }) {
     const postTags = attributes?.categorias?.data;
     const imageFormats = attributes?.foto?.data?.attributes?.formats;
     const alternativeText = attributes?.foto?.data?.attributes?.alternativeText;
+    const slug = attributes?.slug ? 'blog/' + attributes.slug : '';
 
     const convertDate = (date) => {
         // Convert 2022-12-29 to 29/12/2022
@@ -20,8 +20,9 @@ export default function OurPostComponent({ attributes }) {
         return `${day}/${month}/${year}`;
     };
 
+    const router = useRouter();
     const handleClick = () => {
-        // TODO - fazer redirecionamento para a página do post
+        router.push(slug);
     };
 
     return (
