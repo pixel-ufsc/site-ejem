@@ -10,26 +10,28 @@ import OurMainPostComponent from '../../components/Blog/OurMainPostComponent';
 import PostGridComponent from '../../components/Blog/PostGridComponent';
 import OurContactComponent from '../../components/Shared/OurContactComponent';
 import { loadRedesSociais } from '../../utils/loadRedesSociais';
+import { loadPosts } from '../../utils/loadPosts';
 
 export default function Blog({ postsData, mainPost, redesSociaisData }) {
     const [filteredPosts, setFilteredPosts] = useState([]);
 
     useEffect(() => {
         if (postsData) {
-            setFilteredPosts(postsData?.data);
+            setFilteredPosts(postsData);
         }
     }, [postsData]);
 
     const handleSearch = (search) => {
         if (search) {
             // If search is not '' (empty)
-            const filtered = postsData?.data.filter((post) => {
+            const filtered = postsData?.filter((post) => {
                 return post.attributes.titulo.toLowerCase().includes(search.toLowerCase());
             });
             setFilteredPosts(filtered);
         } else {
             // Else, return all posts
-            setFilteredPosts(postsData?.data);
+            // Talvez adicionar um numero maximo de posts...
+            setFilteredPosts(postsData);
         }
     };
 
@@ -53,12 +55,11 @@ export default function Blog({ postsData, mainPost, redesSociaisData }) {
 }
 
 export async function getStaticProps() {
-    const postsData = await fetchData('/posts?populate=%2A');
+    const postsData = await loadPosts();
     const mainPost = await fetchData(
         '/publicacao-destaque?populate[publicacao][populate][0]=foto&populate[publicacao][populate][1]=categorias',
     );
     const redesSociaisData = await loadRedesSociais();
-
     return {
         props: { 
             postsData, 
