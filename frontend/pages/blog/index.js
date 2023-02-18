@@ -65,10 +65,23 @@ export default function Blog({ postsData, mainPost, contatoData, redesSociaisDat
                 <NavigationBar />
                 <OurMainPostComponent mainPost={mainPost} />
                 <OurSearchComponent onSearch={(search) => handleSearch(search)} />
-                <div onChange={(e) => setActiveTag(e.target.value)}>
-                    <input type="radio" value='' name='tag' /> tag1
-                    <input type="radio" value='Análise de falhas' name='tag' /> tag2
-                    <input type="radio" value='Carac' name='tag' /> tag3
+                <div>
+                    <button onClick={() => setActiveTag('')}>Todos</button>
+                    {/* creates one button for each categoria tag from api */}
+                    {postsData?.map((post) => {
+                        return post.attributes.categorias.data.map((categoria) => {
+                            return (
+                                <button
+                                    key={categoria.id}
+                                    onClick={() => setActiveTag(categoria.attributes.tag)}
+                                >
+                                    {categoria.attributes.tag}
+                                </button>
+                            );
+                        });
+                    })}
+
+                                
                 </div>
                 <PostGridComponent postsData={filteredPosts} />
                 <OurContactComponent contatoData={contatoData} />
