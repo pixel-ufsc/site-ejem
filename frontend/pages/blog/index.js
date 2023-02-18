@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
-// Hooks
-import fetchData from '../../utils/fetchData';
+// Utils
+import { loadRedesSociais } from '../../utils/loadRedesSociais';
+import { loadPosts } from '../../utils/loadPosts';
+import { loadMainPosts } from '../../utils/loadMainPost';
 // Components
 import NavigationBar from '../../components/Shared/NavigationBar';
 import FooterComponent from '../../components/Shared/FooterComponent';
@@ -9,9 +11,7 @@ import OurSearchComponent from '../../components/Blog/OurSearchComponent';
 import OurMainPostComponent from '../../components/Blog/OurMainPostComponent';
 import PostGridComponent from '../../components/Blog/PostGridComponent';
 import OurContactComponent from '../../components/Shared/OurContactComponent';
-import { loadRedesSociais } from '../../utils/loadRedesSociais';
-import { loadPosts } from '../../utils/loadPosts';
-import { loadMainPosts } from '../../utils/loadMainPost';
+
 
 export default function Blog({ postsData, mainPost, redesSociaisData }) {
     const [filteredPosts, setFilteredPosts] = useState([]);

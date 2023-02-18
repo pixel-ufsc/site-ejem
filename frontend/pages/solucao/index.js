@@ -1,4 +1,7 @@
 import Head from 'next/head';
+// Utils
+import { loadRedesSociais } from '../../utils/loadRedesSociais';
+// Components
 import NavigationBar from '../../components/Shared/NavigationBar';
 import SolucaoBanner from '../../components/Solucao/SolucaoBanner';
 import OurContentComponent from '../../components/Solucao/OurContentComponent';
@@ -6,7 +9,6 @@ import FooterComponent from '../../components/Shared/FooterComponent';
 import WppComponent from '../../components/Shared/WppComponent';
 import OurFormComponent from '../../components/Solucao/OurFormComponent';
 import styles from './styles.module.css';
-import { loadRedesSociais } from '../../utils/loadRedesSociais';
 
 export default function Solucao({ redesSociaisData }) {
     return (

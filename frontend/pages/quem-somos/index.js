@@ -1,6 +1,6 @@
 import Head from 'next/head';
 // Hooks
-import fetchData from '../../utils/fetchData';
+import { loadRedesSociais } from '../../utils/loadRedesSociais';
 // Components
 import QuemSomosBanner from '../../components/QuemSomos/QuemSomosBanner';
 import IntroComponent from '../../components/QuemSomos/IntroComponent';
@@ -12,7 +12,6 @@ import OurMembersComponent from '../../components/QuemSomos/OurMembersComponent'
 import OurContactComponent from '../../components/Shared/OurContactComponent';
 import FooterComponent from '../../components/Shared/FooterComponent';
 import NavigationBar from '../../components/Shared/NavigationBar';
-import { loadRedesSociais } from '../../utils/loadRedesSociais';
 
 export default function QuemSomos({ statementsData, membersData, redesSociaisData }) {
     return (

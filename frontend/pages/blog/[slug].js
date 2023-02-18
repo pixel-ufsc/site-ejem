@@ -2,13 +2,16 @@ import React from 'react';
 import fm from 'front-matter';
 import Head from 'next/head';
 import { marked } from 'marked';
+// Utils
+import { loadRedesSociais } from '../../utils/loadRedesSociais';
+import { loadPosts } from '../../utils/loadPosts';
+import { loadPostsFiltered } from '../../utils/loadPostsFiltered';
+// Components
 import NavigationBar from '../../components/Shared/NavigationBar';
 import PostComponent from '../../components/Blog/PostComponent';
 import OurContactComponent from '../../components/Shared/OurContactComponent';
 import FooterComponent from '../../components/Shared/FooterComponent';
-import { loadRedesSociais } from '../../utils/loadRedesSociais';
-import { loadPosts } from '../../utils/loadPosts';
-import { loadPostsFiltered } from '../../utils/loadPostsFiltered';
+
 
 export default function Post({ image, htmlString, data, redesSociaisData }) {
     return (

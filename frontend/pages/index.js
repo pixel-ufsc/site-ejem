@@ -1,6 +1,7 @@
 import Head from 'next/head';
 // Utils
-import fetchData from '../utils/fetchData';
+import { loadRedesSociais } from '../utils/loadRedesSociais';
+import { loadFeedback } from '../utils/loadFeedback';
 // Components
 import NavigationBar from '../components/Shared/NavigationBar';
 import HomeBanner from '../components/Home/HomeBanner';
@@ -11,8 +12,7 @@ import OurProjectComponent from '../components/Home/OurProjectComponent';
 import OurPartnersComponent from '../components/Home/OurPartnersComponent';
 import OurFeedBackComponent from '../components/Home/OurFeedBackComponent';
 import FooterComponent from '../components/Shared/FooterComponent';
-import { loadRedesSociais } from '../utils/loadRedesSociais';
-import { loadFeedback } from '../utils/loadFeedback';
+
 
 export default function Home({ feedbackData, redesSociaisData }) {
     return (

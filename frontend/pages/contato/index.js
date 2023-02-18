@@ -1,10 +1,12 @@
 import Head from 'next/head';
+// Utils
+import { loadRedesSociais } from '../../utils/loadRedesSociais';
+// Components
 import TitleContactComponent from '../../components/Contato/TitleContactComponent';
 import OurContentComponent from '../../components/Contato/OurContentComponent';
 import WppComponent from '../../components/Shared/WppComponent';
 import FooterComponent from '../../components/Shared/FooterComponent';
 import NavigationBar from '../../components/Shared/NavigationBar';
-import { loadRedesSociais } from '../../utils/loadRedesSociais';
 
 export default function Contato({ redesSociaisData }) {
     return (
