@@ -46,8 +46,8 @@ export default function Blog({ postsData, mainPost, contatoData, redesSociaisDat
             </Head>
             <main>
                 <NavigationBar />
-                <OurSearchComponent onSearch={(search) => handleSearch(search)} />
                 <OurMainPostComponent mainPost={mainPost} />
+                <OurSearchComponent onSearch={(search) => handleSearch(search)} />
                 <PostGridComponent postsData={filteredPosts} />
                 <OurContactComponent contatoData={contatoData} />
                 <FooterComponent redesSociaisData={redesSociaisData} />
