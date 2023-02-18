@@ -16,6 +16,7 @@ import OurContactComponent from '../../components/Shared/OurContactComponent';
 
 export default function Blog({ postsData, mainPost, contatoData, redesSociaisData }) {
     const [filteredPosts, setFilteredPosts] = useState([]);
+    const [searchText, setSearchText] = useState('');
     const [activeTag, setActiveTag] = useState('');
 
     useEffect(() => {
@@ -24,38 +25,34 @@ export default function Blog({ postsData, mainPost, contatoData, redesSociaisDat
         }
     }, [postsData]);
 
+    useEffect(() => {
+        let x = filterByTitle(postsData, searchText);
+        x = filterByTag(x, activeTag);
+        setFilteredPosts(x);
+    }, [activeTag]);
+
+    const filterByTag = (posts, tag) => {
+        // returns a filtered array of posts
+        return posts?.filter((post) => {
+            return post.attributes.categorias.data.some((categoria) => {
+                return categoria.attributes.tag.toLowerCase().includes(tag.toLowerCase());
+            });
+        });
+    };
+
+    const filterByTitle = (posts, search) => {
+        // returns a filtered array of posts
+        return posts?.filter((post) => {
+            return post.attributes.titulo.toLowerCase().includes(search.toLowerCase());
+        });
+    };
+
     const handleSearch = (search) => {
-        if (search) {
-            // If search is not '' (empty)
-            const filtered = postsData?.filter((post) => {
-                return post.attributes.titulo.toLowerCase().includes(search.toLowerCase());
-            });
-            setFilteredPosts(filtered);
-        } else {
-            // Else, return all posts
-            // Talvez adicionar um numero maximo de posts...
-            setFilteredPosts(postsData);
-        }
+        setSearchText(search);
+        let x = filterByTitle(postsData, search);
+        x = filterByTag(x, activeTag);
+        setFilteredPosts(x);
     };
-
-    const handleTagSearch = (tag) => {
-        if (tag) {
-            // If search is not '' (empty)
-            const filtered = postsData?.filter((post) => {
-                return post.attributes.categorias.data.some((categoria) => {
-                    return categoria.attributes.tag.toLowerCase().includes(tag.toLowerCase());
-                });
-            });
-            setFilteredPosts(filtered);
-            setActiveTag(tag);
-        } else {
-            // Else, return all posts
-            // Talvez adicionar um numero maximo de posts...
-            setFilteredPosts(postsData);
-            setActiveTag('');
-        }
-    };
-
 
     return (
         <div>
@@ -67,7 +64,12 @@ export default function Blog({ postsData, mainPost, contatoData, redesSociaisDat
             <main>
                 <NavigationBar />
                 <OurMainPostComponent mainPost={mainPost} />
-                <OurSearchComponent onSearch={(search) => handleTagSearch(search)} />
+                <OurSearchComponent onSearch={(search) => handleSearch(search)} />
+                <div onChange={(e) => setActiveTag(e.target.value)}>
+                    <input type="radio" value='' name='tag' /> tag1
+                    <input type="radio" value='Análise de falhas' name='tag' /> tag2
+                    <input type="radio" value='Carac' name='tag' /> tag3
+                </div>
                 <PostGridComponent postsData={filteredPosts} />
                 <OurContactComponent contatoData={contatoData} />
                 <FooterComponent redesSociaisData={redesSociaisData} />
