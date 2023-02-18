@@ -19,18 +19,21 @@ export default function Blog({ postsData, mainPost, contatoData, redesSociaisDat
     const [searchText, setSearchText] = useState('');
     const [activeTag, setActiveTag] = useState('');
 
+    // seta filtered posts para todos os posts quando postsData é carregado
     useEffect(() => {
         if (postsData) {
             setFilteredPosts(postsData);
         }
     }, [postsData]);
 
+    // detecta mudanças em activeTag e filtra posts por tag e titulo para setar filteredPosts
     useEffect(() => {
         let x = filterByTitle(postsData, searchText);
         x = filterByTag(x, activeTag);
         setFilteredPosts(x);
     }, [activeTag]);
 
+    // retorna um array de posts filtrados por tag
     const filterByTag = (posts, tag) => {
         // returns a filtered array of posts
         return posts?.filter((post) => {
@@ -40,6 +43,7 @@ export default function Blog({ postsData, mainPost, contatoData, redesSociaisDat
         });
     };
 
+    // retorna um array de posts filtrados por titulo
     const filterByTitle = (posts, search) => {
         // returns a filtered array of posts
         return posts?.filter((post) => {
@@ -47,6 +51,7 @@ export default function Blog({ postsData, mainPost, contatoData, redesSociaisDat
         });
     };
 
+    // filtra posts por titulo e tag e atualiza filteredPosts
     const handleSearch = (search) => {
         setSearchText(search);
         let x = filterByTitle(postsData, search);
@@ -65,6 +70,10 @@ export default function Blog({ postsData, mainPost, contatoData, redesSociaisDat
                 <NavigationBar />
                 <OurMainPostComponent mainPost={mainPost} />
                 <OurSearchComponent onSearch={(search) => handleSearch(search)} />
+                {/* Não necessariamente precisa ser feito assim, qualquer vez que for chamado o
+                    setActiveTags ele vai filtrar tudo corretamente de acordo com o argumento da tag
+                    e o texto do input de pesquisa
+                */}
                 <div>
                     <button onClick={() => setActiveTag('')}>Todos</button>
                     {/* creates one button for each categoria tag from api */}
