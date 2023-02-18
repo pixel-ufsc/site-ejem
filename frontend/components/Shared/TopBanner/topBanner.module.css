@@ -6,17 +6,8 @@
     width: 100%;
 }
 
-.space {
-    height: 204px;
-}
-
-@media(max-width:800px) {
+@media (max-width: 800px) {
     .container {
         height: 279px;
     }
-
-    .space {
-        height: 121px;
-    }
-
 }

@@ -3,8 +3,7 @@
 }
 
 .container {
-    padding-top: 260px;
-    padding-bottom: 64px;
+    padding: 38px 0 64px 0;
 
     display: flex;
     flex-direction: column;
@@ -19,11 +18,8 @@
     font-weight: 700;
     font-size: 48px;
     line-height: 59px;
-
-    /* identical to box height */
     text-align: center;
 
-    /* Azul escuro */
     color: #042660;
 }
 
@@ -80,7 +76,7 @@
 
 @media (max-width: 767px) {
     .container {
-        padding: 160px 0 50px 0;
+        padding: 50px 0;
     }
 
     .title {

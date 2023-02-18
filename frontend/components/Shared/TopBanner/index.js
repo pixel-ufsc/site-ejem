@@ -9,7 +9,6 @@ function TopBanner({ bgOption, children }) {
 
     return (
         <section>
-            <div className={styles.space}></div>
             <div
                 className={styles.container}
                 style={{
