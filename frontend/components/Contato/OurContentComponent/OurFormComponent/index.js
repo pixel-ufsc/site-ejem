@@ -102,7 +102,7 @@ export default function OurFormComponent() {
             <form
                 className={styles.formContainer}
                 name="contato"
-                // action="/sucesso" // Redireciona para a página de sucesso
+                action="/sucesso" // Redireciona para a página de sucesso
                 method="POST"
                 data-netlify="true"
                 netlify-honeypot="bot-field"
@@ -111,7 +111,7 @@ export default function OurFormComponent() {
             >
                 <input type="hidden" name="form-name" value="contato" />{' '}
                 {/* Configura o nome do formulário para o Netlify Forms */}
-                <p class="hidden">
+                <p hidden>
                     <label>
                     Não preencha se você é humano: <input name="bot-field" />
                     </label>
