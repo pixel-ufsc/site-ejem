@@ -13,6 +13,7 @@ import OurMainPostComponent from '../../components/Blog/OurMainPostComponent';
 import PostGridComponent from '../../components/Blog/PostGridComponent';
 import OurContactComponent from '../../components/Shared/OurContactComponent';
 import TagsFilter from '../../components/Blog/TagsFilterComponent';
+import TitleComponent from '../../components/Shared/TitleComponent';
 
 export default function Blog({ postsData, mainPost, contatoData, redesSociaisData }) {
     const [filteredPosts, setFilteredPosts] = useState([]);
@@ -68,6 +69,7 @@ export default function Blog({ postsData, mainPost, contatoData, redesSociaisDat
             </Head>
             <main>
                 <NavigationBar />
+                <TitleComponent title={'Blog'} />
                 <OurMainPostComponent mainPost={mainPost} />
                 <OurSearchComponent onSearch={(search) => handleSearch(search)} />
                 {/* Não necessariamente precisa ser feito assim, qualquer vez que for chamado o
