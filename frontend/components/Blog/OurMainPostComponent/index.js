@@ -34,7 +34,7 @@ export default function OurMainPostComponent({ mainPost }) {
                 <img
                     className={styles.image}
                     src={postImageFormats?.large?.url ? postImageFormats?.large?.url : postImageFormats?.medium?.url}
-                    alt="imagem"
+                    alt="Imagem do post em destaque"
                 />
             </div>
         </section>
