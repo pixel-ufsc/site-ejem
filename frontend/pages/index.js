@@ -7,13 +7,11 @@ import { loadContato } from '../utils/loadContato';
 import NavigationBar from '../components/Shared/NavigationBar';
 import HomeBanner from '../components/Home/HomeBanner';
 import OurSolutionsComponent from '../components/Home/OurSolutionsComponent';
-import WppComponent from '../components/Shared/WppComponent';
 import OurContactComponent from '../components/Shared/OurContactComponent';
 import OurProjectComponent from '../components/Home/OurProjectComponent';
 import OurPartnersComponent from '../components/Home/OurPartnersComponent';
 import OurFeedBackComponent from '../components/Home/OurFeedBackComponent';
 import FooterComponent from '../components/Shared/FooterComponent';
-
 
 export default function Home({ contatoData, feedbackData, redesSociaisData }) {
     return (
@@ -27,9 +25,8 @@ export default function Home({ contatoData, feedbackData, redesSociaisData }) {
             <main>
                 <NavigationBar />
                 <HomeBanner />
-                <WppComponent />
                 <OurSolutionsComponent />
-                <OurContactComponent contatoData={contatoData}/>
+                <OurContactComponent contatoData={contatoData} />
                 <OurProjectComponent />
                 <OurPartnersComponent />
                 <OurFeedBackComponent feedbackData={feedbackData} />
@@ -46,7 +43,7 @@ export async function getStaticProps() {
     const feedbackData = await loadFeedback();
     const redesSociaisData = await loadRedesSociais();
     return {
-        props: { 
+        props: {
             contatoData,
             feedbackData,
             redesSociaisData,

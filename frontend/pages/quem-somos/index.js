@@ -7,7 +7,6 @@ import IntroComponent from '../../components/QuemSomos/IntroComponent';
 import OurPartnersComponent from '../../components/QuemSomos/OurPartnersComponent';
 import AboutMejComponent from '../../components/QuemSomos/AboutMejComponent';
 import OurStatementComponent from '../../components/QuemSomos/OurStatementComponent';
-import WppComponent from '../../components/Shared/WppComponent';
 import OurMembersComponent from '../../components/QuemSomos/OurMembersComponent';
 import OurContactComponent from '../../components/Shared/OurContactComponent';
 import FooterComponent from '../../components/Shared/FooterComponent';
@@ -16,7 +15,7 @@ import { loadDepoimentos } from '../../utils/loadDepoimentos';
 import { loadMembros } from '../../utils/loadMembros';
 import { loadContato } from '../../utils/loadContato';
 
-export default function QuemSomos({ statementsData,contatoData, membersData, redesSociaisData }) {
+export default function QuemSomos({ statementsData, contatoData, membersData, redesSociaisData }) {
     return (
         <div>
             <Head>
@@ -27,14 +26,13 @@ export default function QuemSomos({ statementsData,contatoData, membersData, red
             <main>
                 <NavigationBar />
                 <QuemSomosBanner />
-                <WppComponent />
                 <IntroComponent />
                 <OurStatementComponent statementsData={statementsData} />
                 <AboutMejComponent />
                 <OurPartnersComponent />
                 <OurMembersComponent membersData={membersData} />
                 <OurContactComponent contatoData={contatoData} />
-                <FooterComponent redesSociaisData={redesSociaisData}/>
+                <FooterComponent redesSociaisData={redesSociaisData} />
             </main>
         </div>
     );
@@ -47,7 +45,7 @@ export async function getStaticProps() {
     const redesSociaisData = await loadRedesSociais();
 
     return {
-        props: { 
+        props: {
             statementsData,
             contatoData,
             membersData,
