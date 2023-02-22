@@ -102,18 +102,17 @@ export default function OurFormComponent() {
             <form
                 className={styles.formContainer}
                 name="contato"
-                action="/sucesso" // Redireciona para a página de sucesso
+                action="https://api.web3forms.com/submit"
                 method="POST"
-                netlify="true"
-                netlify-honeypot="bot-field"
-                // data-netlify-recaptcha="true"
                 // onSubmit={(event) => handleSubmit(event)}
             >
-                <input type="hidden" name="form-name" value="contato" />{' '}
-                {/* Configura o nome do formulário para o Netlify Forms */}
+                <input type="hidden" name="access_key" value="6893ee10-361e-4bcc-b6d8-82694f30b1da" />
+                <input type="hidden" name="from_name" value={nome}></input>
+                <input type="hidden" name="subject" value={`Novo formulário preenchido por ${nome}`}></input>
+                {/* Honeyfield*/}
                 <p hidden>
                     <label>
-                    Não preencha se você é humano: <input name="bot-field" />
+                    Não preencha se você é humano: <input types="checkbox" name="botcheck" />
                     </label>
                 </p>
                 <h1 className={styles.title}>
@@ -287,7 +286,6 @@ export default function OurFormComponent() {
                     </div>
                 </div>
                 <p id="error" className={styles.error}></p>
-                {/* <div data-netlify-recaptcha="true"></div> */}
                 <div className={styles.buttonContainer}>
                     <button type="submit" className={styles.button}>
                         ENVIAR
