@@ -5,7 +5,6 @@ import { loadContato } from '../../utils/loadContato';
 // Components
 import TitleContactComponent from '../../components/Contato/TitleContactComponent';
 import OurContentComponent from '../../components/Contato/OurContentComponent';
-import WppComponent from '../../components/Shared/WppComponent';
 import FooterComponent from '../../components/Shared/FooterComponent';
 import NavigationBar from '../../components/Shared/NavigationBar';
 
@@ -21,8 +20,7 @@ export default function Contato({ redesSociaisData, contatoData }) {
                 <NavigationBar></NavigationBar>
                 <TitleContactComponent />
                 <OurContentComponent contatoData={contatoData} />
-                <WppComponent />
-                <FooterComponent redesSociaisData={redesSociaisData}/>
+                <FooterComponent redesSociaisData={redesSociaisData} />
             </main>
         </div>
     );
@@ -33,10 +31,9 @@ export async function getStaticProps() {
     const contatoData = await loadContato();
 
     return {
-        props: { 
+        props: {
             redesSociaisData,
             contatoData,
         },
     };
 }
-

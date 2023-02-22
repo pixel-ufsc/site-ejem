@@ -16,21 +16,18 @@ export default function OurSearchComponent({ onSearch }) {
     }, [debouncedSearch]);
 
     return (
-        <section className={styles.section}>
-            <div className={styles.container}>
-                <div className={styles.title}>Blog</div>
-                <div className={styles.search}>
-                    <button className={styles.button} type="submit">
-                        <AiOutlineSearch size={30} color={'#2E4494'}></AiOutlineSearch>
-                    </button>
-                    <input
-                        className={styles.input}
-                        placeholder="O que você procura?"
-                        type="search"
-                        onChange={(e) => setSearchValue(e.target.value)}
-                    ></input>
-                </div>
+        <div className={styles.container}>
+            <div className={styles.search}>
+                <button className={styles.button} type="submit">
+                    <AiOutlineSearch size={30} color={'#2E4494'}></AiOutlineSearch>
+                </button>
+                <input
+                    className={styles.input}
+                    placeholder="O que você procura?"
+                    type="search"
+                    onChange={(e) => setSearchValue(e.target.value)}
+                ></input>
             </div>
-        </section>
+        </div>
     );
 }
