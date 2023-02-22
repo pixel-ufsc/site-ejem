@@ -4,7 +4,7 @@ export default function TagsFilter({ postsData, onChangeSelected }) {
     return (
         <div className={styles.container}>
             <>
-                <input type="radio" name="categoria" onClick={() => onChangeSelected?.('')} id="Todos" />
+                <input type="radio" name="categoria" onClick={() => onChangeSelected?.('')} id="Todos" defaultChecked/>
                 <label for="Todos">Todos</label>
             </>
 
