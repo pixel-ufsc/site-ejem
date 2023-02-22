@@ -13,6 +13,7 @@
     .container {
         grid-template-columns: 1fr;
         padding: 65px 20%;
+        margin-bottom: 5vh;
     }
 }
 
@@ -20,6 +21,7 @@
     .container {
         grid-template-columns: 1fr;
         padding: 65px 10%;
+        margin-bottom: 5vh;
     }
 }
 
@@ -27,5 +29,6 @@
     .container {
         grid-template-columns: 1fr;
         padding: 40px 5%;
+        margin-bottom: 10vh;
     }
 }

@@ -20,8 +20,6 @@
     white-space: nowrap;
 
     cursor: pointer;
-
-    transition: all 0.3s ease-in-out;
 }
 
 .container input[type='radio'] {
