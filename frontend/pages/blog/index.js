@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
+import Fuse from 'fuse.js';
 // Utils
 import { loadRedesSociais } from '../../utils/loadRedesSociais';
 import { loadPosts } from '../../utils/loadPosts';
@@ -20,6 +21,18 @@ export default function Blog({ postsData, mainPost, contatoData, redesSociaisDat
     const [searchText, setSearchText] = useState('');
     const [activeTag, setActiveTag] = useState('');
 
+    const fuse = new Fuse(postsData, {
+        keys: [
+            'attributes.titulo',
+            'attributes.categorias.data.attributes.tag'
+        ],
+        includeScore: true
+    })
+    const results = fuse.search(searchText)
+    const fuseResults = searchText ? results.map(result => result.item) : postsData
+    // console.log('fuse', fuse)
+    // console.log('results', results)
+
     // seta filtered posts para todos os posts quando postsData é carregado
     useEffect(() => {
         if (postsData) {
@@ -29,10 +42,11 @@ export default function Blog({ postsData, mainPost, contatoData, redesSociaisDat
 
     // detecta mudanças em activeTag e filtra posts por tag e titulo para setar filteredPosts
     useEffect(() => {
-        let x = filterByTitle(postsData, searchText);
+        let x = filterByTitle();
         x = filterByTag(x, activeTag);
         setFilteredPosts(x);
-    }, [activeTag]);
+        // setFilteredPosts(fuseResults);
+    }, [searchText, activeTag]);
 
     // retorna um array de posts filtrados por tag
     const filterByTag = (posts, tag) => {
@@ -43,21 +57,24 @@ export default function Blog({ postsData, mainPost, contatoData, redesSociaisDat
             });
         });
     };
+    
 
     // retorna um array de posts filtrados por titulo
     const filterByTitle = (posts, search) => {
         // returns a filtered array of posts
-        return posts?.filter((post) => {
-            return post.attributes.titulo.toLowerCase().includes(search.toLowerCase());
-        });
+        // return posts?.filter((post) => {
+        //     return post.attributes.titulo.toLowerCase().includes(search.toLowerCase());
+        // });
+        return fuseResults
     };
 
     // filtra posts por titulo e tag e atualiza filteredPosts
     const handleSearch = (search) => {
         setSearchText(search);
-        let x = filterByTitle(postsData, search);
+        let x = filterByTitle();
         x = filterByTag(x, activeTag);
         setFilteredPosts(x);
+        // setFilteredPosts(fuseResults);
     };
 
     return (
