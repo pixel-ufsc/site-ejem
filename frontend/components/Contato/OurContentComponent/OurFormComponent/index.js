@@ -104,7 +104,7 @@ export default function OurFormComponent() {
                 name="contato"
                 action="/sucesso" // Redireciona para a página de sucesso
                 method="POST"
-                data-netlify="true"
+                netlify="true"
                 netlify-honeypot="bot-field"
                 // data-netlify-recaptcha="true"
                 // onSubmit={(event) => handleSubmit(event)}
