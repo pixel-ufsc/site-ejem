@@ -93,7 +93,7 @@ export default function OurFormComponent() {
                 .then(() => alert('Success!'))
                 .catch((error) => alert(error));
         } */
-
+        console.log('teste');
         event.preventDefault();
     };
 
@@ -106,8 +106,8 @@ export default function OurFormComponent() {
                 method="POST"
                 data-netlify="true"
                 netlify-honeypot="bot-field"
-                data-netlify-recaptcha="true"
-                onSubmit={(event) => handleSubmit(event)}
+                // data-netlify-recaptcha="true"
+                // onSubmit={(event) => handleSubmit(event)}
             >
                 <input type="hidden" name="form-name" value="contato" />{' '}
                 {/* Configura o nome do formulário para o Netlify Forms */}
@@ -287,7 +287,7 @@ export default function OurFormComponent() {
                     </div>
                 </div>
                 <p id="error" className={styles.error}></p>
-                <div data-netlify-recaptcha="true"></div>
+                {/* <div data-netlify-recaptcha="true"></div> */}
                 <div className={styles.buttonContainer}>
                     <button type="submit" className={styles.button}>
                         ENVIAR
