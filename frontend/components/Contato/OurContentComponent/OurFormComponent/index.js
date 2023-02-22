@@ -101,12 +101,21 @@ export default function OurFormComponent() {
         <div className={styles.container}>
             <form
                 className={styles.formContainer}
-                netlify
+                name="contato"
+                // action="/sucesso" // Redireciona para a página de sucesso
+                method="POST"
+                data-netlify="true"
                 netlify-honeypot="bot-field"
+                data-netlify-recaptcha="true"
                 onSubmit={(event) => handleSubmit(event)}
             >
-                <input type="hidden" name="contato" value="contato" />{' '}
+                <input type="hidden" name="form-name" value="contato" />{' '}
                 {/* Configura o nome do formulário para o Netlify Forms */}
+                <p class="hidden">
+                    <label>
+                    Não preencha se você é humano: <input name="bot-field" />
+                    </label>
+                </p>
                 <h1 className={styles.title}>
                     E aí, vamos fazer um <span className={styles.spanOrcamento}>orçamento gratuito?</span>
                 </h1>
@@ -278,6 +287,7 @@ export default function OurFormComponent() {
                     </div>
                 </div>
                 <p id="error" className={styles.error}></p>
+                <div data-netlify-recaptcha="true"></div>
                 <div className={styles.buttonContainer}>
                     <button type="submit" className={styles.button}>
                         ENVIAR
