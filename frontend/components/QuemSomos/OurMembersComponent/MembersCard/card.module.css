@@ -9,7 +9,7 @@
 .section {
     height: 323px;
     width: 222px;
-    background: #79ABDE;
+    background: #79abde;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,7 +24,15 @@
     height: 195px;
 }
 
-.textContainer{
+.imageContainer > .image {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+
+.textContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,7 +47,7 @@
     font-size: 14px;
     line-height: 17px;
     text-align: center;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 .description {
@@ -49,5 +57,5 @@
     font-size: 14px;
     line-height: 17px;
     text-align: center;
-    color: #FFFFFF;
+    color: #ffffff;
 }
