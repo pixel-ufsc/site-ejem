@@ -12,7 +12,7 @@ import OurSearchComponent from '../../components/Blog/OurSearchComponent';
 import OurMainPostComponent from '../../components/Blog/OurMainPostComponent';
 import PostGridComponent from '../../components/Blog/PostGridComponent';
 import OurContactComponent from '../../components/Shared/OurContactComponent';
-
+import TagsFilter from '../../components/Blog/TagsFilterComponent';
 
 export default function Blog({ postsData, mainPost, contatoData, redesSociaisData }) {
     const [filteredPosts, setFilteredPosts] = useState([]);
@@ -74,24 +74,7 @@ export default function Blog({ postsData, mainPost, contatoData, redesSociaisDat
                     setActiveTags ele vai filtrar tudo corretamente de acordo com o argumento da tag
                     e o texto do input de pesquisa
                 */}
-                <div>
-                    <button onClick={() => setActiveTag('')}>Todos</button>
-                    {/* creates one button for each categoria tag from api */}
-                    {postsData?.map((post) => {
-                        return post.attributes.categorias.data.map((categoria) => {
-                            return (
-                                <button
-                                    key={categoria.id}
-                                    onClick={() => setActiveTag(categoria.attributes.tag)}
-                                >
-                                    {categoria.attributes.tag}
-                                </button>
-                            );
-                        });
-                    })}
-
-                                
-                </div>
+                <TagsFilter onChangeSelected={(tag) => setActiveTag(tag)} postsData={postsData} />
                 <PostGridComponent postsData={filteredPosts} />
                 <OurContactComponent contatoData={contatoData} />
                 <FooterComponent redesSociaisData={redesSociaisData} />
@@ -106,8 +89,8 @@ export async function getStaticProps() {
     const contatoData = await loadContato();
     const redesSociaisData = await loadRedesSociais();
     return {
-        props: { 
-            postsData, 
+        props: {
+            postsData,
             mainPost,
             contatoData,
             redesSociaisData,
