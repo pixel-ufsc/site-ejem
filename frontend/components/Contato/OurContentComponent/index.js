@@ -4,10 +4,10 @@ import email from '../../../public/home/contact/email.png';
 import phone from '../../../public/home/contact/phone.png';
 import wpp from '../../../public/home/contact/wpp.png';
 import location from '../../../public/contato/content/location.png';
-import OurFormComponent from './OurFormComponent';
+import OurFormComponent from '../../Shared/OurFormComponent';
 import Link from 'next/link';
 
-export default function OurContentComponent( { contatoData } ) {
+export default function OurContentComponent({ contatoData }) {
     return (
         <section className={styles.section}>
             <div className={styles.sectionContent}>
@@ -48,9 +48,7 @@ export default function OurContentComponent( { contatoData } ) {
                     <Link href="/">
                         <Image className={styles.image} src={location} alt="location" />
                     </Link>
-                    <div className={styles.subtitle2}>
-                        {contatoData.endereco}
-                    </div>
+                    <div className={styles.subtitle2}>{contatoData.endereco}</div>
                 </div>
             </div>
 
