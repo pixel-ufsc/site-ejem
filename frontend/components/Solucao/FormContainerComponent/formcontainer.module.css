@@ -1,0 +1,12 @@
+.container {
+    width: 100%;
+    background-color: #042660;
+
+    padding: 64px 15%;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 36px 5%;
+    }
+}
