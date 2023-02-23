@@ -3,11 +3,15 @@ import { loadRedesSociais } from '../../../utils/loadRedesSociais';
 // Components
 import SolutionPage from '../../../components/Solucao/SolutionPage';
 // Assets
-import { RecycleIcon } from '../../../public/icons/icons';
+import { LightbulbIcon } from '../../../public/icons/icons';
 
-export default function Reciclagem({ redesSociaisData }) {
+export default function Consultoria({ redesSociaisData }) {
     return (
-        <SolutionPage redesSociaisData={redesSociaisData} title="Reciclagem" icon={<RecycleIcon color={'#79ABDE'} />}>
+        <SolutionPage
+            redesSociaisData={redesSociaisData}
+            title="Otimização de Materiais e Processos"
+            icon={<LightbulbIcon color={'#79ABDE'} />}
+        >
             ...
         </SolutionPage>
     );

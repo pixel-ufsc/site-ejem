@@ -38,19 +38,21 @@ export default function NavigationBar() {
                     <li>
                         <DropdownButton label="SOLUÇÕES">
                             <DropdownButton.Item>
-                                <Link href="/">Caracterização de materiais</Link>
+                                <Link href="/solucao/caracterizacao-de-materiais">Caracterização de materiais</Link>
                             </DropdownButton.Item>
                             <DropdownButton.Item>
-                                <Link href="/">Ensaios mecânicos</Link>
+                                <Link href="/solucao/ensaios-mecanicos">Ensaios mecânicos</Link>
                             </DropdownButton.Item>
                             <DropdownButton.Item>
-                                <Link href="/">Análise de falhas</Link>
+                                <Link href="/solucao/analise-de-falhas">Análise de falhas</Link>
                             </DropdownButton.Item>
                             <DropdownButton.Item>
-                                <Link href="/">Gestão de resíduos</Link>
+                                <Link href="/solucao/gestao-de-residuos">Gestão de resíduos</Link>
                             </DropdownButton.Item>
                             <DropdownButton.Item>
-                                <Link href="/">Otimização de materiais e processos</Link>
+                                <Link href="/solucao/otimizacao-de-materiais-e-processos">
+                                    Otimização de materiais e processos
+                                </Link>
                             </DropdownButton.Item>
                         </DropdownButton>
                     </li>

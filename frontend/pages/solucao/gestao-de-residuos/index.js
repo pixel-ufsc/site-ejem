@@ -3,14 +3,14 @@ import { loadRedesSociais } from '../../../utils/loadRedesSociais';
 // Components
 import SolutionPage from '../../../components/Solucao/SolutionPage';
 // Assets
-import { LightbulbIcon } from '../../../public/icons/icons';
+import { RecycleIcon } from '../../../public/icons/icons';
 
-export default function Consultoria({ redesSociaisData }) {
+export default function Reciclagem({ redesSociaisData }) {
     return (
         <SolutionPage
             redesSociaisData={redesSociaisData}
-            title="Consultoria"
-            icon={<LightbulbIcon color={'#79ABDE'} />}
+            title="Gestão de Resíduos"
+            icon={<RecycleIcon color={'#79ABDE'} />}
         >
             ...
         </SolutionPage>
