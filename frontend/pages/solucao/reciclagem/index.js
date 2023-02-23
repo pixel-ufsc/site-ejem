@@ -5,7 +5,7 @@ import SolutionPage from '../../../components/Solucao/SolutionPage';
 // Assets
 import { RecycleIcon } from '../../../public/icons/icons';
 
-export default function EnsaiosMecanicos({ redesSociaisData }) {
+export default function Reciclagem({ redesSociaisData }) {
     return (
         <SolutionPage redesSociaisData={redesSociaisData} title="Reciclagem" icon={<RecycleIcon color={'#79ABDE'} />}>
             ...
