@@ -1,11 +1,14 @@
 import styles from './ourmainpost.module.css';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import PostTagComponent from '../PostTagComponent';
 
 export default function OurMainPostComponent({ mainPost }) {
     const post = mainPost?.publicacao?.data?.attributes;
     const postImageFormats = post?.foto?.data?.attributes?.formats;
     const postTags = post?.categorias?.data;
+    const slug = post?.slug ? 'blog/' + post?.slug : '';
+
 
     const convertDate = (date) => {
         // Convert 2022-12-29 to 29/12/2022
@@ -16,8 +19,15 @@ export default function OurMainPostComponent({ mainPost }) {
         return `${day}/${month}/${year}`;
     };
 
+    const router = useRouter();
+
+    const handleClick = () => {
+        router.push(slug);
+    };
+
+
     return (
-        <section className={styles.container}>
+        <section className={styles.container} onClick={handleClick}>
             <div className={styles.contentWrapper}>
                 <div className={styles.textContainer}>
                     <h2>{post.titulo}</h2>
