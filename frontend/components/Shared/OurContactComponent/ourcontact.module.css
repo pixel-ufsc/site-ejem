@@ -3,6 +3,7 @@
     border: 4px solid #79abde;
 
     padding: 56px 10vw;
+    margin-bottom: 22px;
 
     display: flex;
     flex-direction: row;
@@ -93,6 +94,12 @@
 
     .contactInfo {
         gap: 10px;
+    }
+}
+
+@media (max-width: 800px) {
+    .container {
+        margin-bottom: 0;
     }
 }
 

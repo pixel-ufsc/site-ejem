@@ -4,6 +4,8 @@
     gap: 10px;
     width: 100%;
     display: flex;
+
+    margin-bottom: 68px;
 }
 
 .sectionContent {
@@ -99,6 +101,8 @@
     .section {
         flex-direction: column;
         gap: 10px;
+
+        margin-bottom: 0;
     }
 
     .sectionContent {
@@ -108,6 +112,7 @@
     .sectionForm {
         width: 100%;
         padding: 30px 23px;
+        border-radius: 0;
     }
 
     .sectionForm {
