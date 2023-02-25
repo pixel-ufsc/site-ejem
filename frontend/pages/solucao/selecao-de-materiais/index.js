@@ -9,10 +9,16 @@ export default function Reciclagem({ redesSociaisData }) {
     return (
         <SolutionPage
             redesSociaisData={redesSociaisData}
-            title="Gestão de Resíduos"
+            title="Seleção de Materiais"
             icon={<RecycleIcon color={'#79ABDE'} />}
         >
-            ...
+            A seleção de materiais traz, por meio de softwares, estudos e contato com o cliente, a adequação de material
+            para a realidade do cliente, Com base no entendimento das vontades do cliente, das propriedades necessárias
+            à aplicação e dos custos de produção, a EJEM seleciona o melhor material para o caso. <br />
+            <br />
+            Benefícios: <br />
+            Seleção adequada do material; <br />
+            Desenvolvimento de produto.
         </SolutionPage>
     );
 }
