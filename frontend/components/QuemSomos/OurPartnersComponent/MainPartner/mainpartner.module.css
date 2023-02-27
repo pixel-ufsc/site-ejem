@@ -35,6 +35,13 @@
     font-weight: 400;
     font-size: 24px;
     line-height: 40px;
+    text-align: justify;
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+
     color: #000;
 }
 
@@ -50,12 +57,6 @@
     .contentContainer > p {
         font-size: 18px;
         line-height: 30px;
-
-        text-align: justify;
-        -webkit-hyphens: auto;
-        -moz-hyphens: auto;
-        -ms-hyphens: auto;
-        hyphens: auto;
     }
     .contentContainer > .imageContainer > img {
         height: 151px;
