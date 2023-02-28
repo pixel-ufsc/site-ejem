@@ -48,7 +48,12 @@
     justify-content: center;
     align-items: center;
 
-    gap: 6px;
+    gap: 10px;
+}
+
+.imageContainer > .image {
+    max-height: 200px;
+    width: auto;
 }
 
 @media (max-width: 1300px) {
