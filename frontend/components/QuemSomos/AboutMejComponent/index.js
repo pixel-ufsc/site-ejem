@@ -10,15 +10,14 @@ export default function AboutMejComponent() {
             <h1>EJEM na Rede</h1>
             <div className={styles.contentContainer}>
                 <p className={styles.text}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor elit amet viverra nunc commodo.
-                    Auctor sed dictum porta sed cursus ut. Sit elementum aliquam elit sapien quis dolor feugiat
-                    placerat. Feugiat tempus blandit dictumst bibendum accumsan habitasse eu id etiam. <br />
-                    Elementum, risus, justo viverra dictumst id laoreet orci. Egestas enim vel consequat risus.
-                    Vestibulum eros, fermentum at id sed consectetur tellus auctor. Volutpat morbi sapien penatibus
-                    pharetra mauris lectus. Risus morbi ullamcorper risus tincidunt aliquam. Donec urna tortor at
-                    suspendisse malesuada nec sit mattis. Pellentesque urna faucibus vitae convallis amet aliquam nullam
-                    bibendum euismod. Ac risus pretium, donec eu integer velit, ac mi Pellentesque urna faucibus vitae
-                    convallis amet aliquam nullam bibendum euismod. Ac risus pretium, donec eu integer velit, ac mi
+                    O movimento empresa júnior, (MEJ), chegou ao Brasil em meados dos anos 1990, no curso de
+                    Administração da Fundação Getúlio Vargas - uma das mais renomadas universidades do país. No entanto
+                    sua origem é europeia, tendo sido criado na França em 1967. Desde o início, seu intuito é que os
+                    estudantes coloquem na prática os conhecimentos aprendidos em sala de aula. Hoje existem no Brasil
+                    cerca de 1500 empresas juniores em mais de 280 instituições de ensino superior em todos os estados
+                    da Federação. Além disso, vem mostrando um crescimento acelerado nos últimos anos. Dentre elas está
+                    a EJEM, se fortalecendo cada vez mais dentro do movimento e proporcionando uma melhor vivência
+                    empresarial para seus integrantes.
                 </p>
                 <div className={styles.imageContainer}>
                     <Image src={BRJunior} alt="BRJunior" className={styles.image} />

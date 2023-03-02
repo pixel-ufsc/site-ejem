@@ -1,0 +1,54 @@
+.section {
+    width: 100%;
+    height: fit-content;
+
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: 1fr;
+
+    gap: 64px;
+
+    padding: 64px 5%;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #000000;
+    text-align: justify;
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+
+.section > .iconContainer {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 800px) {
+    .section {
+        padding: 32px 3%;
+        gap: 4%;
+    }
+
+    .text {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .section > .iconContainer {
+        width: clamp(40px, 10vw, 70px);
+    }
+}

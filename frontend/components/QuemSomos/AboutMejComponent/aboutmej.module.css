@@ -33,6 +33,12 @@
     font-weight: 400;
     font-size: 24px;
     line-height: 40px;
+    text-align: justify;
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+
     color: #000;
 }
 
@@ -42,7 +48,12 @@
     justify-content: center;
     align-items: center;
 
-    gap: 6px;
+    gap: 10px;
+}
+
+.imageContainer > .image {
+    max-height: 200px;
+    width: auto;
 }
 
 @media (max-width: 1300px) {
@@ -57,11 +68,6 @@
     .contentContainer > p {
         font-size: 18px;
         line-height: 30px;
-
-        text-align: justify;
-        -webkit-hyphens: auto;
-        -moz-hyphens: auto;
-        hyphens: auto;
     }
     .contentContainer > .imageContainer {
         display: flex;
