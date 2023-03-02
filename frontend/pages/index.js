@@ -5,6 +5,7 @@ import { loadFeedback } from '../utils/loadFeedback';
 import { loadContato } from '../utils/loadContato';
 // Components
 import NavigationBar from '../components/Shared/NavigationBar';
+import WhatsappIconComponent from '../components/Shared/WhatsappIconComponent';
 import HomeBanner from '../components/Home/HomeBanner';
 import OurSolutionsComponent from '../components/Home/OurSolutionsComponent';
 import OurContactComponent from '../components/Shared/OurContactComponent';
@@ -26,6 +27,7 @@ export default function Home({ contatoData, feedbackData, redesSociaisData }) {
             </Head>
             <main>
                 <NavigationBar />
+                <WhatsappIconComponent url={redesSociaisData?.linkWhatsapp ? redesSociaisData.linkWhatsapp : '/'} />
                 <HomeBanner />
                 <OurSolutionsComponent />
                 <OurContactComponent contatoData={contatoData} />

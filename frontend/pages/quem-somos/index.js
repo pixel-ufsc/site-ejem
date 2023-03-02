@@ -11,6 +11,7 @@ import OurMembersComponent from '../../components/QuemSomos/OurMembersComponent'
 import OurContactComponent from '../../components/Shared/OurContactComponent';
 import FooterComponent from '../../components/Shared/FooterComponent';
 import NavigationBar from '../../components/Shared/NavigationBar';
+import WhatsappIconComponent from '../../components/Shared/WhatsappIconComponent';
 import { loadDepoimentos } from '../../utils/loadDepoimentos';
 import { loadMembros } from '../../utils/loadMembros';
 import { loadContato } from '../../utils/loadContato';
@@ -24,6 +25,7 @@ export default function QuemSomos({ statementsData, contatoData, membersData, re
             </Head>
             <main>
                 <NavigationBar />
+                <WhatsappIconComponent url={redesSociaisData?.linkWhatsapp ? redesSociaisData.linkWhatsapp : '/'} />
                 <QuemSomosBanner />
                 <IntroComponent />
                 <OurStatementComponent statementsData={statementsData} />

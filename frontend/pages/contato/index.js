@@ -7,6 +7,7 @@ import TitleContactComponent from '../../components/Contato/TitleContactComponen
 import OurContentComponent from '../../components/Contato/OurContentComponent';
 import FooterComponent from '../../components/Shared/FooterComponent';
 import NavigationBar from '../../components/Shared/NavigationBar';
+import WhatsappIconComponent from '../../components/Shared/WhatsappIconComponent';
 
 export default function Contato({ redesSociaisData, contatoData }) {
     return (
@@ -16,7 +17,8 @@ export default function Contato({ redesSociaisData, contatoData }) {
                 <meta name="description" content="Página sobre a empresa" />
             </Head>
             <main>
-                <NavigationBar></NavigationBar>
+                <NavigationBar />
+                <WhatsappIconComponent url={redesSociaisData?.linkWhatsapp ? redesSociaisData.linkWhatsapp : '/'} />
                 <TitleContactComponent />
                 <OurContentComponent contatoData={contatoData} />
                 <FooterComponent redesSociaisData={redesSociaisData} />
