@@ -12,9 +12,8 @@ export default function Contato({ redesSociaisData, contatoData }) {
     return (
         <div>
             <Head>
-                <title>Contato</title>
+                <title>Contato | EJEM</title>
                 <meta name="description" content="Página sobre a empresa" />
-                <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
                 <NavigationBar></NavigationBar>

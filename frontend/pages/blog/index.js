@@ -22,14 +22,11 @@ export default function Blog({ postsData, mainPost, contatoData, redesSociaisDat
     const [activeTag, setActiveTag] = useState('');
 
     const fuse = new Fuse(postsData, {
-        keys: [
-            'attributes.titulo',
-            'attributes.categorias.data.attributes.tag'
-        ],
-        includeScore: true
-    })
-    const results = fuse.search(searchText)
-    const fuseResults = searchText ? results.map(result => result.item) : postsData
+        keys: ['attributes.titulo', 'attributes.categorias.data.attributes.tag'],
+        includeScore: true,
+    });
+    const results = fuse.search(searchText);
+    const fuseResults = searchText ? results.map((result) => result.item) : postsData;
     // console.log('fuse', fuse)
     // console.log('results', results)
 
@@ -57,7 +54,6 @@ export default function Blog({ postsData, mainPost, contatoData, redesSociaisDat
             });
         });
     };
-    
 
     // retorna um array de posts filtrados por titulo
     const filterByTitle = (posts, search) => {
@@ -65,7 +61,7 @@ export default function Blog({ postsData, mainPost, contatoData, redesSociaisDat
         // return posts?.filter((post) => {
         //     return post.attributes.titulo.toLowerCase().includes(search.toLowerCase());
         // });
-        return fuseResults
+        return fuseResults;
     };
 
     // filtra posts por titulo e tag e atualiza filteredPosts
@@ -80,9 +76,8 @@ export default function Blog({ postsData, mainPost, contatoData, redesSociaisDat
     return (
         <div>
             <Head>
-                <title>Solução</title>
+                <title>Solução | EJEM</title>
                 <meta name="description" content="Página sobre a empresa" />
-                <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
                 <NavigationBar />
