@@ -19,9 +19,8 @@ export default function QuemSomos({ statementsData, contatoData, membersData, re
     return (
         <div>
             <Head>
-                <title>Quem somos</title>
+                <title>Quem somos? | EJEM</title>
                 <meta name="description" content="Página sobre a empresa" />
-                <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
                 <NavigationBar />

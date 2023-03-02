@@ -17,9 +17,8 @@ export default function Post({ image, htmlString, data, contatoData, redesSociai
     return (
         <>
             <Head>
-                <title>{data.titulo}</title>
+                <title>{data.titulo} | EJEM</title>
                 <meta name="description" content={data.titulo} />
-                <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
                 <NavigationBar />

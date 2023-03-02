@@ -12,7 +12,6 @@ export default function SolutionPage({ title, children: description, icon, redes
             <Head>
                 <title>Solução - {title}</title>
                 <meta name="description" content={`Entenda sobre a solução "${title}".`} />
-                <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
                 <NavigationBar />
