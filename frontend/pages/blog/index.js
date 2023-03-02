@@ -8,6 +8,7 @@ import { loadContato } from '../../utils/loadContato';
 import { loadMainPosts } from '../../utils/loadMainPost';
 // Components
 import NavigationBar from '../../components/Shared/NavigationBar';
+import WhatsappIconComponent from '../../components/Shared/WhatsappIconComponent';
 import FooterComponent from '../../components/Shared/FooterComponent';
 import OurSearchComponent from '../../components/Blog/OurSearchComponent';
 import OurMainPostComponent from '../../components/Blog/OurMainPostComponent';
@@ -81,6 +82,7 @@ export default function Blog({ postsData, mainPost, contatoData, redesSociaisDat
             </Head>
             <main>
                 <NavigationBar />
+                <WhatsappIconComponent url={redesSociaisData?.linkWhatsapp ? redesSociaisData.linkWhatsapp : '/'} />
                 <TitleComponent title={'Blog'} />
                 <OurMainPostComponent mainPost={mainPost} />
                 <OurSearchComponent onSearch={(search) => handleSearch(search)} />
