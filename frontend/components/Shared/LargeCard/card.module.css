@@ -87,6 +87,11 @@
         overflow: scroll;
     }
 
+    .imageContainer {
+        width: 100%;
+        height: 210px;
+    }
+
     .textContent {
         padding: 0;
 

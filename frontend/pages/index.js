@@ -24,6 +24,7 @@ export default function Home({ contatoData, feedbackData, redesSociaisData }) {
                     content='Empresa Júnior do curso de Engenharia de Materiais da Universidade Federal de Santa Catarina (UFSC). A empresa tem como missão: "Difundir a Engenharia de Materiais: promovendo soluções aos clientes, gerando conhecimento aos alunos e impactando a sociedade."'
                 />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta name="theme-color" content="#042660" />
             </Head>
             <main>
                 <NavigationBar />
