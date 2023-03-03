@@ -17,10 +17,23 @@
     grid-template-columns: 280px 1fr;
 }
 
-.card .image {
+.imageContainer {
+    position: relative;
+    width: 280px;
+    height: 210px;
+
     border-radius: 6px;
     overflow: hidden;
-    margin: auto 0;
+}
+
+.imageContainer > .image {
+    object-fit: cover;
+
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
 }
 
 .textContent {
@@ -28,7 +41,7 @@
     padding: 10px 0;
     text-overflow: ellipsis;
 
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 .textContent .titleContainer {
@@ -62,7 +75,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 22px;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 @media (max-width: 800px) {
@@ -72,10 +85,6 @@
         grid-template-rows: 210px 1fr;
 
         overflow: scroll;
-    }
-
-    .card .image {
-        margin: 0 auto;
     }
 
     .textContent {

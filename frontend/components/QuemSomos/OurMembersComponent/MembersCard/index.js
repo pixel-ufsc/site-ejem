@@ -8,7 +8,7 @@ export default function MembersCard({ nome, cargo, foto }) {
         <section className={styles.sectionOutside}>
             <section className={styles.section}>
                 <div className={styles.imageContainer}>
-                    <Image src={foto} width="166" height="195" alt="membros" className={styles.image} />
+                    <Image fill src={foto} alt="Membros" className={styles.image} unoptimized />
                 </div>
                 <div className={styles.textContainer}>
                     <div className={styles.name}>{nome}</div>
