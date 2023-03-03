@@ -10,21 +10,30 @@
     height: 323px;
     width: 222px;
     background: #79abde;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 24px;
-    align-items: center;
+
     border-radius: 10px;
     overflow: hidden;
+
+    padding-top: 20px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 205px 1fr;
 }
 
 .imageContainer {
-    width: 166px;
-    height: 195px;
+    position: relative;
+    height: 205px;
+    width: calc(100% - 40px);
+    margin: 0 20px;
+
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .imageContainer > .image {
+    object-fit: cover;
+
     -webkit-user-drag: none;
     -khtml-user-drag: none;
     -moz-user-drag: none;
@@ -35,9 +44,9 @@
 .textContainer {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     gap: 8px;
-    width: 210px;
 }
 
 .name {
