@@ -45,7 +45,8 @@ export const getStaticProps = async ({ params }) => {
     const markdownWithMeta = await loadPostsFiltered({ slug: params.slug });
     const parsedMarkdown = fm(markdownWithMeta.data[0].attributes.conteudo);
     const htmlString = marked(parsedMarkdown.body);
-    const image = markdownWithMeta.data[0].attributes.foto.data.attributes.formats.large;
+    const imageFormats = markdownWithMeta.data[0].attributes.foto.data.attributes.formats
+    const image = imageFormats?.large ? imageFormats?.large : imageFormats?.medium;
 
     const redesSociaisData = await loadRedesSociais();
     const contatoData = await loadContato();
