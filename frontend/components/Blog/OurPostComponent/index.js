@@ -29,7 +29,7 @@ export default function OurPostComponent({ attributes }) {
     return (
         <div className={styles.container} onClick={handleClick}>
             <img
-                src={imageFormats.large.url ? imageFormats.large.url : imageFormats.medium.url}
+                src={imageFormats?.large?.url ? imageFormats?.large?.url : imageFormats.medium.url}
                 alt={alternativeText}
                 className={styles.cardImage}
             />
