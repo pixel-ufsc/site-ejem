@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { loadRedesSociais } from '../utils/loadRedesSociais';
 import { loadFeedback } from '../utils/loadFeedback';
 import { loadContato } from '../utils/loadContato';
+import { loadProjetos } from '../utils/loadProjetos';
 // Components
 import NavigationBar from '../components/Shared/NavigationBar';
 import WhatsappIconComponent from '../components/Shared/WhatsappIconComponent';
@@ -14,7 +15,7 @@ import OurPartnersComponent from '../components/Home/OurPartnersComponent';
 import OurFeedBackComponent from '../components/Home/OurFeedBackComponent';
 import FooterComponent from '../components/Shared/FooterComponent';
 
-export default function Home({ contatoData, feedbackData, redesSociaisData }) {
+export default function Home({ contatoData, feedbackData, redesSociaisData, numeroProjetosData }) {
     return (
         <>
             <Head>
@@ -32,7 +33,7 @@ export default function Home({ contatoData, feedbackData, redesSociaisData }) {
                 <HomeBanner />
                 <OurSolutionsComponent />
                 <OurContactComponent contatoData={contatoData} />
-                <OurProjectComponent />
+                <OurProjectComponent numeroProjetosData={numeroProjetosData} />
                 <OurPartnersComponent />
                 <OurFeedBackComponent feedbackData={feedbackData} />
                 <FooterComponent redesSociaisData={redesSociaisData} />
@@ -47,11 +48,14 @@ export async function getStaticProps() {
     const contatoData = await loadContato();
     const feedbackData = await loadFeedback();
     const redesSociaisData = await loadRedesSociais();
+    const numeroProjetosData = await loadProjetos();
     return {
         props: {
             contatoData,
             feedbackData,
             redesSociaisData,
+            numeroProjetosData,
         },
     };
 }
+
