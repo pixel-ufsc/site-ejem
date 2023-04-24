@@ -10,6 +10,7 @@ import Slider from 'react-slick';
 export default class OurStatementComponent extends Component {
     render() {
         const statements = this.props.statementsData?.data ? this.props.statementsData.data : [];
+        console.log(statements);
 
         const settings = {
             dots: true,
@@ -21,24 +22,27 @@ export default class OurStatementComponent extends Component {
         };
 
         return (
-            <section className={styles.sectionContainer}>
-                <h1 className={styles.title}>Depoimentos</h1>
+            statements &&
+            statements?.length > 0 && (
+                <section className={styles.sectionContainer}>
+                    <h1 className={styles.title}>Depoimentos</h1>
 
-                <Slider {...settings}>
-                    {statements.map((statement) => {
-                        return (
-                            <LargeCard
-                                key={statement.id}
-                                id={statement.id}
-                                title={statement.attributes.nome}
-                                subtitle={statement.attributes.cargo}
-                                description={statement.attributes.textoDepoimento}
-                                imageUrl={statement.attributes.foto.data[0].attributes.formats.thumbnail.url}
-                            />
-                        );
-                    })}
-                </Slider>
-            </section>
+                    <Slider {...settings}>
+                        {statements.map((statement) => {
+                            return (
+                                <LargeCard
+                                    key={statement.id}
+                                    id={statement.id}
+                                    title={statement.attributes.nome}
+                                    subtitle={statement.attributes.cargo}
+                                    description={statement.attributes.textoDepoimento}
+                                    imageUrl={statement.attributes.foto.data[0].attributes.formats.thumbnail.url}
+                                />
+                            );
+                        })}
+                    </Slider>
+                </section>
+            )
         );
     }
 }

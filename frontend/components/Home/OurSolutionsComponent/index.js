@@ -46,17 +46,17 @@ export default function OurSolutionsComponent() {
                     iconSmall={<ExclamationSmallIcon />}
                 />
                 <SolutionCard
-                    title={'Reciclagem'}
+                    title={'Seleção de materiais'}
                     description={
-                        'A reciclagem é um processo que transforma materiais usados em novos produtos, reduzindo o consumo de recursos naturais.'
+                        'Selecionar materiais é essencial para garantir qualidade e durabilidade do produto, equilibrando desempenho, viabilidade econômica e sustentabilidade.'
                     }
                     icon={<RecycleIcon />}
                     iconSmall={<RecycleSmallIcon />}
                 />
                 <SolutionCard
-                    title={'Consultoria'}
+                    title={'Otimização de materiais'}
                     description={
-                        'A consultoria é um processo de apoio a uma organização, com o objetivo de melhorar a sua performance.'
+                        'Otimização de materiais e processos busca melhorar a eficiência, qualidade e sustentabilidade de produtos e processos industriais.'
                     }
                     icon={<LightbulbIcon />}
                     iconSmall={<LightbulbSmallIcon />}

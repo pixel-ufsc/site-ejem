@@ -19,6 +19,10 @@
     margin: 44px 0px 53px;
 }
 
+.cards {
+    margin-bottom: 80px;
+}
+
 @media (max-width: 800px) {
     .text {
         font-size: 18px;

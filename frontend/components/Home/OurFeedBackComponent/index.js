@@ -10,7 +10,7 @@ import LargeCard from '../../Shared/LargeCard';
 
 export default class OurFeedBackComponent extends Component {
     render() {
-        const feedbacks = this.props.feedbackData? this.props.feedbackData : [];
+        const feedbacks = this.props.feedbackData ? this.props.feedbackData : [];
 
         const settings = {
             dots: true,
@@ -26,7 +26,7 @@ export default class OurFeedBackComponent extends Component {
                 <h1 className={styles.title}>Feedback de clientes</h1>
 
                 <Slider {...settings}>
-                    {feedbacks.map((feedback) => {
+                    {feedbacks?.map((feedback) => {
                         return (
                             <LargeCard
                                 key={feedback.id}
