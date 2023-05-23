@@ -13,7 +13,7 @@ export default function Reciclagem({ redesSociaisData }) {
             icon={<RecycleIcon color={'#79ABDE'} />}
         >
             A seleção de materiais traz, por meio de softwares, estudos e contato com o cliente, a adequação de material
-            para a realidade do cliente, Com base no entendimento das vontades do cliente, das propriedades necessárias
+            para a realidade do cliente. Com base no entendimento das vontades do cliente, das propriedades necessárias
             à aplicação e dos custos de produção, a EJEM seleciona o melhor material para o caso. <br />
             <br />
             Benefícios: <br />

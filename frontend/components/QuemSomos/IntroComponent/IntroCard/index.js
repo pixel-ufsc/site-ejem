@@ -23,7 +23,8 @@ export default function IntroComponent() {
                     União
                     <br /> Propósito
                     <br /> Excelência
-                    <br /> Proatividade Transparência
+                    <br /> Proatividade
+                    <br /> Transparência
                     <br /> Comprometimento
                 </div>
             </section>
