@@ -1,6 +1,6 @@
 .container {
     width: 100%;
-    height: fit-content;
+    height: min-content;
     padding: 40px 5%;
 
     cursor: pointer;
@@ -8,8 +8,10 @@
 }
 
 .contentWrapper {
+    height: min-content;
     display: grid;
     grid-template-columns: 55% 45%;
+    grid-template-rows: min-content;
     column-gap: 30px;
 }
 
@@ -23,7 +25,7 @@
     color: #ffffff;
 }
 
-.textContainer > h2 {
+.textContainer > .text > h2 {
     font-weight: 600;
     font-size: 32px;
     line-height: 39px;
@@ -31,7 +33,7 @@
     margin-bottom: 18px;
 }
 
-.textContainer > h4 {
+.textContainer > .text > h4 {
     font-weight: 500;
     font-size: 20px;
     line-height: 24px;
@@ -39,7 +41,7 @@
     margin-bottom: 30px;
 }
 
-.textContainer > p {
+.textContainer > .text > p {
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
@@ -47,13 +49,22 @@
     margin-bottom: 16px;
 }
 
-.image {
-    height: 100%;
-    width: 100%;
-    background-color: blue;
+.date {
+    margin-bottom: 8px;
+}
+
+.imageContainer {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageContainer > img {
+    max-width: 100%;
+    aspect-ratio: 16/9;
 
     border-radius: 10px;
-
     object-fit: cover;
 }
 
