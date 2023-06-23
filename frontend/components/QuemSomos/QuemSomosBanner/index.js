@@ -6,7 +6,7 @@ function QuemSomosBanner() {
     return (
         <TopBanner bgOption="quemSomos">
             <TitleContainer>
-                <Title>Quem somos?</Title>
+                <Title>Sobre nós</Title>
             </TitleContainer>
         </TopBanner>
     );

@@ -3,7 +3,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     width: 100%;
     width: 90%;
+    gap: 50px;
 
+}
+
+@media (max-width: 470px) {
+    .container {
+        gap: 10px;
+    }
 }

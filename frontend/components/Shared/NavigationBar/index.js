@@ -30,7 +30,7 @@ export default function NavigationBar() {
             <div className={`${styles.bottomContent} ${isMenuOpen ? styles.menuActive : ''}`}>
                 <ul className={styles.itemsList}>
                     <li>
-                        <Link href="/quem-somos">QUEM SOMOS?</Link>
+                        <Link href="/sobre-nos">SOBRE NÓS</Link>
                     </li>
                     <li>
                         <Link href="/blog">BLOG</Link>

@@ -18,3 +18,27 @@
     }
 }
 
+@media (max-width: 308px){
+    .title {
+        font-size: 28px;
+    }   
+}
+
+@media (max-width: 270px){
+    .title {
+        font-size: 24px;
+    }   
+}
+
+@media (max-width: 234px){
+    .title {
+        font-size: 24px;
+        line-height: 45px;
+    }   
+}
+
+@media (max-width: 190px) {
+    .title {
+        line-height: 40px;
+    }
+}
