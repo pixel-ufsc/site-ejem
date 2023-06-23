@@ -6,6 +6,7 @@ import WhatsappIconComponent from '../../Shared/WhatsappIconComponent';
 import BannerComponent from './BannerComponent';
 import DescriptionComponent from './DescriptionComponent';
 import FormContainerComponent from './FormContainerComponent';
+import InfoButtonComponent from './InfoButtonComponent';
 
 export default function SolutionPage({ title, children: description, icon, redesSociaisData }) {
     return (
@@ -19,7 +20,8 @@ export default function SolutionPage({ title, children: description, icon, redes
                 <WhatsappIconComponent url={redesSociaisData?.linkWhatsapp ? redesSociaisData.linkWhatsapp : '/'} />
                 <BannerComponent title={title} />
                 <DescriptionComponent icon={icon}>{description}</DescriptionComponent>
-                <FormContainerComponent />
+                {/* <FormContainerComponent /> */}
+                <InfoButtonComponent redesSociaisData={redesSociaisData} />
                 <FooterComponent redesSociaisData={redesSociaisData} />
             </main>
         </>
