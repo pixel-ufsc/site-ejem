@@ -4,118 +4,62 @@
     flex-direction: column;
     align-items: center;
     border: 4px solid#79ABDE;
-    padding: 56px 48px 56px 48px;
-    gap: 74px;
+    padding: 48px 8%;
+    gap: 48px;
     margin-top: 16px;
     margin-bottom: 68px;
 }
 
 .title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-shrink: 0;
+    text-decoration: underline;
+    text-decoration-color: #79abde;
+    text-underline-offset: 12px;
+    text-decoration-thickness: 2px;
+
     color: var(--azul-escuro, #042660);
     text-align: center;
     font-size: 36px;
     font-family: Montserrat;
     font-weight: 700;
-    gap: 15px;
-}
-
-.titleUnderline {
-    width: 416px;
-    height: 1px;
-    background-color: #79abde;
-}
-
-.whoAreWeText {
-    color: #042660;
-    font-size: 24px;
-    text-align: center;
 }
 
 .whoAreWeTextDiv {
+    padding: 0 4%;
     display: flex;
     flex-direction: column;
     gap: 29px;
     max-width: 1440px;
 }
 
+.whoAreWeTextDiv > p {
+    color: #042660;
+    font-size: 20px;
+    text-align: center;
+}
+
 .cardsDiv {
+    width: 100%;
+    max-width: 100%;
+
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 100px;
-    margin-top: 110px;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 32px;
+    max-width: 1440px;
 }
 
-@media (max-width: 1500px) {
-    .cardsDiv {
-        gap: 50px;
+@media (max-width: 1000px) {
+    .title {
+        font-size: 28px;
     }
-}
 
-@media (max-width: 1200px) {
     .cardsDiv {
         flex-direction: column;
     }
 }
 
-@media (max-width: 500px) {
-    .titleUnderline {
-        max-width: 70%;
-    }
-}
-
-@media (max-width: 330px) {
-    .title {
-        font-size: 20px;
-    }
-
-    .titleUnderline {
-        max-width: 200px;
-    }
-
-    .whoAreWeTextDiv .whoAreWeText {
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 300px) {
-    .cardsDiv {
-        max-width: 100%;
-    }
-
+@media (max-width: 600px) {
     .section {
-        padding-left: 10px;
-        padding-right: 10px;
-
-    }
-}
-
-@media (max-width: 230px) {
-    .title {
-        font-size: 18px;
-        text-decoration: underline 1px;
-    text-decoration-color: #79abde;
-    text-underline-offset: 3px;
-    }
-
-    .titleUnderline {
-        display: none;
-    }
-
-    .whoAreWeTextDiv .whoAreWeText {
-        font-size: 14px;
-    }
-
-    .section {
-        gap: 20px;
-        padding: 0px 0px;
-    }
-
-    .cardsDiv {
-        margin-top: 20px;
+        padding: 48px 4%;
     }
 }

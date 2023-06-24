@@ -1,132 +1,32 @@
 .cardDiv {
-    background-color: #042660;
-    color: #EFEFEF;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 415px;
-    height: 461px;
-    border-radius: 45px;
     justify-content: flex-start;
+
+    width: 100%;
+    padding: 32px;
+    border-radius: 32px;
     gap: 20px;
+
+    background-color: #042660;
+    color: #efefef;
+    font-family: Montserrat, sans-serif;
 }
 
-.titleImageDiv {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    margin-top: 21px;
-}
-
-.cardDiv .cardTitle {
-    color: #EFEFEF;
+.cardDiv > h3 {
     text-align: center;
-    font-size: 44.48px;
-    font-family: Montserrat;
-    font-weight: 700;
+    font-size: 28px;
+    font-weight: 500;
 }
 
-.cardDiv .cardText {
+.cardDiv > p {
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    font-size: 20px;
-    font-weight: 300;
-    font-family: Montserrat;
-    line-height: 28px;
-    justify-content: center;
-    max-width: 343px;
-    height: 203px;
-}
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
 
-@media (max-width: 1400px) {
-    .cardDiv {
-        width: 350px;
-    }
+    word-break: break-word;
 
-    .cardDiv .cardText {
-        max-width: 300px;
-    }
-}
-
-@media (max-width: 1200px) {
-    .cardDiv {
-        width: 415px;
-    }
-
-    .cardDiv .cardText {
-        max-width: 343px;
-    }
-}
-
-@media (max-width: 460px) {
-    .cardDiv {
-        width: 350px;
-    }
-
-    .cardDiv .cardText {
-        max-width: 300px;
-    }
-}
-
-@media (max-width: 390px) {
-    .cardDiv .cardText {
-        font-size: 16px;
-        max-width: 250px;
-    }
-
-    .cardDiv .cardTitle {
-        font-size: 30px;
-    }
-
-    .cardDiv {
-        max-width: 270px;
-    }
-
-}
-
-@media (max-width: 300px) {
-    .image {
-        display: none;
-    }
-
-    .cardDiv {
-        justify-content: center;
-        justify-content: center;
-        max-height: 600px;
-        max-width: 100%;
-        gap: 100px;
-    }
-
-    .cardDiv .cardText {
-        font-size: 12px;
-    }
-
-    .cardDiv .cardTitle {
-        font-size: 16px;
-    }
-
-    .titleImageDiv {
-        margin-top: 0px;
-    }
-
-}
-
-@media (max-width: 300px) {
-    
-    .cardDiv .cardText {
-        max-width: 70%;
-    }
-    
-    .cardDiv .cardText {
-        max-width: 70%;
-    }
-}
-
-@media (max-width: 190px) {
-    .cardDiv {
-        gap: 130px;
-    }
+    hyphens: auto;
 }

@@ -1,17 +1,16 @@
 .container {
-    height: 422px;
+    height: 450px;
+    max-height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    width: 90%;
-    gap: 50px;
-
+    gap: 30px;
 }
 
-@media (max-width: 470px) {
+@media (max-width: 600px) {
     .container {
-        gap: 10px;
+        height: 380px;
     }
 }
