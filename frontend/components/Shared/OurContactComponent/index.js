@@ -13,7 +13,7 @@ export default function OurContactComponent({ contatoData }) {
                 <h2>Entre em contato conosco!</h2>
                 <Link href="/contato" className={styles.contactUsButton}>
                     <Image src={orçamento} alt="orçamento" />
-                    <h3>Solicite seu orçamento gratuito</h3>
+                    <h3>Entre em contato para diagnóstico</h3>
                 </Link>
             </div>
 
