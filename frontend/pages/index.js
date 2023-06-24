@@ -12,7 +12,7 @@ import OurProjectComponent from '../components/Home/OurProjectComponent';
 import OurPartnersComponent from '../components/Home/OurPartnersComponent';
 import OurFeedBackComponent from '../components/Home/OurFeedBackComponent';
 import FooterComponent from '../components/Shared/FooterComponent';
-import WhoAreWeComponent from "../components/Home/WhoAreWeComponent";
+import WhoAreWeComponent from '../components/Home/WhoAreWeComponent';
 
 export default function Home({ feedbackData, redesSociaisData, numeroProjetosData }) {
     return (
@@ -29,7 +29,7 @@ export default function Home({ feedbackData, redesSociaisData, numeroProjetosDat
             <main>
                 <NavigationBar />
                 <WhatsappIconComponent url={redesSociaisData?.linkWhatsapp ? redesSociaisData.linkWhatsapp : '/'} />
-                <HomeBanner />
+                <HomeBanner whatsappUrl={redesSociaisData?.linkWhatsapp} />
                 <OurSolutionsComponent />
                 <WhoAreWeComponent />
                 <OurProjectComponent numeroProjetosData={numeroProjetosData} />
@@ -55,4 +55,3 @@ export async function getStaticProps() {
         },
     };
 }
-
