@@ -1,0 +1,12 @@
+.contactButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: 10px;
+    padding: 12px 18px;
+
+    background-color: #efefef;
+    color: var(--azul-escuro, #042660);
+}

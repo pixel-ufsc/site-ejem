@@ -2,12 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 422px;
+    height: 100%;
     width: 100%;
-}
-
-@media (max-width: 800px) {
-    .container {
-        height: 279px;
-    }
+    padding: 0 7%;
 }

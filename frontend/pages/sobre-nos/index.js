@@ -20,14 +20,15 @@ export default function QuemSomos({ statementsData, contatoData, membersData, re
     return (
         <div>
             <Head>
-                <title>Quem somos? | EJEM</title>
+                <title>Sobre Nós | EJEM</title>
                 <meta name="description" content="Página sobre a empresa" />
             </Head>
             <main>
                 <NavigationBar />
                 <WhatsappIconComponent url={redesSociaisData?.linkWhatsapp ? redesSociaisData.linkWhatsapp : '/'} />
                 <QuemSomosBanner />
-                <IntroComponent />
+                {//<IntroComponent />
+                }
                 <OurStatementComponent statementsData={statementsData} />
                 <AboutMejComponent />
                 <OurPartnersComponent />

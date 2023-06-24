@@ -1,0 +1,65 @@
+.section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 4px solid#79ABDE;
+    padding: 48px 8%;
+    gap: 48px;
+    margin-top: 16px;
+    margin-bottom: 68px;
+}
+
+.title {
+    text-decoration: underline;
+    text-decoration-color: #79abde;
+    text-underline-offset: 12px;
+    text-decoration-thickness: 2px;
+
+    color: var(--azul-escuro, #042660);
+    text-align: center;
+    font-size: 36px;
+    font-family: Montserrat;
+    font-weight: 700;
+}
+
+.whoAreWeTextDiv {
+    padding: 0 4%;
+    display: flex;
+    flex-direction: column;
+    gap: 29px;
+    max-width: 1440px;
+}
+
+.whoAreWeTextDiv > p {
+    color: #042660;
+    font-size: 20px;
+    text-align: center;
+}
+
+.cardsDiv {
+    width: 100%;
+    max-width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 32px;
+    max-width: 1440px;
+}
+
+@media (max-width: 1000px) {
+    .title {
+        font-size: 28px;
+    }
+
+    .cardsDiv {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .section {
+        padding: 48px 4%;
+    }
+}
