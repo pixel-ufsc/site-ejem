@@ -7,6 +7,8 @@
 }
 
 .title {
+    margin-top: 64px;
+
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
@@ -15,11 +17,9 @@
     text-align: center;
     color: #042660;
 
-    margin-top: 64px;
-
     text-decoration: underline 1px;
     text-decoration-color: #79abde;
-    text-underline-offset: 6px;
+    text-underline-offset: 12px;
 }
 
 .images {

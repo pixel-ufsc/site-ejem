@@ -11,16 +11,17 @@
 }
 
 .title {
-    text-decoration: underline;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    text-align: center;
+    color: #042660;
+
+    text-decoration: underline 1px;
     text-decoration-color: #79abde;
     text-underline-offset: 12px;
-    text-decoration-thickness: 2px;
-
-    color: var(--azul-escuro, #042660);
-    text-align: center;
-    font-size: 36px;
-    font-family: Montserrat;
-    font-weight: 700;
 }
 
 .whoAreWeTextDiv {
@@ -49,10 +50,6 @@
 }
 
 @media (max-width: 1000px) {
-    .title {
-        font-size: 28px;
-    }
-
     .cardsDiv {
         flex-direction: column;
     }
