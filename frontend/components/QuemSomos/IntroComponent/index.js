@@ -6,7 +6,7 @@ export default function IntroComponent() {
         <section className={styles.section}>
             <div className={styles.text}>
                 Somos uma empresa que busca, por meio da vivência empresarial, líderes empreendedores que impactam a
-                sociedade e aspiram por um mercado mais competitivos e capaz de fornecer{' '}
+                sociedade e aspiram por um mercado mais competitivo e capaz de fornecer{' '}
                 <b>produtos e serviços de qualidade.</b>
                 <br />
                 <br />

@@ -10,13 +10,13 @@ export default function AboutMejComponent() {
             <h1>EJEM na Rede</h1>
             <div className={styles.contentContainer}>
                 <p className={styles.text}>
-                    O movimento empresa júnior, (MEJ), chegou ao Brasil em meados dos anos 1990, no curso de
-                    Administração da Fundação Getúlio Vargas - uma das mais renomadas universidades do país. No entanto
-                    sua origem é europeia, tendo sido criado na França em 1967. Desde o início, seu intuito é que os
-                    estudantes coloquem na prática os conhecimentos aprendidos em sala de aula. Hoje existem no Brasil
-                    cerca de 1500 empresas juniores em mais de 280 instituições de ensino superior em todos os estados
-                    da Federação. Além disso, vem mostrando um crescimento acelerado nos últimos anos. Dentre elas está
-                    a EJEM, se fortalecendo cada vez mais dentro do movimento e proporcionando uma melhor vivência
+                    O movimento Empresa Júnior (MEJ) chegou ao Brasil em meados dos anos 1990, no curso de Administração
+                    da Fundação Getúlio Vargas - uma das mais renomadas universidades do país. No entanto, sua origem é
+                    europeia, tendo sido criado na França em 1967. Desde o início, seu intuito é que os estudantes
+                    coloquem em prática os conhecimentos aprendidos em sala de aula. Hoje, existem no Brasil cerca de
+                    1500 empresas juniores, em mais de 280 instituições de ensino superior em todos os estados da
+                    Federação. Além disso, vêm mostrando um crescimento acelerado nos últimos anos. Dentre elas, está a
+                    EJEM, fortalecendo-se cada vez mais dentro do movimento e proporcionando uma melhor vivência
                     empresarial para seus integrantes.
                 </p>
                 <div className={styles.imageContainer}>

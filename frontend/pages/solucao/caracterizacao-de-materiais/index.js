@@ -19,7 +19,7 @@ export default function CaracterizacaoDeMateriais({ redesSociaisData }) {
             Alguns dos ensaios envolvidos: <br />
             Microscopia Óptica; <br />
             Microscopia Eletrônica de Varredura; <br />
-            Espectrometria de Emissão Óptic; <br />
+            Espectrometria de Emissão Óptica; <br />
             Difração de Raio-X.
         </SolutionPage>
     );
